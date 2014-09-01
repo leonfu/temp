@@ -14,21 +14,48 @@
 
 @implementation DetailViewController
 
+@synthesize netType, token;
+
 - (void)viewDidLoad
 {
+    indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    indicator.hidesWhenStopped = YES;
+    indicator.center = CGPointMake(self.tableView.frame.size.width/2, self.tableView.frame.size.height/2);
+    [self.tableView addSubview:indicator];
+    [indicator startAnimating];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationItem.title = @"身份信息";
-    if(self.netType == DOUBAN)
-    {
-        
-    }
+    data = [[NSMutableArray alloc] init];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return data.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"DETAIL_CELL_LIST";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    }
+    cell.textLabel.text = data[indexPath.row];
+    return cell;
 }
 
 /*

@@ -11,6 +11,8 @@
 #define DOUBAN_APIKEY "09c92b8c7d3f9ac11d5b82a577bed043"
 #define DOUBAN_APISECRET "b61ff05818339a08"
 
+#define TOPIC_GET_ACCESS_TOKEN 0
+
 @interface DoubanLogonViewController ()
 
 @end
@@ -63,7 +65,7 @@
     if([code hasPrefix:@"code="] ==YES)
     {
         NSString* auth_code = [code substringFromIndex:[code rangeOfString:@"="].location+1];
-        URLRquestHandler* handler = [[URLRquestHandler alloc] initWithURLString:@"https://www.douban.com/service/auth2/token" Body:[NSString stringWithFormat:@"client_id=%s&client_secret=%s&redirect_uri=http://step.2&grant_type=authorization_code&code=%@", DOUBAN_APIKEY, DOUBAN_APISECRET, auth_code]];
+        URLRequestHandler* handler = [[URLRequestHandler alloc] initWithURLStringPOST:@"https://www.douban.com/service/auth2/token" Body:[NSString stringWithFormat:@"client_id=%s&client_secret=%s&redirect_uri=http://step.2&grant_type=authorization_code&code=%@", DOUBAN_APIKEY, DOUBAN_APISECRET, auth_code] Topic:TOPIC_GET_ACCESS_TOKEN];
         handler.delegate = self;
         [handler start];
         return;
@@ -100,10 +102,10 @@
     
 }
                                         
-- (void) getResponseResult:(NSString *)result
+- (void) getResponseResult:(BOOL)isValid Result:(NSString *)result Topic:(NSInteger)topic
 {
     [self dismissViewControllerAnimated:YES completion:nil];
-    if(result == nil)
+    if(isValid == NO)
     {
         [self.delegate getLogonResult:NO Type:self.netType Info:nil];
     }

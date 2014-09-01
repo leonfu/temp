@@ -6,20 +6,32 @@
 //  Copyright (c) 2014年 iShanghai Creative. All rights reserved.
 //
 
-#import "URLRquestHandler.h"
+#import "URLRequestHandler.h"
 
-@implementation URLRquestHandler
+@implementation URLRequestHandler
 
 @synthesize delegate;
 
 
-- (id) initWithURLString:(NSString *)url Body:(NSString*) body
+- (id) initWithURLStringPOST:(NSString *)url Body:(NSString*) body Topic:(NSInteger) base
 {
-    
+    topic = base;
+
     NSData* data = [body dataUsingEncoding:NSUTF8StringEncoding];
     urlRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
     [urlRequest setHTTPMethod:@"POST"];
     [urlRequest setHTTPBody:data];
+    return self;
+}
+
+- (id) initWithURLStringGET: (NSString*)url Headers:(NSDictionary*)headers Topic:(NSInteger) base
+{
+    topic = base;
+
+    urlRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
+    [urlRequest setHTTPMethod:@"GET"];
+    for (NSString* key in headers.allKeys)
+        [urlRequest addValue:headers[key] forHTTPHeaderField:key];
     return self;
 }
 
@@ -37,23 +49,20 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
     NSString* str = [[NSString alloc] initWithData:dataResponse encoding:NSUTF8StringEncoding];
-    [delegate getResponseResult:str];
+    [delegate getResponseResult:statusCode Result:str Topic:topic];
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
-    [delegate getResponseResult:nil];
+    [delegate getResponseResult:NO Result: nil Topic:topic];
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
     NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
-    int statusCode = httpResponse.statusCode;
+    statusCode = httpResponse.statusCode;
     if(statusCode != 200)
-    {
-        [connection cancel];
-        [delegate getResponseResult:nil];
-    }
+        NSLog(@"%@", httpResponse.allHeaderFields.description);
 }
 
 @end

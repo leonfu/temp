@@ -8,6 +8,9 @@
 
 #import "ViewController.h"
 #import "DetailViewController.h"
+#import "DoubanLogonViewController.h"
+#import "NSDoubanIdentityModel.h"
+#import "DoubanDetailViewController.h"
 
 @interface ViewController ()
 
@@ -19,11 +22,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    NSMutableDictionary* dict = [[NSMutableDictionary alloc] init];
-    [dict setObject:@"0" forKey:@"is_authed"];
-    [dict setObject:@"" forKey:@"content"];
-    [dict setObject:@"" forKey:@"token"];
-    self.IdentityList = [[NSArray alloc] initWithObjects:dict, dict, nil];
+    NSDoubanIdentityModel* modelDouban = [[NSDoubanIdentityModel alloc]init];
+    self.IdentityList = [[NSArray alloc] initWithObjects:modelDouban, nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -67,9 +67,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDictionary* dict = self.IdentityList[indexPath.row];
-    NSString* authed = dict[@"is_authed"];
-    if([authed compare:@"0"] == NSOrderedSame) //unauthed
+    NSIdentityModel* model = self.IdentityList[indexPath.row];
+    if(model.isAuthed == NO) //unauthed
     {
         DoubanLogonViewController* logonViewControler = [[DoubanLogonViewController alloc] init];
         logonViewControler.delegate = self;
@@ -77,36 +76,32 @@
         UINavigationController* navController = [[UINavigationController alloc] initWithRootViewController:logonViewControler];
         [self presentViewController:navController animated:YES completion:nil];
     }
-    else
+    else //authed
     {
-        [self showDetailInfo: indexPath.row];
+        [self showDetailInfo: indexPath.row withLogonToken:nil];
     }
 }
 
-- (void) showDetailInfo: (NSInteger) type
+- (void) showDetailInfo: (NETTYPE) type withLogonToken:(NSDictionary*) dictToken
 {
-    DetailViewController* detailViewController = [[DetailViewController alloc] init];
-    switch(type)
+    if(type == DOUBAN)
     {
-        case 0:
-            detailViewController.netType = DOUBAN;
-            [self.navigationController pushViewController:detailViewController animated:YES];
-            break;
-        case 1:
-            break;
+        DoubanDetailViewController* detailViewController =[[DoubanDetailViewController alloc] init];
+        detailViewController.netType = DOUBAN;
+        detailViewController.model = self.IdentityList[DOUBAN];
+        detailViewController.token = dictToken;
+        [self.navigationController pushViewController:detailViewController animated:YES];
     }
-   
 }
 
 - (void) getLogonResult:(BOOL)result Type:(NETTYPE) type Info:(NSString *)info
 {
     if(result == NO)
         return;
+    NSDictionary* dict = [NSJSONSerialization JSONObjectWithData: [info dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:nil];
     if(type == DOUBAN)
     {
-        self.IdentityList[DOUBAN][@"token"] = info;
-        self.IdentityList[DOUBAN][@"is_authed"] = @"1";
-        [self showDetailInfo: type];
+        [self showDetailInfo:type withLogonToken:dict];
     }
 }
 

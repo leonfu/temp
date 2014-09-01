@@ -8,12 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
+#import "NSIdentityModel.h"
 
-@interface DetailViewController : UITableViewController<UITableViewDataSource, UITabBarControllerDelegate>
+@interface DetailViewController : UITableViewController<UITableViewDataSource, UITableViewDelegate>
 {
+@protected
     BOOL m_isAuthed;
+    NSInteger rowNumber;
+    NSMutableArray* data;
+    UIActivityIndicatorView* indicator;
 }
 
 @property NETTYPE netType;
+@property NSDictionary* token;
 
 @end

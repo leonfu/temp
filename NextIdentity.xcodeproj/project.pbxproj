@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3517746119B3693F00AECE17 /* DoubanLogonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3517746019B3693F00AECE17 /* DoubanLogonViewController.m */; };
-		3517746419B3701E00AECE17 /* URLRquestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 3517746319B3701E00AECE17 /* URLRquestHandler.m */; };
+		3517746419B3701E00AECE17 /* URLRequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 3517746319B3701E00AECE17 /* URLRequestHandler.m */; };
 		359AD86C19B2F15B00E191A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359AD86B19B2F15B00E191A1 /* Foundation.framework */; };
 		359AD86E19B2F15B00E191A1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359AD86D19B2F15B00E191A1 /* CoreGraphics.framework */; };
 		359AD87019B2F15B00E191A1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359AD86F19B2F15B00E191A1 /* UIKit.framework */; };
@@ -25,6 +25,9 @@
 		359AD89719B2F15B00E191A1 /* NextIdentityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 359AD89619B2F15B00E191A1 /* NextIdentityTests.m */; };
 		359AD8A219B2FC9600E191A1 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 359AD8A119B2FC9600E191A1 /* DetailViewController.m */; };
 		359AD8A519B307AE00E191A1 /* LogonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 359AD8A419B307AE00E191A1 /* LogonViewController.m */; };
+		359B5F9819B40CD600DEB0E7 /* NSIdentityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 359B5F9719B40CD600DEB0E7 /* NSIdentityModel.m */; };
+		359B5F9B19B411C000DEB0E7 /* NSDoubanIdentityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 359B5F9A19B411C000DEB0E7 /* NSDoubanIdentityModel.m */; };
+		359B5F9E19B46FF000DEB0E7 /* DoubanDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 359B5F9D19B46FF000DEB0E7 /* DoubanDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +43,8 @@
 /* Begin PBXFileReference section */
 		3517745F19B3693F00AECE17 /* DoubanLogonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoubanLogonViewController.h; sourceTree = "<group>"; };
 		3517746019B3693F00AECE17 /* DoubanLogonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoubanLogonViewController.m; sourceTree = "<group>"; };
-		3517746219B3701E00AECE17 /* URLRquestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLRquestHandler.h; sourceTree = "<group>"; };
-		3517746319B3701E00AECE17 /* URLRquestHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLRquestHandler.m; sourceTree = "<group>"; };
+		3517746219B3701E00AECE17 /* URLRequestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLRequestHandler.h; sourceTree = "<group>"; };
+		3517746319B3701E00AECE17 /* URLRequestHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLRequestHandler.m; sourceTree = "<group>"; };
 		359AD86819B2F15B00E191A1 /* NextIdentity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NextIdentity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		359AD86B19B2F15B00E191A1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		359AD86D19B2F15B00E191A1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -65,6 +68,12 @@
 		359AD8A119B2FC9600E191A1 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		359AD8A319B307AE00E191A1 /* LogonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogonViewController.h; sourceTree = "<group>"; };
 		359AD8A419B307AE00E191A1 /* LogonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogonViewController.m; sourceTree = "<group>"; };
+		359B5F9619B40CD600DEB0E7 /* NSIdentityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSIdentityModel.h; sourceTree = "<group>"; };
+		359B5F9719B40CD600DEB0E7 /* NSIdentityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSIdentityModel.m; sourceTree = "<group>"; };
+		359B5F9919B411C000DEB0E7 /* NSDoubanIdentityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDoubanIdentityModel.h; sourceTree = "<group>"; };
+		359B5F9A19B411C000DEB0E7 /* NSDoubanIdentityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDoubanIdentityModel.m; sourceTree = "<group>"; };
+		359B5F9C19B46FF000DEB0E7 /* DoubanDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoubanDetailViewController.h; sourceTree = "<group>"; };
+		359B5F9D19B46FF000DEB0E7 /* DoubanDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoubanDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,12 +140,18 @@
 				359AD88119B2F15B00E191A1 /* ViewController.m */,
 				359AD8A019B2FC9600E191A1 /* DetailViewController.h */,
 				359AD8A119B2FC9600E191A1 /* DetailViewController.m */,
+				359B5F9C19B46FF000DEB0E7 /* DoubanDetailViewController.h */,
+				359B5F9D19B46FF000DEB0E7 /* DoubanDetailViewController.m */,
 				359AD8A319B307AE00E191A1 /* LogonViewController.h */,
 				359AD8A419B307AE00E191A1 /* LogonViewController.m */,
 				3517745F19B3693F00AECE17 /* DoubanLogonViewController.h */,
 				3517746019B3693F00AECE17 /* DoubanLogonViewController.m */,
-				3517746219B3701E00AECE17 /* URLRquestHandler.h */,
-				3517746319B3701E00AECE17 /* URLRquestHandler.m */,
+				3517746219B3701E00AECE17 /* URLRequestHandler.h */,
+				3517746319B3701E00AECE17 /* URLRequestHandler.m */,
+				359B5F9619B40CD600DEB0E7 /* NSIdentityModel.h */,
+				359B5F9719B40CD600DEB0E7 /* NSIdentityModel.m */,
+				359B5F9919B411C000DEB0E7 /* NSDoubanIdentityModel.h */,
+				359B5F9A19B411C000DEB0E7 /* NSDoubanIdentityModel.m */,
 				359AD88319B2F15B00E191A1 /* Images.xcassets */,
 				359AD87219B2F15B00E191A1 /* Supporting Files */,
 			);
@@ -269,12 +284,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3517746419B3701E00AECE17 /* URLRquestHandler.m in Sources */,
+				359B5F9B19B411C000DEB0E7 /* NSDoubanIdentityModel.m in Sources */,
+				359B5F9819B40CD600DEB0E7 /* NSIdentityModel.m in Sources */,
+				3517746419B3701E00AECE17 /* URLRequestHandler.m in Sources */,
 				359AD8A519B307AE00E191A1 /* LogonViewController.m in Sources */,
 				3517746119B3693F00AECE17 /* DoubanLogonViewController.m in Sources */,
 				359AD88219B2F15B00E191A1 /* ViewController.m in Sources */,
 				359AD87C19B2F15B00E191A1 /* AppDelegate.m in Sources */,
 				359AD87819B2F15B00E191A1 /* main.m in Sources */,
+				359B5F9E19B46FF000DEB0E7 /* DoubanDetailViewController.m in Sources */,
 				359AD8A219B2FC9600E191A1 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

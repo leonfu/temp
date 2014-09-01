@@ -10,20 +10,22 @@
 
 @protocol RequestDelegate
 
-- (void) getResponseResult: (NSString*)result;
+- (void) getResponseResult: (BOOL)isValid Result:(NSString*)result Topic:(NSInteger)topic;
 
 @end
 
-@interface URLRquestHandler : NSObject<NSURLConnectionDelegate>
+@interface URLRequestHandler : NSObject<NSURLConnectionDelegate>
 {
     NSMutableURLRequest* urlRequest;
     NSURLConnection* urlConnection;
     NSMutableData* dataResponse;
+    NSInteger statusCode;
+    NSInteger topic;
 }
 @property (nonatomic, assign) id <RequestDelegate> delegate;
 
-- (id) initWithURLString: (NSString*)url Body:(NSString*)body;
-
+- (id) initWithURLStringPOST: (NSString*)url Body:(NSString*)body Topic:(NSInteger)base;
+- (id) initWithURLStringGET: (NSString*)url Headers:(NSDictionary*)headers Topic:(NSInteger)base;
 - (void) start;
 
 @end
