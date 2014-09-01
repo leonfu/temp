@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum {DOUBAN, WEIBO} NETTYPE;
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

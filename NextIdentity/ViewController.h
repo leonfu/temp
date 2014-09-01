@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DoubanLogonViewController.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UITableViewController<UITableViewDataSource, UITableViewDelegate, LogonDelegate>
+
+@property(strong, nonatomic) NSArray* IdentityList;
+
+- (void) showDetailInfo: (NSInteger) type;
 
 @end

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3517746119B3693F00AECE17 /* DoubanLogonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3517746019B3693F00AECE17 /* DoubanLogonViewController.m */; };
+		3517746419B3701E00AECE17 /* URLRquestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 3517746319B3701E00AECE17 /* URLRquestHandler.m */; };
 		359AD86C19B2F15B00E191A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359AD86B19B2F15B00E191A1 /* Foundation.framework */; };
 		359AD86E19B2F15B00E191A1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359AD86D19B2F15B00E191A1 /* CoreGraphics.framework */; };
 		359AD87019B2F15B00E191A1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359AD86F19B2F15B00E191A1 /* UIKit.framework */; };
@@ -21,6 +23,8 @@
 		359AD88D19B2F15B00E191A1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359AD86F19B2F15B00E191A1 /* UIKit.framework */; };
 		359AD89519B2F15B00E191A1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 359AD89319B2F15B00E191A1 /* InfoPlist.strings */; };
 		359AD89719B2F15B00E191A1 /* NextIdentityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 359AD89619B2F15B00E191A1 /* NextIdentityTests.m */; };
+		359AD8A219B2FC9600E191A1 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 359AD8A119B2FC9600E191A1 /* DetailViewController.m */; };
+		359AD8A519B307AE00E191A1 /* LogonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 359AD8A419B307AE00E191A1 /* LogonViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3517745F19B3693F00AECE17 /* DoubanLogonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoubanLogonViewController.h; sourceTree = "<group>"; };
+		3517746019B3693F00AECE17 /* DoubanLogonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoubanLogonViewController.m; sourceTree = "<group>"; };
+		3517746219B3701E00AECE17 /* URLRquestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLRquestHandler.h; sourceTree = "<group>"; };
+		3517746319B3701E00AECE17 /* URLRquestHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLRquestHandler.m; sourceTree = "<group>"; };
 		359AD86819B2F15B00E191A1 /* NextIdentity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NextIdentity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		359AD86B19B2F15B00E191A1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		359AD86D19B2F15B00E191A1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,6 +61,10 @@
 		359AD89219B2F15B00E191A1 /* NextIdentityTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NextIdentityTests-Info.plist"; sourceTree = "<group>"; };
 		359AD89419B2F15B00E191A1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		359AD89619B2F15B00E191A1 /* NextIdentityTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NextIdentityTests.m; sourceTree = "<group>"; };
+		359AD8A019B2FC9600E191A1 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		359AD8A119B2FC9600E191A1 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		359AD8A319B307AE00E191A1 /* LogonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogonViewController.h; sourceTree = "<group>"; };
+		359AD8A419B307AE00E191A1 /* LogonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogonViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +129,14 @@
 				359AD87D19B2F15B00E191A1 /* Main.storyboard */,
 				359AD88019B2F15B00E191A1 /* ViewController.h */,
 				359AD88119B2F15B00E191A1 /* ViewController.m */,
+				359AD8A019B2FC9600E191A1 /* DetailViewController.h */,
+				359AD8A119B2FC9600E191A1 /* DetailViewController.m */,
+				359AD8A319B307AE00E191A1 /* LogonViewController.h */,
+				359AD8A419B307AE00E191A1 /* LogonViewController.m */,
+				3517745F19B3693F00AECE17 /* DoubanLogonViewController.h */,
+				3517746019B3693F00AECE17 /* DoubanLogonViewController.m */,
+				3517746219B3701E00AECE17 /* URLRquestHandler.h */,
+				3517746319B3701E00AECE17 /* URLRquestHandler.m */,
 				359AD88319B2F15B00E191A1 /* Images.xcassets */,
 				359AD87219B2F15B00E191A1 /* Supporting Files */,
 			);
@@ -249,9 +269,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3517746419B3701E00AECE17 /* URLRquestHandler.m in Sources */,
+				359AD8A519B307AE00E191A1 /* LogonViewController.m in Sources */,
+				3517746119B3693F00AECE17 /* DoubanLogonViewController.m in Sources */,
 				359AD88219B2F15B00E191A1 /* ViewController.m in Sources */,
 				359AD87C19B2F15B00E191A1 /* AppDelegate.m in Sources */,
 				359AD87819B2F15B00E191A1 /* main.m in Sources */,
+				359AD8A219B2FC9600E191A1 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +480,7 @@
 				359AD89C19B2F15B00E191A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		359AD89D19B2F15B00E191A1 /* Build configuration list for PBXNativeTarget "NextIdentityTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +489,7 @@
 				359AD89F19B2F15B00E191A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
