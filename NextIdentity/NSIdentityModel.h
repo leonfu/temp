@@ -19,6 +19,7 @@
 @interface NSIdentityModel : NSObject
 {
     NETTYPE netType;
+    NSInteger curr_topic_count;
 }
 @property (nonatomic, assign) id <ModelDoneDelegate> delegate;
 @property (strong, nonatomic) NSMutableDictionary* dictModel;
@@ -33,5 +34,4 @@
 
 - (id) init;
 - (void) addNewKey: (NSString*)key SubKeys: (NSArray*) subKeys;
-
 @end

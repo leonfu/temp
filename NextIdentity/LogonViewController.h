@@ -12,7 +12,7 @@
 
 @protocol LogonDelegate
 
-- (void) getLogonResult: (BOOL)result Type: (NETTYPE)type Info: (NSString*) info;
+- (void) getLogonResult: (BOOL)result Type: (NETTYPE)type Info: (NSDictionary*) info;
 
 @end
 

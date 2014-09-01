@@ -11,8 +11,6 @@
 #define DOUBAN_APIKEY "09c92b8c7d3f9ac11d5b82a577bed043"
 #define DOUBAN_APISECRET "b61ff05818339a08"
 
-#define TOPIC_GET_ACCESS_TOKEN 0
-
 @interface DoubanLogonViewController ()
 
 @end
@@ -56,6 +54,7 @@
 - (void) showLogonView
 {
     NSURLRequest* urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://www.douban.com/service/auth2/auth?client_id=%s&redirect_uri=http://step.1&response_type=code&scope=shuo_basic_r,shuo_basic_w,douban_basic_common", DOUBAN_APIKEY]]];
+    self.webView.delegate = self;
     [self.webView loadRequest:urlRequest];
     return;
 }
@@ -89,19 +88,19 @@
 
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
-    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
-    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
-    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
-                                        
+
 - (void) getResponseResult:(BOOL)isValid Result:(NSString *)result Topic:(NSInteger)topic
 {
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -109,7 +108,8 @@
     {
         [self.delegate getLogonResult:NO Type:self.netType Info:nil];
     }
-    [self.delegate getLogonResult:YES Type: self.netType Info: result];
+    NSDictionary* dict = [NSJSONSerialization JSONObjectWithData: [result dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:nil];
+    [self.delegate getLogonResult:YES Type: self.netType Info: dict];
 }
 
 @end

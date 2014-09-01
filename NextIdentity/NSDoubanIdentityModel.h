@@ -10,10 +10,7 @@
 #import "URLRequestHandler.h"
 
 @interface NSDoubanIdentityModel : NSIdentityModel<RequestDelegate>
-{
-    NSInteger curr_topic_count;
-}
-- (id) init;
+
 - (void) updateLogonToken: (NSDictionary*)dict;
 - (void) buildUserInfo;
 - (void) buildUserFavoriteBooks;

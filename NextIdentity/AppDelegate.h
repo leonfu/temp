@@ -7,8 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WeiboSDK.h"
 
-typedef enum {DOUBAN, WEIBO} NETTYPE;
+typedef enum {DOUBAN=0, SINA_WEIBO} NETTYPE;
+
+#define TOPIC_GET_ACCESS_TOKEN 0
+
+#define SINAWEIBO_APIKEY @"3147952809"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

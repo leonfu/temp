@@ -7,12 +7,16 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [WeiboSDK enableDebugMode:YES];
+    [WeiboSDK registerApp:SINAWEIBO_APIKEY];
+
     return YES;
 }
 							
@@ -43,4 +47,14 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    if([url.scheme hasPrefix:@"wb"]== YES)
+    {
+        UINavigationController* navController = (UINavigationController*)self.window.rootViewController;
+        ViewController* viewController = (ViewController*)navController.topViewController;
+        return [viewController handleSinaWeiboUrl: url];
+    }
+    return YES;
+}
 @end

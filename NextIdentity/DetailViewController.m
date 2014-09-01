@@ -18,12 +18,12 @@
 
 - (void)viewDidLoad
 {
+    [super viewDidLoad];
     indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     indicator.hidesWhenStopped = YES;
-    indicator.center = CGPointMake(self.tableView.frame.size.width/2, self.tableView.frame.size.height/2);
-    [self.tableView addSubview:indicator];
     [indicator startAnimating];
-    [super viewDidLoad];
+    indicator.center = CGPointMake(self.view.bounds.size.width/2, self.view.bounds.size.height/2 - self.view.frame.origin.y);
+    [self.tableView addSubview:indicator];
     // Do any additional setup after loading the view.
     self.navigationItem.title = @"身份信息";
     data = [[NSMutableArray alloc] init];

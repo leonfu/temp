@@ -15,6 +15,7 @@
 - (id) init
 {
     self.isAuthed = NO;
+    curr_topic_count = 0;
     self = [super init];
     dictModel = [[NSMutableDictionary alloc] init];
     [dictModel setObject:@"" forKey:@"logon_tokens"];
@@ -24,7 +25,6 @@
     [dictModel setObject:@"" forKey:@"user_favorites"];
     return self;
 }
-
 
 - (void) addNewKey: (NSString*)key SubKeys: (NSArray*) subKeys
 {

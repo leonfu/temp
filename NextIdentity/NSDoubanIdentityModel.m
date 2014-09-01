@@ -15,12 +15,6 @@
 
 @implementation NSDoubanIdentityModel
 
-- (id) init
-{
-    curr_topic_count = 0;
-    self = [super init];
-    return self;
-}
 
 - (void) updateLogonToken: (NSDictionary*) dict
 {

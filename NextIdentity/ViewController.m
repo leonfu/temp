@@ -11,6 +11,9 @@
 #import "DoubanLogonViewController.h"
 #import "NSDoubanIdentityModel.h"
 #import "DoubanDetailViewController.h"
+#import "NSSinaWeiboIdentityModel.h"
+#import "SinaWeiboLogonController.h"
+#import "SinaWeiboDetailViewController.h"
 
 @interface ViewController ()
 
@@ -18,12 +21,15 @@
 
 @implementation ViewController
 
+@synthesize sinaWeiboLogonController;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     NSDoubanIdentityModel* modelDouban = [[NSDoubanIdentityModel alloc]init];
-    self.IdentityList = [[NSArray alloc] initWithObjects:modelDouban, nil];
+    NSSinaWeiboIdentityModel* modelSina = [[NSSinaWeiboIdentityModel alloc] init];
+    self.IdentityList = [[NSArray alloc] initWithObjects:modelDouban, modelSina, nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,7 +45,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 2;
+    return self.IdentityList.count;
 }
 
 
@@ -54,10 +60,10 @@
     }
     switch (indexPath.row)
     {
-        case 0:
+        case DOUBAN:
             cell.textLabel.text = @"我的豆瓣身份";
             break;
-        case 1:
+        case SINA_WEIBO:
             cell.textLabel.text = @"我的微博身份";
             break;
     }
@@ -70,16 +76,38 @@
     NSIdentityModel* model = self.IdentityList[indexPath.row];
     if(model.isAuthed == NO) //unauthed
     {
-        DoubanLogonViewController* logonViewControler = [[DoubanLogonViewController alloc] init];
-        logonViewControler.delegate = self;
-        logonViewControler.netType = DOUBAN;
-        UINavigationController* navController = [[UINavigationController alloc] initWithRootViewController:logonViewControler];
-        [self presentViewController:navController animated:YES completion:nil];
+        switch (indexPath.row)
+        {
+            case DOUBAN:
+                [self showDoubanLogon];
+                break;
+            case SINA_WEIBO:
+                [self showSinaWeiboLogon];
+                break;
+            default:
+                break;
+        }
     }
     else //authed
     {
-        [self showDetailInfo: indexPath.row withLogonToken:nil];
+        [self showDetailInfo: (NETTYPE)indexPath.row withLogonToken:nil];
     }
+}
+
+- (void) showDoubanLogon
+{
+    DoubanLogonViewController* logonViewControler = [[DoubanLogonViewController alloc] init];
+    logonViewControler.delegate = self;
+    logonViewControler.netType = DOUBAN;
+    UINavigationController* navController = [[UINavigationController alloc] initWithRootViewController:logonViewControler];
+    [self presentViewController:navController animated:YES completion:nil];
+}
+
+- (void) showSinaWeiboLogon
+{
+    sinaWeiboLogonController = [[SinaWeiboLogonController alloc] init];
+    sinaWeiboLogonController.delegate = self;
+    [sinaWeiboLogonController startLogon];
 }
 
 - (void) showDetailInfo: (NETTYPE) type withLogonToken:(NSDictionary*) dictToken
@@ -92,16 +120,32 @@
         detailViewController.token = dictToken;
         [self.navigationController pushViewController:detailViewController animated:YES];
     }
+    else if(type == SINA_WEIBO)
+    {
+        SinaWeiboDetailViewController* detailViewController = [[SinaWeiboDetailViewController alloc] init];
+        detailViewController.netType = SINA_WEIBO;
+        detailViewController.model = self.IdentityList[SINA_WEIBO];
+        detailViewController.token = dictToken;
+        [self.navigationController pushViewController:detailViewController animated:YES];
+    }
 }
 
-- (void) getLogonResult:(BOOL)result Type:(NETTYPE) type Info:(NSString *)info
+- (BOOL) handleSinaWeiboUrl:(NSURL *)url
+{
+    return [WeiboSDK handleOpenURL:url delegate:sinaWeiboLogonController];
+}
+
+- (void) getLogonResult:(BOOL)result Type:(NETTYPE) type Info:(NSDictionary *)info
 {
     if(result == NO)
         return;
-    NSDictionary* dict = [NSJSONSerialization JSONObjectWithData: [info dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:nil];
     if(type == DOUBAN)
     {
-        [self showDetailInfo:type withLogonToken:dict];
+        [self showDetailInfo:type withLogonToken:info];
+    }
+    else if (type == SINA_WEIBO)
+    {
+        [self showDetailInfo:type withLogonToken:info];
     }
 }
 
