@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "WeiboSDK.h"
 
-typedef enum {DOUBAN=0, SINA_WEIBO, TAOBAO} NETTYPE;
+typedef enum {DOUBAN=0, SINA_WEIBO, TAOBAO, TENCENT} NETTYPE;
 
 #define TOPIC_GET_ACCESS_TOKEN 0
 
@@ -20,6 +20,9 @@ typedef enum {DOUBAN=0, SINA_WEIBO, TAOBAO} NETTYPE;
 
 #define TAOBAO_APIKEY "23013352"
 #define TAOBAO_APISECRET "e9a0d229aea64b2d5762a5cb3b07ec82"
+
+#define TENCENT_APPID "222222" //"1102352854"
+#define TENCENT_APPKEY "4fNoztVbwwJCjoMj"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

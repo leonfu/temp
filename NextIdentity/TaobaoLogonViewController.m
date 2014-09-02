@@ -106,7 +106,20 @@
         [self.delegate getLogonResult:NO Type:self.netType Info:nil];
     }
     NSDictionary* dict = [NSJSONSerialization JSONObjectWithData: [result dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:nil];
+    [self updateLogonToken:dict];
     [self.delegate getLogonResult:YES Type: self.netType Info: dict];
+}
+
+- (void) updateLogonToken: (NSDictionary*) dict
+{
+    if(self.model.isAuthed == YES)
+        return;
+    self.model.dictModel[@"logon_tokens"][@"token"] = dict[@"access_token"];
+    self.model.dictModel[@"logon_tokens"][@"expire_time"] = dict[@"expires_in"];
+    self.model.dictModel[@"logon_tokens"][@"refresh_token"] = dict[@"refresh_token"];
+    self.model.dictModel[@"user_infos"][@"user_id"] = dict[@"taobao_user_id"];
+    self.model.dictModel[@"user_infos"][@"user_nick"] = dict[@"taobao_user_nick"];
+    self.model.isAuthed = YES;
 }
 
 @end

@@ -14,7 +14,7 @@
 
 @implementation DetailViewController
 
-@synthesize netType, token;
+@synthesize netType, model;
 
 - (void)viewDidLoad
 {
@@ -26,7 +26,9 @@
     [self.tableView addSubview:indicator];
     // Do any additional setup after loading the view.
     self.navigationItem.title = @"身份信息";
-    data = [[NSMutableArray alloc] init];
+    data = [[NSMutableArray alloc] initWithObjects:self.model.accessToken, nil];
+    [self.tableView reloadData];
+    [indicator stopAnimating];
 }
 
 - (void)didReceiveMemoryWarning

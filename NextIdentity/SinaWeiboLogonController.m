@@ -23,7 +23,10 @@
     if(response.statusCode != WeiboSDKResponseStatusCodeSuccess)
         [self.delegate getLogonResult:NO Type:SINA_WEIBO Info:response.userInfo];
     else
+    {
+        [self updateLogonToken:response.userInfo];
         [self.delegate getLogonResult:YES Type:SINA_WEIBO Info:response.userInfo];
+    }
 }
 
 - (void) startLogon
@@ -34,4 +37,15 @@
     request.userInfo = @{@"SSO_From": @"ID.Sina.Wb"};
     [WeiboSDK sendRequest:request];
 }
+
+- (void) updateLogonToken: (NSDictionary*) dict
+{
+    if(self.model.isAuthed == YES)
+        return;
+    self.model.dictModel[@"logon_tokens"][@"token"] = dict[@"access_token"];
+    self.model.dictModel[@"logon_tokens"][@"expire_time"] = dict[@"expires_in"];
+    self.model.dictModel[@"user_infos"][@"user_id"] = dict[@"uid"];
+    self.model.isAuthed = YES;
+}
+
 @end

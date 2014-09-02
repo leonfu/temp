@@ -11,9 +11,18 @@
 		3517746419B3701E00AECE17 /* URLRequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 3517746319B3701E00AECE17 /* URLRequestHandler.m */; };
 		3517746B19B4A80400AECE17 /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3517746819B4A80400AECE17 /* libWeiboSDK.a */; };
 		3517746C19B4A80400AECE17 /* WeiboSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3517746919B4A80400AECE17 /* WeiboSDK.bundle */; };
-		3517746F19B4B0D400AECE17 /* NSSinaWeiboIdentityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3517746E19B4B0D400AECE17 /* NSSinaWeiboIdentityModel.m */; };
 		3517747219B4BA6600AECE17 /* SinaWeiboLogonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3517747119B4BA6600AECE17 /* SinaWeiboLogonController.m */; };
-		3517747519B4C1CE00AECE17 /* SinaWeiboDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3517747419B4C1CE00AECE17 /* SinaWeiboDetailViewController.m */; };
+		3517747919B5FB1000AECE17 /* TencentLogonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3517747819B5FB1000AECE17 /* TencentLogonController.m */; };
+		3517747B19B6012700AECE17 /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3517747A19B6012700AECE17 /* TencentOpenApi_IOS_Bundle.bundle */; };
+		3517747D19B6014600AECE17 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3517747C19B6014600AECE17 /* TencentOpenAPI.framework */; };
+		3517748519B6058C00AECE17 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3517748419B6058C00AECE17 /* CoreTelephony.framework */; };
+		3517748719B6059B00AECE17 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3517748619B6059B00AECE17 /* SystemConfiguration.framework */; };
+		3517748919B605AD00AECE17 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3517748819B605AD00AECE17 /* CoreFoundation.framework */; };
+		3517748B19B605BF00AECE17 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3517748A19B605BF00AECE17 /* Security.framework */; };
+		3517748F19B6080400AECE17 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3517748E19B6080400AECE17 /* libz.1.1.3.dylib */; };
+		3517749119B6081500AECE17 /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3517749019B6081500AECE17 /* libstdc++.6.0.9.dylib */; };
+		3517749319B6082F00AECE17 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3517749219B6082F00AECE17 /* libsqlite3.0.dylib */; };
+		3517749519B615BD00AECE17 /* qq.png in Resources */ = {isa = PBXBuildFile; fileRef = 3517749419B615BD00AECE17 /* qq.png */; };
 		359AD86C19B2F15B00E191A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359AD86B19B2F15B00E191A1 /* Foundation.framework */; };
 		359AD86E19B2F15B00E191A1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359AD86D19B2F15B00E191A1 /* CoreGraphics.framework */; };
 		359AD87019B2F15B00E191A1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359AD86F19B2F15B00E191A1 /* UIKit.framework */; };
@@ -31,13 +40,9 @@
 		359AD8A219B2FC9600E191A1 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 359AD8A119B2FC9600E191A1 /* DetailViewController.m */; };
 		359AD8A519B307AE00E191A1 /* LogonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 359AD8A419B307AE00E191A1 /* LogonViewController.m */; };
 		359B5F9819B40CD600DEB0E7 /* NSIdentityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 359B5F9719B40CD600DEB0E7 /* NSIdentityModel.m */; };
-		359B5F9B19B411C000DEB0E7 /* NSDoubanIdentityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 359B5F9A19B411C000DEB0E7 /* NSDoubanIdentityModel.m */; };
-		359B5F9E19B46FF000DEB0E7 /* DoubanDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 359B5F9D19B46FF000DEB0E7 /* DoubanDetailViewController.m */; };
 		359B5FA219B56B3000DEB0E7 /* douban.png in Resources */ = {isa = PBXBuildFile; fileRef = 359B5FA019B56B3000DEB0E7 /* douban.png */; };
 		359B5FA319B56B3000DEB0E7 /* sina.png in Resources */ = {isa = PBXBuildFile; fileRef = 359B5FA119B56B3000DEB0E7 /* sina.png */; };
 		359B5FA819B5AB5500DEB0E7 /* TaobaoLogonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 359B5FA719B5AB5500DEB0E7 /* TaobaoLogonViewController.m */; };
-		359B5FAB19B5CBF200DEB0E7 /* NSTaobaoIdentityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 359B5FAA19B5CBF200DEB0E7 /* NSTaobaoIdentityModel.m */; };
-		359B5FB119B5CE5000DEB0E7 /* TaobaoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 359B5FB019B5CE5000DEB0E7 /* TaobaoDetailViewController.m */; };
 		359B5FB319B5D01400DEB0E7 /* taobao.png in Resources */ = {isa = PBXBuildFile; fileRef = 359B5FB219B5D01400DEB0E7 /* taobao.png */; };
 /* End PBXBuildFile section */
 
@@ -59,12 +64,20 @@
 		3517746819B4A80400AECE17 /* libWeiboSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeiboSDK.a; sourceTree = "<group>"; };
 		3517746919B4A80400AECE17 /* WeiboSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WeiboSDK.bundle; sourceTree = "<group>"; };
 		3517746A19B4A80400AECE17 /* WeiboSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboSDK.h; sourceTree = "<group>"; };
-		3517746D19B4B0D400AECE17 /* NSSinaWeiboIdentityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSSinaWeiboIdentityModel.h; sourceTree = "<group>"; };
-		3517746E19B4B0D400AECE17 /* NSSinaWeiboIdentityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSSinaWeiboIdentityModel.m; sourceTree = "<group>"; };
 		3517747019B4BA6600AECE17 /* SinaWeiboLogonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinaWeiboLogonController.h; sourceTree = "<group>"; };
 		3517747119B4BA6600AECE17 /* SinaWeiboLogonController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SinaWeiboLogonController.m; sourceTree = "<group>"; };
-		3517747319B4C1CE00AECE17 /* SinaWeiboDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinaWeiboDetailViewController.h; sourceTree = "<group>"; };
-		3517747419B4C1CE00AECE17 /* SinaWeiboDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SinaWeiboDetailViewController.m; sourceTree = "<group>"; };
+		3517747719B5FB1000AECE17 /* TencentLogonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TencentLogonController.h; sourceTree = "<group>"; };
+		3517747819B5FB1000AECE17 /* TencentLogonController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TencentLogonController.m; sourceTree = "<group>"; };
+		3517747A19B6012700AECE17 /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
+		3517747C19B6014600AECE17 /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
+		3517748419B6058C00AECE17 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		3517748619B6059B00AECE17 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		3517748819B605AD00AECE17 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		3517748A19B605BF00AECE17 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		3517748E19B6080400AECE17 /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
+		3517749019B6081500AECE17 /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
+		3517749219B6082F00AECE17 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		3517749419B615BD00AECE17 /* qq.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = qq.png; path = res/qq.png; sourceTree = "<group>"; };
 		359AD86819B2F15B00E191A1 /* NextIdentity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NextIdentity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		359AD86B19B2F15B00E191A1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		359AD86D19B2F15B00E191A1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -90,18 +103,10 @@
 		359AD8A419B307AE00E191A1 /* LogonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogonViewController.m; sourceTree = "<group>"; };
 		359B5F9619B40CD600DEB0E7 /* NSIdentityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSIdentityModel.h; sourceTree = "<group>"; };
 		359B5F9719B40CD600DEB0E7 /* NSIdentityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSIdentityModel.m; sourceTree = "<group>"; };
-		359B5F9919B411C000DEB0E7 /* NSDoubanIdentityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDoubanIdentityModel.h; sourceTree = "<group>"; };
-		359B5F9A19B411C000DEB0E7 /* NSDoubanIdentityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDoubanIdentityModel.m; sourceTree = "<group>"; };
-		359B5F9C19B46FF000DEB0E7 /* DoubanDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoubanDetailViewController.h; sourceTree = "<group>"; };
-		359B5F9D19B46FF000DEB0E7 /* DoubanDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoubanDetailViewController.m; sourceTree = "<group>"; };
 		359B5FA019B56B3000DEB0E7 /* douban.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = douban.png; path = res/douban.png; sourceTree = "<group>"; };
 		359B5FA119B56B3000DEB0E7 /* sina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sina.png; path = res/sina.png; sourceTree = "<group>"; };
 		359B5FA619B5AB5500DEB0E7 /* TaobaoLogonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaobaoLogonViewController.h; sourceTree = "<group>"; };
 		359B5FA719B5AB5500DEB0E7 /* TaobaoLogonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaobaoLogonViewController.m; sourceTree = "<group>"; };
-		359B5FA919B5CBF200DEB0E7 /* NSTaobaoIdentityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSTaobaoIdentityModel.h; sourceTree = "<group>"; };
-		359B5FAA19B5CBF200DEB0E7 /* NSTaobaoIdentityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSTaobaoIdentityModel.m; sourceTree = "<group>"; };
-		359B5FAF19B5CE5000DEB0E7 /* TaobaoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaobaoDetailViewController.h; sourceTree = "<group>"; };
-		359B5FB019B5CE5000DEB0E7 /* TaobaoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaobaoDetailViewController.m; sourceTree = "<group>"; };
 		359B5FB219B5D01400DEB0E7 /* taobao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = taobao.png; path = res/taobao.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,6 +115,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3517749319B6082F00AECE17 /* libsqlite3.0.dylib in Frameworks */,
+				3517749119B6081500AECE17 /* libstdc++.6.0.9.dylib in Frameworks */,
+				3517748F19B6080400AECE17 /* libz.1.1.3.dylib in Frameworks */,
+				3517748B19B605BF00AECE17 /* Security.framework in Frameworks */,
+				3517748919B605AD00AECE17 /* CoreFoundation.framework in Frameworks */,
+				3517748719B6059B00AECE17 /* SystemConfiguration.framework in Frameworks */,
+				3517748519B6058C00AECE17 /* CoreTelephony.framework in Frameworks */,
+				3517747D19B6014600AECE17 /* TencentOpenAPI.framework in Frameworks */,
 				359AD86E19B2F15B00E191A1 /* CoreGraphics.framework in Frameworks */,
 				359AD87019B2F15B00E191A1 /* UIKit.framework in Frameworks */,
 				359AD86C19B2F15B00E191A1 /* Foundation.framework in Frameworks */,
@@ -162,6 +175,15 @@
 		359AD86A19B2F15B00E191A1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3517749219B6082F00AECE17 /* libsqlite3.0.dylib */,
+				3517749019B6081500AECE17 /* libstdc++.6.0.9.dylib */,
+				3517748E19B6080400AECE17 /* libz.1.1.3.dylib */,
+				3517748A19B605BF00AECE17 /* Security.framework */,
+				3517748819B605AD00AECE17 /* CoreFoundation.framework */,
+				3517748619B6059B00AECE17 /* SystemConfiguration.framework */,
+				3517748419B6058C00AECE17 /* CoreTelephony.framework */,
+				3517747C19B6014600AECE17 /* TencentOpenAPI.framework */,
+				3517747A19B6012700AECE17 /* TencentOpenApi_IOS_Bundle.bundle */,
 				3517746719B4A80400AECE17 /* libWeiboSDK */,
 				359AD86B19B2F15B00E191A1 /* Foundation.framework */,
 				359AD86D19B2F15B00E191A1 /* CoreGraphics.framework */,
@@ -174,7 +196,6 @@
 		359AD87119B2F15B00E191A1 /* NextIdentity */ = {
 			isa = PBXGroup;
 			children = (
-				359B5FAE19B5CC2500DEB0E7 /* DetailViewController */,
 				359B5FAD19B5CC0C00DEB0E7 /* LogonViewController */,
 				359B5FAC19B5CBFC00DEB0E7 /* IdentityModel */,
 				359AD87A19B2F15B00E191A1 /* AppDelegate.h */,
@@ -182,6 +203,8 @@
 				359AD87D19B2F15B00E191A1 /* Main.storyboard */,
 				359AD88019B2F15B00E191A1 /* ViewController.h */,
 				359AD88119B2F15B00E191A1 /* ViewController.m */,
+				359AD8A019B2FC9600E191A1 /* DetailViewController.h */,
+				359AD8A119B2FC9600E191A1 /* DetailViewController.m */,
 				3517746219B3701E00AECE17 /* URLRequestHandler.h */,
 				3517746319B3701E00AECE17 /* URLRequestHandler.m */,
 				359AD88319B2F15B00E191A1 /* Images.xcassets */,
@@ -223,6 +246,7 @@
 		359B5F9F19B56B0F00DEB0E7 /* res */ = {
 			isa = PBXGroup;
 			children = (
+				3517749419B615BD00AECE17 /* qq.png */,
 				359B5FB219B5D01400DEB0E7 /* taobao.png */,
 				359B5FA019B56B3000DEB0E7 /* douban.png */,
 				359B5FA119B56B3000DEB0E7 /* sina.png */,
@@ -235,12 +259,6 @@
 			children = (
 				359B5F9619B40CD600DEB0E7 /* NSIdentityModel.h */,
 				359B5F9719B40CD600DEB0E7 /* NSIdentityModel.m */,
-				359B5F9919B411C000DEB0E7 /* NSDoubanIdentityModel.h */,
-				359B5F9A19B411C000DEB0E7 /* NSDoubanIdentityModel.m */,
-				3517746D19B4B0D400AECE17 /* NSSinaWeiboIdentityModel.h */,
-				3517746E19B4B0D400AECE17 /* NSSinaWeiboIdentityModel.m */,
-				359B5FA919B5CBF200DEB0E7 /* NSTaobaoIdentityModel.h */,
-				359B5FAA19B5CBF200DEB0E7 /* NSTaobaoIdentityModel.m */,
 			);
 			name = IdentityModel;
 			sourceTree = "<group>";
@@ -256,23 +274,10 @@
 				3517747119B4BA6600AECE17 /* SinaWeiboLogonController.m */,
 				359B5FA619B5AB5500DEB0E7 /* TaobaoLogonViewController.h */,
 				359B5FA719B5AB5500DEB0E7 /* TaobaoLogonViewController.m */,
+				3517747719B5FB1000AECE17 /* TencentLogonController.h */,
+				3517747819B5FB1000AECE17 /* TencentLogonController.m */,
 			);
 			name = LogonViewController;
-			sourceTree = "<group>";
-		};
-		359B5FAE19B5CC2500DEB0E7 /* DetailViewController */ = {
-			isa = PBXGroup;
-			children = (
-				359AD8A019B2FC9600E191A1 /* DetailViewController.h */,
-				359AD8A119B2FC9600E191A1 /* DetailViewController.m */,
-				359B5F9C19B46FF000DEB0E7 /* DoubanDetailViewController.h */,
-				359B5F9D19B46FF000DEB0E7 /* DoubanDetailViewController.m */,
-				3517747319B4C1CE00AECE17 /* SinaWeiboDetailViewController.h */,
-				3517747419B4C1CE00AECE17 /* SinaWeiboDetailViewController.m */,
-				359B5FAF19B5CE5000DEB0E7 /* TaobaoDetailViewController.h */,
-				359B5FB019B5CE5000DEB0E7 /* TaobaoDetailViewController.m */,
-			);
-			name = DetailViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -351,12 +356,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3517747B19B6012700AECE17 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				359AD88419B2F15B00E191A1 /* Images.xcassets in Resources */,
 				359AD87619B2F15B00E191A1 /* InfoPlist.strings in Resources */,
 				359B5FA319B56B3000DEB0E7 /* sina.png in Resources */,
 				359AD87F19B2F15B00E191A1 /* Main.storyboard in Resources */,
 				3517746C19B4A80400AECE17 /* WeiboSDK.bundle in Resources */,
 				359B5FA219B56B3000DEB0E7 /* douban.png in Resources */,
+				3517749519B615BD00AECE17 /* qq.png in Resources */,
 				359B5FB319B5D01400DEB0E7 /* taobao.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,21 +384,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				359B5FA819B5AB5500DEB0E7 /* TaobaoLogonViewController.m in Sources */,
-				359B5F9B19B411C000DEB0E7 /* NSDoubanIdentityModel.m in Sources */,
 				3517747219B4BA6600AECE17 /* SinaWeiboLogonController.m in Sources */,
 				359B5F9819B40CD600DEB0E7 /* NSIdentityModel.m in Sources */,
 				3517746419B3701E00AECE17 /* URLRequestHandler.m in Sources */,
 				359AD8A519B307AE00E191A1 /* LogonViewController.m in Sources */,
-				3517746F19B4B0D400AECE17 /* NSSinaWeiboIdentityModel.m in Sources */,
 				3517746119B3693F00AECE17 /* DoubanLogonViewController.m in Sources */,
-				3517747519B4C1CE00AECE17 /* SinaWeiboDetailViewController.m in Sources */,
+				3517747919B5FB1000AECE17 /* TencentLogonController.m in Sources */,
 				359AD88219B2F15B00E191A1 /* ViewController.m in Sources */,
 				359AD87C19B2F15B00E191A1 /* AppDelegate.m in Sources */,
 				359AD87819B2F15B00E191A1 /* main.m in Sources */,
-				359B5F9E19B46FF000DEB0E7 /* DoubanDetailViewController.m in Sources */,
-				359B5FAB19B5CBF200DEB0E7 /* NSTaobaoIdentityModel.m in Sources */,
 				359AD8A219B2FC9600E191A1 /* DetailViewController.m in Sources */,
-				359B5FB119B5CE5000DEB0E7 /* TaobaoDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,8 +516,13 @@
 		359AD89B19B2F15B00E191A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NextIdentity/NextIdentity-Prefix.pch";
 				INFOPLIST_FILE = "NextIdentity/NextIdentity-Info.plist";
@@ -523,8 +530,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/libWeiboSDK",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/NextIdentity",
 				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -532,8 +543,13 @@
 		359AD89C19B2F15B00E191A1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NextIdentity/NextIdentity-Prefix.pch";
 				INFOPLIST_FILE = "NextIdentity/NextIdentity-Info.plist";
@@ -541,8 +557,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/libWeiboSDK",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/NextIdentity",
 				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -13,6 +13,8 @@
 @interface SinaWeiboLogonController : NSObject<WeiboSDKDelegate>
 
 @property (nonatomic, assign) id <LogonDelegate> delegate;
+@property (nonatomic, assign) NSIdentityModel* model;
+
 - (void) startLogon;
 
 @end

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 #import "URLRequestHandler.h"
+#import "NSIdentityModel.h"
 
 @protocol LogonDelegate
 
@@ -21,6 +22,7 @@
     NETTYPE netType;
     UIWebView* webView;
 }
+@property (nonatomic, assign) NSIdentityModel* model;
 @property NETTYPE netType;
 @property (nonatomic, assign) id <LogonDelegate> delegate;
 @property (strong, nonatomic) IBOutlet UIWebView* webView;

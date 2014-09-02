@@ -49,11 +49,16 @@
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
-    if([url.scheme hasPrefix:@"wb"]== YES)
+    UINavigationController* navController = (UINavigationController*)self.window.rootViewController;
+    ViewController* viewController = (ViewController*)navController.topViewController;
+
+    if([url.scheme hasPrefix:@"wb"] == YES)
     {
-        UINavigationController* navController = (UINavigationController*)self.window.rootViewController;
-        ViewController* viewController = (ViewController*)navController.topViewController;
-        return [viewController handleSinaWeiboUrl: url];
+         return [viewController handleSinaWeiboUrl: url];
+    }
+    else if([url.scheme hasPrefix:@"tencent"] == YES)
+    {
+        return [viewController handleTencentUrl: url];
     }
     return YES;
 }

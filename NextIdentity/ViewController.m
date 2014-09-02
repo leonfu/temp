@@ -9,15 +9,11 @@
 #import "ViewController.h"
 #import "DetailViewController.h"
 #import "DoubanLogonViewController.h"
-#import "NSDoubanIdentityModel.h"
-#import "DoubanDetailViewController.h"
-#import "NSSinaWeiboIdentityModel.h"
 #import "SinaWeiboLogonController.h"
-#import "SinaWeiboDetailViewController.h"
 #import "TaobaoLogonViewController.h"
+#import "TencentLogonController.h"
 #import "NSIdentityModel.h"
-#import "TaobaoDetailViewController.h"
-#import "NSTaobaoIdentityModel.h"
+#import <TencentOpenAPI/TencentOAuth.h>
 
 @interface ViewController ()
 
@@ -25,16 +21,17 @@
 
 @implementation ViewController
 
-@synthesize sinaWeiboLogonController;
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    NSDoubanIdentityModel* modelDouban = [[NSDoubanIdentityModel alloc]init];
-    NSSinaWeiboIdentityModel* modelSina = [[NSSinaWeiboIdentityModel alloc] init];
-    NSTaobaoIdentityModel* modelTaobao = [[NSTaobaoIdentityModel alloc] init];
-    self.IdentityList = [[NSArray alloc] initWithObjects:modelDouban, modelSina, modelTaobao, nil];
+    NSMutableArray* array = [[NSMutableArray alloc] init];
+    for (int i = DOUBAN; i < TENCENT+1; i++)
+    {
+        NSIdentityModel* model = [[NSIdentityModel alloc]init];
+        [array addObject:model];
+    }
+    self.IdentityList = array;
 }
 
 - (void)didReceiveMemoryWarning
@@ -76,6 +73,11 @@
         case TAOBAO:
             cell.textLabel.text = @"我的淘宝身份";
             cell.imageView.image = [UIImage imageNamed:@"taobao.png"];
+            break;
+        case TENCENT:
+            cell.textLabel.text = @"我的QQ身份";
+            cell.imageView.image = [UIImage imageNamed:@"qq.png"];
+            break;
     }
     
     return cell;
@@ -97,6 +99,9 @@
             case TAOBAO:
                 [self showTaobaoLogon];
                 break;
+            case TENCENT:
+                [self showTencentLogon];
+                break;
             default:
                 break;
         }
@@ -112,6 +117,7 @@
     DoubanLogonViewController* logonViewControler = [[DoubanLogonViewController alloc] init];
     logonViewControler.delegate = self;
     logonViewControler.netType = DOUBAN;
+    logonViewControler.model = self.IdentityList[DOUBAN];
     UINavigationController* navController = [[UINavigationController alloc] initWithRootViewController:logonViewControler];
     [self presentViewController:navController animated:YES completion:nil];
 }
@@ -121,6 +127,7 @@
     TaobaoLogonViewController* logonViewControler = [[TaobaoLogonViewController alloc] init];
     logonViewControler.delegate = self;
     logonViewControler.netType = TAOBAO;
+    logonViewControler.model = self.IdentityList[TAOBAO];
     UINavigationController* navController = [[UINavigationController alloc] initWithRootViewController:logonViewControler];
     [self presentViewController:navController animated:YES completion:nil];
 }
@@ -129,40 +136,34 @@
 {
     sinaWeiboLogonController = [[SinaWeiboLogonController alloc] init];
     sinaWeiboLogonController.delegate = self;
+    sinaWeiboLogonController.model = self.IdentityList[SINA_WEIBO];
     [sinaWeiboLogonController startLogon];
+}
+
+- (void) showTencentLogon
+{
+    tencentLogonController = [[TencentLogonController alloc] init];
+    tencentLogonController.delegate = self;
+    tencentLogonController.model = self.IdentityList[TENCENT];
+    [tencentLogonController startLogon];
 }
 
 - (void) showDetailInfo: (NETTYPE) type withLogonToken:(NSDictionary*) dictToken
 {
-    if(type == DOUBAN)
-    {
-        DoubanDetailViewController* detailViewController =[[DoubanDetailViewController alloc] init];
-        detailViewController.netType = DOUBAN;
-        detailViewController.model = self.IdentityList[DOUBAN];
-        detailViewController.token = dictToken;
-        [self.navigationController pushViewController:detailViewController animated:YES];
-    }
-    else if(type == SINA_WEIBO)
-    {
-        SinaWeiboDetailViewController* detailViewController = [[SinaWeiboDetailViewController alloc] init];
-        detailViewController.netType = SINA_WEIBO;
-        detailViewController.model = self.IdentityList[SINA_WEIBO];
-        detailViewController.token = dictToken;
-        [self.navigationController pushViewController:detailViewController animated:YES];
-    }
-    else if(type == TAOBAO)
-    {
-        TaobaoDetailViewController* detailViewController = [[TaobaoDetailViewController alloc] init];
-        detailViewController.netType = TAOBAO;
-        detailViewController.model = self.IdentityList[TAOBAO];
-        detailViewController.token = dictToken;
-        [self.navigationController pushViewController:detailViewController animated:YES];
-    }
-}
+    DetailViewController* detailViewController = [[DetailViewController alloc] init];
+    detailViewController.netType = type;
+    detailViewController.model = self.IdentityList[type];
+    [self.navigationController pushViewController:detailViewController animated:YES];
+  }
 
 - (BOOL) handleSinaWeiboUrl:(NSURL *)url
 {
     return [WeiboSDK handleOpenURL:url delegate:sinaWeiboLogonController];
+}
+
+- (BOOL) handleTencentUrl:(NSURL *)url
+{
+    return [TencentOAuth HandleOpenURL:url];
 }
 
 - (void) getLogonResult:(BOOL)result Type:(NETTYPE) type Info:(NSDictionary *)info

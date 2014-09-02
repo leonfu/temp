@@ -18,8 +18,7 @@
     NSMutableArray* data;
     UIActivityIndicatorView* indicator;
 }
-
+@property (assign, nonatomic) NSIdentityModel* model;
 @property NETTYPE netType;
-@property NSDictionary* token;
 
 @end

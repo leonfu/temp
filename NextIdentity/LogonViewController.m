@@ -14,7 +14,7 @@
 
 @implementation LogonViewController
 
-@synthesize webView, netType, delegate;
+@synthesize webView, netType, delegate, model;
 
 - (void)viewDidLoad
 {

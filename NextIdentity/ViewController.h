@@ -10,16 +10,21 @@
 #import "LogonViewController.h"
 #import "NSIdentityModel.h"
 #import "SinaWeiboLogonController.h"
+#import "TencentLogonController.h"
 
 @interface ViewController : UITableViewController<UITableViewDataSource, UITableViewDelegate, LogonDelegate, WBHttpRequestDelegate>
-
+{
+    SinaWeiboLogonController* sinaWeiboLogonController;
+    TencentLogonController* tencentLogonController;
+}
 @property(strong, nonatomic) NSArray* IdentityList;
-@property(strong, nonatomic) SinaWeiboLogonController* sinaWeiboLogonController;
 
 - (void) showDetailInfo:(NETTYPE) type withLogonToken:(NSDictionary*) dictToken;
 - (void) showDoubanLogon;
 - (void) showSinaWeiboLogon;
 - (void) showTaobaoLogon;
+- (void) showTencentLogon;
 - (BOOL) handleSinaWeiboUrl: (NSURL*)url;
+- (BOOL) handleTencentUrl: (NSURL*)url;
 
 @end
