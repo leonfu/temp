@@ -1,18 +1,18 @@
 //
-//  DoubanLogonViewController.m
+//  TaobaoLogonViewController.m
 //  NextIdentity
 //
-//  Created by Leon on 14-8-31.
-//  Copyright (c) 2014年 iShanghai Creative. All rights reserved.
+//  Created by Leon Fu on 9/2/14.
+//  Copyright (c) 2014 iShanghai Creative. All rights reserved.
 //
 
-#import "DoubanLogonViewController.h"
+#import "TaobaoLogonViewController.h"
 
-@interface DoubanLogonViewController ()
+@interface TaobaoLogonViewController ()
 
 @end
 
-@implementation DoubanLogonViewController
+@implementation TaobaoLogonViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -50,7 +50,7 @@
 
 - (void) showLogonView
 {
-    NSURLRequest* urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://www.douban.com/service/auth2/auth?client_id=%s&redirect_uri=http://step.1&response_type=code&scope=shuo_basic_r,shuo_basic_w,douban_basic_common", DOUBAN_APIKEY]]];
+    NSURLRequest* urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://oauth.m.taobao.com/authorize?response_type=code&client_id=%s&redirect_uri=http://step.1&state=%d&scope=item,promotion,item,usergrade", TAOBAO_APIKEY, TAOBAO]]];
     self.webView.delegate = self;
     [self.webView loadRequest:urlRequest];
     return;
@@ -58,10 +58,10 @@
 
 - (void) getAuthResponse: (NSString*)code
 {
-    if([code hasPrefix:@"code="] ==YES)
+    if([code hasPrefix:@"code="] == YES)
     {
-        NSString* auth_code = [code substringFromIndex:[code rangeOfString:@"="].location+1];
-        URLRequestHandler* handler = [[URLRequestHandler alloc] initWithURLStringPOST:@"https://www.douban.com/service/auth2/token" Body:[NSString stringWithFormat:@"client_id=%s&client_secret=%s&redirect_uri=http://step.2&grant_type=authorization_code&code=%@", DOUBAN_APIKEY, DOUBAN_APISECRET, auth_code] Topic:TOPIC_GET_ACCESS_TOKEN];
+        NSString* auth_code = [code substringWithRange:NSMakeRange(5, [code rangeOfString:@"&"].location-5)];
+        URLRequestHandler* handler = [[URLRequestHandler alloc] initWithURLStringPOST:@"https://oauth.taobao.com/token" Body:[NSString stringWithFormat:@"grant_type=authorization_code&code=%@&redirect_uri=http://step.1&client_id=%s&client_secret=%s", auth_code, TAOBAO_APIKEY, TAOBAO_APISECRET] Topic:TOPIC_GET_ACCESS_TOKEN];
         handler.delegate = self;
         [handler start];
         return;

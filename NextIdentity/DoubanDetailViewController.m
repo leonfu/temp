@@ -31,8 +31,8 @@
     // Do any additional setup after loading the view.
     self.model.delegate = self;
     [self.model updateLogonToken:self.token];
-    [self.model buildUserInfo];
-    [self.model buildUserFavoriteBooks];
+    //[self.model buildUserInfo];
+    //[self.model buildUserFavoriteBooks];
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,8 +43,7 @@
 
 - (void) modelComplete:(BOOL)result Type:(NETTYPE)type
 {
-    [data addObject:self.model.userProfile];
-    [data addObjectsFromArray:self.model.userFavorites.allValues];
+    [data addObject:self.model.accessToken];
     [self.tableView reloadData];
     [indicator stopAnimating];
 }

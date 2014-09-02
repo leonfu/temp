@@ -66,4 +66,10 @@
     return dictModel[@"user_infos"][@"user_profile"];
 }
 
+- (NSDictionary*) tokens
+{
+    return dictModel[@"logon_tokens"];
+//    return [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:dictModel[@"logon_tokens"] options:NSJSONWritingPrettyPrinted error:nil] encoding:NSUTF8StringEncoding];
+}
+
 @end

@@ -15,17 +15,18 @@
 
 @implementation NSDoubanIdentityModel
 
-
 - (void) updateLogonToken: (NSDictionary*) dict
 {
-    if(self.isAuthed == YES)
-        return;
-    self.dictModel[@"logon_tokens"][@"token"] = dict[@"access_token"];
-    self.dictModel[@"logon_tokens"][@"refresh_token"] = dict[@"refresh_token"];
-    self.dictModel[@"logon_tokens"][@"expire_time"] = dict[@"expires_in"];
-    self.dictModel[@"user_infos"][@"user_id"] = dict[@"douban_user_id"];
-    self.dictModel[@"user_infos"][@"user_nick"] = dict[@"douban_user_name"];
-    self.isAuthed = YES;
+    if(self.isAuthed == NO)
+    {
+        self.dictModel[@"logon_tokens"][@"token"] = dict[@"access_token"];
+        self.dictModel[@"logon_tokens"][@"refresh_token"] = dict[@"refresh_token"];
+        self.dictModel[@"logon_tokens"][@"expire_time"] = dict[@"expires_in"];
+        self.dictModel[@"user_infos"][@"user_id"] = dict[@"douban_user_id"];
+        self.dictModel[@"user_infos"][@"user_nick"] = dict[@"douban_user_name"];
+        self.isAuthed = YES;
+    }
+    [self.delegate modelComplete:YES Type:DOUBAN];
 }
 
 - (void) buildUserInfo

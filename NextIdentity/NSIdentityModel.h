@@ -30,7 +30,7 @@
 @property (readonly, nonatomic) BOOL isExpired;
 @property (readonly, nonatomic) NSDictionary* userFavorites;
 @property (readonly, nonatomic) NSDictionary* userProfile;
-
+@property (readonly, nonatomic) NSDictionary* tokens;
 
 - (id) init;
 - (void) addNewKey: (NSString*)key SubKeys: (NSArray*) subKeys;

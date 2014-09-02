@@ -19,6 +19,7 @@
 - (void) showDetailInfo:(NETTYPE) type withLogonToken:(NSDictionary*) dictToken;
 - (void) showDoubanLogon;
 - (void) showSinaWeiboLogon;
+- (void) showTaobaoLogon;
 - (BOOL) handleSinaWeiboUrl: (NSURL*)url;
 
 @end

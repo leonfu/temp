@@ -21,8 +21,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationItem.title = @"登录认证";
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(closeView)];
     self.webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:self.webView];
+}
+
+- (void) closeView
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning

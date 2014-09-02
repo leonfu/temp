@@ -33,6 +33,12 @@
 		359B5F9819B40CD600DEB0E7 /* NSIdentityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 359B5F9719B40CD600DEB0E7 /* NSIdentityModel.m */; };
 		359B5F9B19B411C000DEB0E7 /* NSDoubanIdentityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 359B5F9A19B411C000DEB0E7 /* NSDoubanIdentityModel.m */; };
 		359B5F9E19B46FF000DEB0E7 /* DoubanDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 359B5F9D19B46FF000DEB0E7 /* DoubanDetailViewController.m */; };
+		359B5FA219B56B3000DEB0E7 /* douban.png in Resources */ = {isa = PBXBuildFile; fileRef = 359B5FA019B56B3000DEB0E7 /* douban.png */; };
+		359B5FA319B56B3000DEB0E7 /* sina.png in Resources */ = {isa = PBXBuildFile; fileRef = 359B5FA119B56B3000DEB0E7 /* sina.png */; };
+		359B5FA819B5AB5500DEB0E7 /* TaobaoLogonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 359B5FA719B5AB5500DEB0E7 /* TaobaoLogonViewController.m */; };
+		359B5FAB19B5CBF200DEB0E7 /* NSTaobaoIdentityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 359B5FAA19B5CBF200DEB0E7 /* NSTaobaoIdentityModel.m */; };
+		359B5FB119B5CE5000DEB0E7 /* TaobaoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 359B5FB019B5CE5000DEB0E7 /* TaobaoDetailViewController.m */; };
+		359B5FB319B5D01400DEB0E7 /* taobao.png in Resources */ = {isa = PBXBuildFile; fileRef = 359B5FB219B5D01400DEB0E7 /* taobao.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +94,15 @@
 		359B5F9A19B411C000DEB0E7 /* NSDoubanIdentityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDoubanIdentityModel.m; sourceTree = "<group>"; };
 		359B5F9C19B46FF000DEB0E7 /* DoubanDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoubanDetailViewController.h; sourceTree = "<group>"; };
 		359B5F9D19B46FF000DEB0E7 /* DoubanDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoubanDetailViewController.m; sourceTree = "<group>"; };
+		359B5FA019B56B3000DEB0E7 /* douban.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = douban.png; path = res/douban.png; sourceTree = "<group>"; };
+		359B5FA119B56B3000DEB0E7 /* sina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sina.png; path = res/sina.png; sourceTree = "<group>"; };
+		359B5FA619B5AB5500DEB0E7 /* TaobaoLogonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaobaoLogonViewController.h; sourceTree = "<group>"; };
+		359B5FA719B5AB5500DEB0E7 /* TaobaoLogonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaobaoLogonViewController.m; sourceTree = "<group>"; };
+		359B5FA919B5CBF200DEB0E7 /* NSTaobaoIdentityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSTaobaoIdentityModel.h; sourceTree = "<group>"; };
+		359B5FAA19B5CBF200DEB0E7 /* NSTaobaoIdentityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSTaobaoIdentityModel.m; sourceTree = "<group>"; };
+		359B5FAF19B5CE5000DEB0E7 /* TaobaoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaobaoDetailViewController.h; sourceTree = "<group>"; };
+		359B5FB019B5CE5000DEB0E7 /* TaobaoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaobaoDetailViewController.m; sourceTree = "<group>"; };
+		359B5FB219B5D01400DEB0E7 /* taobao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = taobao.png; path = res/taobao.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,31 +174,16 @@
 		359AD87119B2F15B00E191A1 /* NextIdentity */ = {
 			isa = PBXGroup;
 			children = (
+				359B5FAE19B5CC2500DEB0E7 /* DetailViewController */,
+				359B5FAD19B5CC0C00DEB0E7 /* LogonViewController */,
+				359B5FAC19B5CBFC00DEB0E7 /* IdentityModel */,
 				359AD87A19B2F15B00E191A1 /* AppDelegate.h */,
 				359AD87B19B2F15B00E191A1 /* AppDelegate.m */,
 				359AD87D19B2F15B00E191A1 /* Main.storyboard */,
 				359AD88019B2F15B00E191A1 /* ViewController.h */,
 				359AD88119B2F15B00E191A1 /* ViewController.m */,
-				359AD8A019B2FC9600E191A1 /* DetailViewController.h */,
-				359AD8A119B2FC9600E191A1 /* DetailViewController.m */,
-				359B5F9C19B46FF000DEB0E7 /* DoubanDetailViewController.h */,
-				359B5F9D19B46FF000DEB0E7 /* DoubanDetailViewController.m */,
-				3517747319B4C1CE00AECE17 /* SinaWeiboDetailViewController.h */,
-				3517747419B4C1CE00AECE17 /* SinaWeiboDetailViewController.m */,
-				359AD8A319B307AE00E191A1 /* LogonViewController.h */,
-				359AD8A419B307AE00E191A1 /* LogonViewController.m */,
-				3517745F19B3693F00AECE17 /* DoubanLogonViewController.h */,
-				3517746019B3693F00AECE17 /* DoubanLogonViewController.m */,
-				3517747019B4BA6600AECE17 /* SinaWeiboLogonController.h */,
-				3517747119B4BA6600AECE17 /* SinaWeiboLogonController.m */,
 				3517746219B3701E00AECE17 /* URLRequestHandler.h */,
 				3517746319B3701E00AECE17 /* URLRequestHandler.m */,
-				359B5F9619B40CD600DEB0E7 /* NSIdentityModel.h */,
-				359B5F9719B40CD600DEB0E7 /* NSIdentityModel.m */,
-				359B5F9919B411C000DEB0E7 /* NSDoubanIdentityModel.h */,
-				359B5F9A19B411C000DEB0E7 /* NSDoubanIdentityModel.m */,
-				3517746D19B4B0D400AECE17 /* NSSinaWeiboIdentityModel.h */,
-				3517746E19B4B0D400AECE17 /* NSSinaWeiboIdentityModel.m */,
 				359AD88319B2F15B00E191A1 /* Images.xcassets */,
 				359AD87219B2F15B00E191A1 /* Supporting Files */,
 			);
@@ -193,6 +193,7 @@
 		359AD87219B2F15B00E191A1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				359B5F9F19B56B0F00DEB0E7 /* res */,
 				359AD87319B2F15B00E191A1 /* NextIdentity-Info.plist */,
 				359AD87419B2F15B00E191A1 /* InfoPlist.strings */,
 				359AD87719B2F15B00E191A1 /* main.m */,
@@ -217,6 +218,61 @@
 				359AD89319B2F15B00E191A1 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		359B5F9F19B56B0F00DEB0E7 /* res */ = {
+			isa = PBXGroup;
+			children = (
+				359B5FB219B5D01400DEB0E7 /* taobao.png */,
+				359B5FA019B56B3000DEB0E7 /* douban.png */,
+				359B5FA119B56B3000DEB0E7 /* sina.png */,
+			);
+			name = res;
+			sourceTree = "<group>";
+		};
+		359B5FAC19B5CBFC00DEB0E7 /* IdentityModel */ = {
+			isa = PBXGroup;
+			children = (
+				359B5F9619B40CD600DEB0E7 /* NSIdentityModel.h */,
+				359B5F9719B40CD600DEB0E7 /* NSIdentityModel.m */,
+				359B5F9919B411C000DEB0E7 /* NSDoubanIdentityModel.h */,
+				359B5F9A19B411C000DEB0E7 /* NSDoubanIdentityModel.m */,
+				3517746D19B4B0D400AECE17 /* NSSinaWeiboIdentityModel.h */,
+				3517746E19B4B0D400AECE17 /* NSSinaWeiboIdentityModel.m */,
+				359B5FA919B5CBF200DEB0E7 /* NSTaobaoIdentityModel.h */,
+				359B5FAA19B5CBF200DEB0E7 /* NSTaobaoIdentityModel.m */,
+			);
+			name = IdentityModel;
+			sourceTree = "<group>";
+		};
+		359B5FAD19B5CC0C00DEB0E7 /* LogonViewController */ = {
+			isa = PBXGroup;
+			children = (
+				359AD8A319B307AE00E191A1 /* LogonViewController.h */,
+				359AD8A419B307AE00E191A1 /* LogonViewController.m */,
+				3517745F19B3693F00AECE17 /* DoubanLogonViewController.h */,
+				3517746019B3693F00AECE17 /* DoubanLogonViewController.m */,
+				3517747019B4BA6600AECE17 /* SinaWeiboLogonController.h */,
+				3517747119B4BA6600AECE17 /* SinaWeiboLogonController.m */,
+				359B5FA619B5AB5500DEB0E7 /* TaobaoLogonViewController.h */,
+				359B5FA719B5AB5500DEB0E7 /* TaobaoLogonViewController.m */,
+			);
+			name = LogonViewController;
+			sourceTree = "<group>";
+		};
+		359B5FAE19B5CC2500DEB0E7 /* DetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				359AD8A019B2FC9600E191A1 /* DetailViewController.h */,
+				359AD8A119B2FC9600E191A1 /* DetailViewController.m */,
+				359B5F9C19B46FF000DEB0E7 /* DoubanDetailViewController.h */,
+				359B5F9D19B46FF000DEB0E7 /* DoubanDetailViewController.m */,
+				3517747319B4C1CE00AECE17 /* SinaWeiboDetailViewController.h */,
+				3517747419B4C1CE00AECE17 /* SinaWeiboDetailViewController.m */,
+				359B5FAF19B5CE5000DEB0E7 /* TaobaoDetailViewController.h */,
+				359B5FB019B5CE5000DEB0E7 /* TaobaoDetailViewController.m */,
+			);
+			name = DetailViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,8 +353,11 @@
 			files = (
 				359AD88419B2F15B00E191A1 /* Images.xcassets in Resources */,
 				359AD87619B2F15B00E191A1 /* InfoPlist.strings in Resources */,
+				359B5FA319B56B3000DEB0E7 /* sina.png in Resources */,
 				359AD87F19B2F15B00E191A1 /* Main.storyboard in Resources */,
 				3517746C19B4A80400AECE17 /* WeiboSDK.bundle in Resources */,
+				359B5FA219B56B3000DEB0E7 /* douban.png in Resources */,
+				359B5FB319B5D01400DEB0E7 /* taobao.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				359B5FA819B5AB5500DEB0E7 /* TaobaoLogonViewController.m in Sources */,
 				359B5F9B19B411C000DEB0E7 /* NSDoubanIdentityModel.m in Sources */,
 				3517747219B4BA6600AECE17 /* SinaWeiboLogonController.m in Sources */,
 				359B5F9819B40CD600DEB0E7 /* NSIdentityModel.m in Sources */,
@@ -329,7 +389,9 @@
 				359AD87C19B2F15B00E191A1 /* AppDelegate.m in Sources */,
 				359AD87819B2F15B00E191A1 /* main.m in Sources */,
 				359B5F9E19B46FF000DEB0E7 /* DoubanDetailViewController.m in Sources */,
+				359B5FAB19B5CBF200DEB0E7 /* NSTaobaoIdentityModel.m in Sources */,
 				359AD8A219B2FC9600E191A1 /* DetailViewController.m in Sources */,
+				359B5FB119B5CE5000DEB0E7 /* TaobaoDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

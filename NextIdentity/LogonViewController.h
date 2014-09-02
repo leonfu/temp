@@ -25,4 +25,6 @@
 @property (nonatomic, assign) id <LogonDelegate> delegate;
 @property (strong, nonatomic) IBOutlet UIWebView* webView;
 
+- (void) closeView;
+
 @end

@@ -14,6 +14,10 @@
 #import "NSSinaWeiboIdentityModel.h"
 #import "SinaWeiboLogonController.h"
 #import "SinaWeiboDetailViewController.h"
+#import "TaobaoLogonViewController.h"
+#import "NSIdentityModel.h"
+#import "TaobaoDetailViewController.h"
+#import "NSTaobaoIdentityModel.h"
 
 @interface ViewController ()
 
@@ -29,7 +33,8 @@
 	// Do any additional setup after loading the view, typically from a nib.
     NSDoubanIdentityModel* modelDouban = [[NSDoubanIdentityModel alloc]init];
     NSSinaWeiboIdentityModel* modelSina = [[NSSinaWeiboIdentityModel alloc] init];
-    self.IdentityList = [[NSArray alloc] initWithObjects:modelDouban, modelSina, nil];
+    NSTaobaoIdentityModel* modelTaobao = [[NSTaobaoIdentityModel alloc] init];
+    self.IdentityList = [[NSArray alloc] initWithObjects:modelDouban, modelSina, modelTaobao, nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,10 +67,15 @@
     {
         case DOUBAN:
             cell.textLabel.text = @"我的豆瓣身份";
+            cell.imageView.image = [UIImage imageNamed:@"douban.png"];
             break;
         case SINA_WEIBO:
             cell.textLabel.text = @"我的微博身份";
+            cell.imageView.image = [UIImage imageNamed:@"sina.png"];
             break;
+        case TAOBAO:
+            cell.textLabel.text = @"我的淘宝身份";
+            cell.imageView.image = [UIImage imageNamed:@"taobao.png"];
     }
     
     return cell;
@@ -84,6 +94,9 @@
             case SINA_WEIBO:
                 [self showSinaWeiboLogon];
                 break;
+            case TAOBAO:
+                [self showTaobaoLogon];
+                break;
             default:
                 break;
         }
@@ -99,6 +112,15 @@
     DoubanLogonViewController* logonViewControler = [[DoubanLogonViewController alloc] init];
     logonViewControler.delegate = self;
     logonViewControler.netType = DOUBAN;
+    UINavigationController* navController = [[UINavigationController alloc] initWithRootViewController:logonViewControler];
+    [self presentViewController:navController animated:YES completion:nil];
+}
+
+- (void) showTaobaoLogon
+{
+    TaobaoLogonViewController* logonViewControler = [[TaobaoLogonViewController alloc] init];
+    logonViewControler.delegate = self;
+    logonViewControler.netType = TAOBAO;
     UINavigationController* navController = [[UINavigationController alloc] initWithRootViewController:logonViewControler];
     [self presentViewController:navController animated:YES completion:nil];
 }
@@ -128,6 +150,14 @@
         detailViewController.token = dictToken;
         [self.navigationController pushViewController:detailViewController animated:YES];
     }
+    else if(type == TAOBAO)
+    {
+        TaobaoDetailViewController* detailViewController = [[TaobaoDetailViewController alloc] init];
+        detailViewController.netType = TAOBAO;
+        detailViewController.model = self.IdentityList[TAOBAO];
+        detailViewController.token = dictToken;
+        [self.navigationController pushViewController:detailViewController animated:YES];
+    }
 }
 
 - (BOOL) handleSinaWeiboUrl:(NSURL *)url
@@ -139,14 +169,7 @@
 {
     if(result == NO)
         return;
-    if(type == DOUBAN)
-    {
-        [self showDetailInfo:type withLogonToken:info];
-    }
-    else if (type == SINA_WEIBO)
-    {
-        [self showDetailInfo:type withLogonToken:info];
-    }
+    [self showDetailInfo:type withLogonToken:info];
 }
 
 @end

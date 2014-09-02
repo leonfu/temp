@@ -1,18 +1,18 @@
 //
-//  SinaWeiboDetailViewController.m
+//  TaobaoDetailViewController.m
 //  NextIdentity
 //
-//  Created by Leon on 14-9-1.
-//  Copyright (c) 2014年 iShanghai Creative. All rights reserved.
+//  Created by Leon Fu on 9/2/14.
+//  Copyright (c) 2014 iShanghai Creative. All rights reserved.
 //
 
-#import "SinaWeiboDetailViewController.h"
+#import "TaobaoDetailViewController.h"
 
-@interface SinaWeiboDetailViewController ()
+@interface TaobaoDetailViewController ()
 
 @end
 
-@implementation SinaWeiboDetailViewController
+@implementation TaobaoDetailViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -38,15 +38,15 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 - (void) modelComplete:(BOOL)result Type:(NETTYPE)type
 {
@@ -54,4 +54,5 @@
     [self.tableView reloadData];
     [indicator stopAnimating];
 }
+
 @end
