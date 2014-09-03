@@ -21,8 +21,8 @@ typedef enum {DOUBAN=0, SINA_WEIBO, TAOBAO, TENCENT} NETTYPE;
 #define TAOBAO_APIKEY "23013352"
 #define TAOBAO_APISECRET "e9a0d229aea64b2d5762a5cb3b07ec82"
 
-#define TENCENT_APPID "222222" //"1102352854"
-#define TENCENT_APPKEY "4fNoztVbwwJCjoMj"
+#define TENCENT_APPID "1102367924"
+#define TENCENT_APPKEY "R1s5GDpiDcK4j5D8"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
