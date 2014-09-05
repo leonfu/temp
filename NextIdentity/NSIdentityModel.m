@@ -8,21 +8,48 @@
 
 #import "NSIdentityModel.h"
 
+
+@implementation NSIdentityList
+
+@synthesize identityList;
+
+static NSIdentityList *_sharedInstance;
+
++ (NSIdentityList*) sharedInstance
+{
+    @synchronized(self)
+    {
+        if (!_sharedInstance)
+        {
+            _sharedInstance = [[NSIdentityList alloc] init];
+        }
+    }
+    
+    return _sharedInstance;
+}
+
+@end
+
+
 @implementation NSIdentityModel
 
-@synthesize delegate, isAuthed, dictModel, accessToken, refreshToken, isExpired;
+@synthesize delegate, isAuthed, accessToken, refreshToken, isExpired;
 
-- (id) init
+- (id) initWithType: (NETTYPE)type Name:(NSString*)name Image:(UIImage*)image
 {
-    self.isAuthed = NO;
-    curr_topic_count = 0;
+    isAuthed = NO;
     self = [super init];
     dictModel = [[NSMutableDictionary alloc] init];
     [dictModel setObject:@"" forKey:@"logon_tokens"];
-    [self addNewKey: @"logon_tokens" SubKeys: [NSArray arrayWithObjects:@"token", @"refresh_token", @"expire_time", nil]];
+    [self addNewKey: @"logon_tokens" SubKeys: @[@"token", @"refresh_token", @"expire_time"]];
     [dictModel setObject:@"" forKey:@"user_infos"];
-    [self addNewKey:@"user_infos" SubKeys: [NSArray arrayWithObjects:@"user_id", @"user_nick", @"user_email", @"user_profile", nil]];
+    [self addNewKey:@"user_infos" SubKeys: @[@"user_id", @"user_nick", @"user_email", @"user_profile"]];
     [dictModel setObject:@"" forKey:@"user_favorites"];
+    
+    netType = type;
+    self.name = name;
+    self.image = image;
+    self.deltaScore = @1.23;
     return self;
 }
 
@@ -34,6 +61,16 @@
         [dict setObject:@"" forKey:str];
     }
     dictModel[key] = [NSMutableDictionary dictionaryWithDictionary:dict];
+}
+
+- (void) addUserTokens:(NSString *)token RefreshToken:(NSString *)rtoken ExpireIn:(NSString *)expire UserID:(NSString *)userId UserNick:(NSString *)userNick
+{
+    dictModel[@"logon_tokens"][@"token"] = token; 
+    dictModel[@"logon_tokens"][@"refresh_token"] = rtoken;
+    dictModel[@"logon_tokens"][@"expire_time"] = expire;
+    dictModel[@"user_infos"][@"user_id"] = userId;
+    dictModel[@"user_infos"][@"user_nick"] = userNick;
+    isAuthed = YES;
 }
 
 - (NSString*) accessToken

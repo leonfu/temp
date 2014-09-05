@@ -114,12 +114,7 @@
 {
     if(self.model.isAuthed == YES)
         return;
-    self.model.dictModel[@"logon_tokens"][@"token"] = dict[@"access_token"];
-    self.model.dictModel[@"logon_tokens"][@"expire_time"] = dict[@"expires_in"];
-    self.model.dictModel[@"logon_tokens"][@"refresh_token"] = dict[@"refresh_token"];
-    self.model.dictModel[@"user_infos"][@"user_id"] = dict[@"taobao_user_id"];
-    self.model.dictModel[@"user_infos"][@"user_nick"] = dict[@"taobao_user_nick"];
-    self.model.isAuthed = YES;
+    [self.model addUserTokens:dict[@"access_token"] RefreshToken:dict[@"refresh_token"] ExpireIn:dict[@"expires_in"] UserID:dict[@"taobao_user_id"] UserNick:dict[@"taobao_user_nick"]];
 }
 
 @end

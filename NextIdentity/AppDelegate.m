@@ -16,7 +16,7 @@
     // Override point for customization after application launch.
     [WeiboSDK enableDebugMode:YES];
     [WeiboSDK registerApp:SINAWEIBO_APIKEY];
-
+    
     return YES;
 }
 							

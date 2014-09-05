@@ -16,22 +16,36 @@
 
 @end
 
+@interface NSIdentityList: NSObject
+{
+
+}
++ (NSIdentityList*) sharedInstance;
+@property (strong, nonatomic) NSMutableArray* identityList;
+
+@end
+
 @interface NSIdentityModel : NSObject
 {
     NETTYPE netType;
-    NSInteger curr_topic_count;
+    NSMutableDictionary* dictModel;
+    
 }
+@property (strong, nonatomic) UIImage* image;
+@property (strong, nonatomic) NSString* name;
+@property (strong, nonatomic) NSNumber* deltaScore;
+@property (strong, nonatomic) NSNumber* totalScore;
+
 @property (nonatomic, assign) id <ModelDoneDelegate> delegate;
-@property (strong, nonatomic) NSMutableDictionary* dictModel;
-@property (assign, nonatomic) BOOL isAuthed;
+
+@property (readonly, nonatomic) BOOL isAuthed;
 @property (readonly, nonatomic) NSString* userID;
 @property (readonly, nonatomic) NSString* accessToken;
 @property (readonly, nonatomic) NSString* refreshToken;
 @property (readonly, nonatomic) BOOL isExpired;
-@property (readonly, nonatomic) NSDictionary* userFavorites;
-@property (readonly, nonatomic) NSDictionary* userProfile;
 @property (readonly, nonatomic) NSDictionary* tokens;
 
-- (id) init;
+- (id) initWithType: (NETTYPE)type Name:(NSString*)name Image:(UIImage*)image;
 - (void) addNewKey: (NSString*)key SubKeys: (NSArray*) subKeys;
+- (void) addUserTokens: (NSString*)token RefreshToken: (NSString*)rtoken ExpireIn: (NSString*)expire UserID: (NSString*)userId UserNick: (NSString*) userNick;
 @end
