@@ -30,4 +30,23 @@
 }
 */
 
+- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
+{
+     self.alpha = 1.0;
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    self.alpha = 0.5;
+    [self.superview touchesBegan:touches withEvent:event];
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    
+    self.alpha = 1.0;
+    [self.superview touchesEnded:touches withEvent:event];
+}
+
+
 @end

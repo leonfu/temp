@@ -29,6 +29,8 @@
     data = [[NSMutableArray alloc] initWithObjects:self.model.accessToken, nil];
     [self.tableView reloadData];
     [indicator stopAnimating];
+    
+    model.deltaScore = @100;
 }
 
 - (void)didReceiveMemoryWarning

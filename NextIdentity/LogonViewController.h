@@ -13,17 +13,17 @@
 
 @protocol LogonDelegate
 
-- (void) getLogonResult: (BOOL)result Type: (NETTYPE)type Info: (NSDictionary*) info;
+- (void) getLogonResult: (BOOL)result Type: (VENDORTYPE)type Info: (NSDictionary*) info;
 
 @end
 
 @interface LogonViewController : UIViewController
 {
-    NETTYPE netType;
+    VENDORTYPE netType;
     UIWebView* webView;
 }
 @property (nonatomic, assign) NSIdentityModel* model;
-@property NETTYPE netType;
+@property VENDORTYPE netType;
 @property (nonatomic, assign) id <LogonDelegate> delegate;
 @property (strong, nonatomic) IBOutlet UIWebView* webView;
 

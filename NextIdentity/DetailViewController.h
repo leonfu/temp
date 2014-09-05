@@ -19,6 +19,6 @@
     UIActivityIndicatorView* indicator;
 }
 @property (assign, nonatomic) NSIdentityModel* model;
-@property NETTYPE netType;
+@property VENDORTYPE netType;
 
 @end

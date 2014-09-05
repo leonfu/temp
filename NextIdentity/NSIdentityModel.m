@@ -35,7 +35,7 @@ static NSIdentityList *_sharedInstance;
 
 @synthesize delegate, isAuthed, accessToken, refreshToken, isExpired;
 
-- (id) initWithType: (NETTYPE)type Name:(NSString*)name Image:(UIImage*)image
+- (id) initWithType: (VENDORTYPE)type Name:(NSString*)name Image:(UIImage*)image
 {
     isAuthed = NO;
     self = [super init];
@@ -49,7 +49,7 @@ static NSIdentityList *_sharedInstance;
     netType = type;
     self.name = name;
     self.image = image;
-    self.deltaScore = @1.23;
+    self.deltaScore = @-1;
     return self;
 }
 

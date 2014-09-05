@@ -12,7 +12,7 @@
 
 @protocol ModelDoneDelegate
 
-- (void) modelComplete:(BOOL)result Type:(NETTYPE)type;
+- (void) modelComplete:(BOOL)result Type:(VENDORTYPE)type;
 
 @end
 
@@ -27,7 +27,7 @@
 
 @interface NSIdentityModel : NSObject
 {
-    NETTYPE netType;
+    VENDORTYPE netType;
     NSMutableDictionary* dictModel;
     
 }
@@ -45,7 +45,7 @@
 @property (readonly, nonatomic) BOOL isExpired;
 @property (readonly, nonatomic) NSDictionary* tokens;
 
-- (id) initWithType: (NETTYPE)type Name:(NSString*)name Image:(UIImage*)image;
+- (id) initWithType: (VENDORTYPE)type Name:(NSString*)name Image:(UIImage*)image;
 - (void) addNewKey: (NSString*)key SubKeys: (NSArray*) subKeys;
 - (void) addUserTokens: (NSString*)token RefreshToken: (NSString*)rtoken ExpireIn: (NSString*)expire UserID: (NSString*)userId UserNick: (NSString*) userNick;
 @end

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "WeiboSDK.h"
 
-typedef enum {DOUBAN=0, SINA_WEIBO, TAOBAO, TENCENT} NETTYPE;
+typedef enum {DOUBAN=0, TENCENT, SINA_WEIBO, TAOBAO, MAXTYPE} VENDORTYPE;
 
 #define TOPIC_GET_ACCESS_TOKEN 0
 
@@ -24,8 +24,15 @@ typedef enum {DOUBAN=0, SINA_WEIBO, TAOBAO, TENCENT} NETTYPE;
 #define TENCENT_APPID "1102367924"
 #define TENCENT_APPKEY "R1s5GDpiDcK4j5D8"
 
+@protocol VendorDelegate
+
+-(BOOL) openType:(VENDORTYPE)type URL:(NSURL*)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation;
+
+@end
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
+@property (assign, nonatomic) id<VendorDelegate> delegate;
 @property (strong, nonatomic) UIWindow *window;
 
 @end

@@ -30,13 +30,13 @@
 		<key>Name</key>
 		<string>领英</string>
 		<key>Image</key>
-		<string>douban.png</string>
+		<string>linkedin.png</string>
 	</dict>
 	<dict>
 		<key>Name</key>
 		<string>微信</string>
 		<key>Image</key>
-		<string>qq.png</string>
+		<string>wechat.png</string>
 	</dict>
 </array>
 </plist>

@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
 
 @implementation AppDelegate
 
@@ -49,16 +48,13 @@
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
-    UINavigationController* navController = (UINavigationController*)self.window.rootViewController;
-    ViewController* viewController = (ViewController*)navController.topViewController;
-
     if([url.scheme hasPrefix:@"wb"] == YES)
     {
-         return [viewController handleSinaWeiboUrl: url];
+        return [self.delegate openType:SINA_WEIBO URL: url sourceApplication:sourceApplication annotation:annotation];
     }
     else if([url.scheme hasPrefix:@"tencent"] == YES)
     {
-        return [viewController handleTencentUrl: url];
+        return [self.delegate openType:TENCENT URL: url sourceApplication:sourceApplication annotation:annotation];
     }
     return YES;
 }
