@@ -21,9 +21,24 @@
 
 @implementation ViewController
 
+#define PNFreshGreen   [UIColor colorWithRed:77.0/255.0 green:196.0/255.0 blue:122.0/255.0 alpha:1.0f]
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSArray *familyNames =[[NSArray alloc]initWithArray:[UIFont familyNames]];
+    NSArray *fontNames;
+    NSInteger indFamily, indFont;
+    for(indFamily=0;indFamily<[familyNames count];++indFamily)
+    {
+        NSLog(@"Family name: %@", [familyNames objectAtIndex:indFamily]);
+        fontNames =[[NSArray alloc]initWithArray:[UIFont fontNamesForFamilyName:[familyNames objectAtIndex:indFamily]]];
+        for(indFont=0; indFont<[fontNames count]; ++indFont)
+        {
+            NSLog(@" Font name: %@",[fontNames objectAtIndex:indFont]);
+        }
+    }
 	// Do any additional setup after loading the view, typically from a nib.
     NSMutableArray* array = [[NSMutableArray alloc] init];
     for (int i = DOUBAN; i < TENCENT+1; i++)
@@ -32,6 +47,10 @@
         [array addObject:model];
     }
     self.IdentityList = array;
+    self.navigationController.navigationBar.barTintColor = PNFreshGreen;
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.titleTextAttributes= @{NSForegroundColorAttributeName : [UIColor whiteColor], NSFontAttributeName: [UIFont fontWithName:@"STHeitiTC-Medium" size:20]};
+    self.navigationController.navigationBar.translucent = NO;
 }
 
 - (void)didReceiveMemoryWarning
@@ -59,6 +78,7 @@
     if (cell == nil)
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        cell.backgroundColor = [UIColor colorWithWhite:0.97 alpha:1.0];
     }
     switch (indexPath.row)
     {
