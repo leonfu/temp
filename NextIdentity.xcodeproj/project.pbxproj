@@ -7,27 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3515394519BA1071002BE0B9 /* ServiceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3515394419BA1071002BE0B9 /* ServiceTableViewController.m */; };
-		3515394819BA10B3002BE0B9 /* SettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3515394719BA10B3002BE0B9 /* SettingTableViewController.m */; };
 		3515394B19BAF8A5002BE0B9 /* NSUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3515394A19BAF8A5002BE0B9 /* NSUserModel.m */; };
 		3515394E19BB022F002BE0B9 /* LaunchIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3515394C19BB022F002BE0B9 /* LaunchIcon.png */; };
 		3515394F19BB022F002BE0B9 /* LaunchIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3515394D19BB022F002BE0B9 /* LaunchIcon@2x.png */; };
-		3515395619BB1743002BE0B9 /* UserLogonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3515395519BB1743002BE0B9 /* UserLogonTableViewController.m */; };
-		3515395919BB270E002BE0B9 /* TouchTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3515395819BB270E002BE0B9 /* TouchTableView.m */; };
-		3515395C19BB5C2E002BE0B9 /* TextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3515395B19BB5C2E002BE0B9 /* TextFieldTableViewCell.m */; };
-		3515395F19BB5D88002BE0B9 /* ChangePwdTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3515395E19BB5D88002BE0B9 /* ChangePwdTableViewController.m */; };
-		3515396219BB5E13002BE0B9 /* KeyValueTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3515396119BB5E13002BE0B9 /* KeyValueTableViewController.m */; };
-		3515396519BB64D5002BE0B9 /* ChangeProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3515396419BB64D5002BE0B9 /* ChangeProfileTableViewController.m */; };
-		3515396819BC0593002BE0B9 /* NewUserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3515396719BC0593002BE0B9 /* NewUserTableViewController.m */; };
-		3515396B19BC19D2002BE0B9 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3515396A19BC19D2002BE0B9 /* RegisterViewController.m */; };
+		3515397219BC80B8002BE0B9 /* ServiceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3515397119BC80B8002BE0B9 /* ServiceTableViewController.m */; };
+		3515397919BC80CD002BE0B9 /* ChangeProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3515397419BC80CD002BE0B9 /* ChangeProfileTableViewController.m */; };
+		3515397A19BC80CD002BE0B9 /* ChangePwdTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3515397619BC80CD002BE0B9 /* ChangePwdTableViewController.m */; };
+		3515397B19BC80CD002BE0B9 /* SettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3515397819BC80CD002BE0B9 /* SettingTableViewController.m */; };
+		3515398219BC80ED002BE0B9 /* NewUserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3515397D19BC80ED002BE0B9 /* NewUserTableViewController.m */; };
+		3515398319BC80ED002BE0B9 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3515397F19BC80ED002BE0B9 /* RegisterViewController.m */; };
+		3515398419BC80ED002BE0B9 /* UserLogonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3515398119BC80ED002BE0B9 /* UserLogonTableViewController.m */; };
+		3515398D19BC810B002BE0B9 /* KeyValueTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3515398619BC810B002BE0B9 /* KeyValueTableViewController.m */; };
+		3515398E19BC810B002BE0B9 /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3515398819BC810B002BE0B9 /* NavigationController.m */; };
+		3515398F19BC810B002BE0B9 /* TextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3515398A19BC810B002BE0B9 /* TextFieldTableViewCell.m */; };
+		3515399019BC810B002BE0B9 /* TouchTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3515398C19BC810B002BE0B9 /* TouchTableView.m */; };
+		3515399319BC8127002BE0B9 /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3515399119BC8127002BE0B9 /* TencentOpenApi_IOS_Bundle.bundle */; };
+		3515399419BC8127002BE0B9 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3515399219BC8127002BE0B9 /* TencentOpenAPI.framework */; };
+		351539A119BC8294002BE0B9 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3515399E19BC8294002BE0B9 /* libWeChatSDK.a */; };
+		351539A619BC82A6002BE0B9 /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 351539A319BC82A6002BE0B9 /* libWeiboSDK.a */; };
+		351539A719BC82A6002BE0B9 /* WeiboSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 351539A419BC82A6002BE0B9 /* WeiboSDK.bundle */; };
 		3517746119B3693F00AECE17 /* DoubanLogonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3517746019B3693F00AECE17 /* DoubanLogonViewController.m */; };
 		3517746419B3701E00AECE17 /* URLRequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 3517746319B3701E00AECE17 /* URLRequestHandler.m */; };
-		3517746B19B4A80400AECE17 /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3517746819B4A80400AECE17 /* libWeiboSDK.a */; };
-		3517746C19B4A80400AECE17 /* WeiboSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3517746919B4A80400AECE17 /* WeiboSDK.bundle */; };
 		3517747219B4BA6600AECE17 /* SinaWeiboLogonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3517747119B4BA6600AECE17 /* SinaWeiboLogonController.m */; };
 		3517747919B5FB1000AECE17 /* TencentLogonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3517747819B5FB1000AECE17 /* TencentLogonController.m */; };
-		3517747B19B6012700AECE17 /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3517747A19B6012700AECE17 /* TencentOpenApi_IOS_Bundle.bundle */; };
-		3517747D19B6014600AECE17 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3517747C19B6014600AECE17 /* TencentOpenAPI.framework */; };
 		3517748519B6058C00AECE17 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3517748419B6058C00AECE17 /* CoreTelephony.framework */; };
 		3517748719B6059B00AECE17 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3517748619B6059B00AECE17 /* SystemConfiguration.framework */; };
 		3517748919B605AD00AECE17 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3517748819B605AD00AECE17 /* CoreFoundation.framework */; };
@@ -60,7 +62,6 @@
 		356B50B619B9F30D00DC5874 /* PNPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 356B50A919B9F30D00DC5874 /* PNPieChart.m */; };
 		356B50B719B9F30D00DC5874 /* PNPieChartDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 356B50AB19B9F30D00DC5874 /* PNPieChartDataItem.m */; };
 		356B50B819B9F30D00DC5874 /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 356B50AE19B9F30D00DC5874 /* UICountingLabel.m */; };
-		356B50BE19B9F4D500DC5874 /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 356B50BD19B9F4D500DC5874 /* NavigationController.m */; };
 		359AD86C19B2F15B00E191A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359AD86B19B2F15B00E191A1 /* Foundation.framework */; };
 		359AD86E19B2F15B00E191A1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359AD86D19B2F15B00E191A1 /* CoreGraphics.framework */; };
 		359AD87019B2F15B00E191A1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359AD86F19B2F15B00E191A1 /* UIKit.framework */; };
@@ -94,43 +95,48 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3515394319BA1071002BE0B9 /* ServiceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceTableViewController.h; sourceTree = "<group>"; };
-		3515394419BA1071002BE0B9 /* ServiceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceTableViewController.m; sourceTree = "<group>"; };
-		3515394619BA10B3002BE0B9 /* SettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewController.h; sourceTree = "<group>"; };
-		3515394719BA10B3002BE0B9 /* SettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewController.m; sourceTree = "<group>"; };
 		3515394919BAF8A5002BE0B9 /* NSUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSUserModel.h; sourceTree = "<group>"; };
 		3515394A19BAF8A5002BE0B9 /* NSUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSUserModel.m; sourceTree = "<group>"; };
 		3515394C19BB022F002BE0B9 /* LaunchIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LaunchIcon.png; path = res/LaunchIcon.png; sourceTree = "<group>"; };
 		3515394D19BB022F002BE0B9 /* LaunchIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "LaunchIcon@2x.png"; path = "res/LaunchIcon@2x.png"; sourceTree = "<group>"; };
-		3515395419BB1743002BE0B9 /* UserLogonTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserLogonTableViewController.h; sourceTree = "<group>"; };
-		3515395519BB1743002BE0B9 /* UserLogonTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserLogonTableViewController.m; sourceTree = "<group>"; };
-		3515395719BB270E002BE0B9 /* TouchTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchTableView.h; sourceTree = "<group>"; };
-		3515395819BB270E002BE0B9 /* TouchTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchTableView.m; sourceTree = "<group>"; };
-		3515395A19BB5C2E002BE0B9 /* TextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldTableViewCell.h; sourceTree = "<group>"; };
-		3515395B19BB5C2E002BE0B9 /* TextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldTableViewCell.m; sourceTree = "<group>"; };
-		3515395D19BB5D88002BE0B9 /* ChangePwdTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePwdTableViewController.h; sourceTree = "<group>"; };
-		3515395E19BB5D88002BE0B9 /* ChangePwdTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePwdTableViewController.m; sourceTree = "<group>"; };
-		3515396019BB5E13002BE0B9 /* KeyValueTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyValueTableViewController.h; sourceTree = "<group>"; };
-		3515396119BB5E13002BE0B9 /* KeyValueTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyValueTableViewController.m; sourceTree = "<group>"; };
-		3515396319BB64D5002BE0B9 /* ChangeProfileTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeProfileTableViewController.h; sourceTree = "<group>"; };
-		3515396419BB64D5002BE0B9 /* ChangeProfileTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeProfileTableViewController.m; sourceTree = "<group>"; };
-		3515396619BC0593002BE0B9 /* NewUserTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewUserTableViewController.h; sourceTree = "<group>"; };
-		3515396719BC0593002BE0B9 /* NewUserTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewUserTableViewController.m; sourceTree = "<group>"; };
-		3515396919BC19D2002BE0B9 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
-		3515396A19BC19D2002BE0B9 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		3515397019BC80B8002BE0B9 /* ServiceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServiceTableViewController.h; path = NextIdentity/ServiceTableViewController.h; sourceTree = "<group>"; };
+		3515397119BC80B8002BE0B9 /* ServiceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServiceTableViewController.m; path = NextIdentity/ServiceTableViewController.m; sourceTree = "<group>"; };
+		3515397319BC80CD002BE0B9 /* ChangeProfileTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChangeProfileTableViewController.h; path = NextIdentity/ChangeProfileTableViewController.h; sourceTree = "<group>"; };
+		3515397419BC80CD002BE0B9 /* ChangeProfileTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChangeProfileTableViewController.m; path = NextIdentity/ChangeProfileTableViewController.m; sourceTree = "<group>"; };
+		3515397519BC80CD002BE0B9 /* ChangePwdTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChangePwdTableViewController.h; path = NextIdentity/ChangePwdTableViewController.h; sourceTree = "<group>"; };
+		3515397619BC80CD002BE0B9 /* ChangePwdTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChangePwdTableViewController.m; path = NextIdentity/ChangePwdTableViewController.m; sourceTree = "<group>"; };
+		3515397719BC80CD002BE0B9 /* SettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingTableViewController.h; path = NextIdentity/SettingTableViewController.h; sourceTree = "<group>"; };
+		3515397819BC80CD002BE0B9 /* SettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingTableViewController.m; path = NextIdentity/SettingTableViewController.m; sourceTree = "<group>"; };
+		3515397C19BC80ED002BE0B9 /* NewUserTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewUserTableViewController.h; path = NextIdentity/NewUserTableViewController.h; sourceTree = "<group>"; };
+		3515397D19BC80ED002BE0B9 /* NewUserTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewUserTableViewController.m; path = NextIdentity/NewUserTableViewController.m; sourceTree = "<group>"; };
+		3515397E19BC80ED002BE0B9 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterViewController.h; path = NextIdentity/RegisterViewController.h; sourceTree = "<group>"; };
+		3515397F19BC80ED002BE0B9 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterViewController.m; path = NextIdentity/RegisterViewController.m; sourceTree = "<group>"; };
+		3515398019BC80ED002BE0B9 /* UserLogonTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserLogonTableViewController.h; path = NextIdentity/UserLogonTableViewController.h; sourceTree = "<group>"; };
+		3515398119BC80ED002BE0B9 /* UserLogonTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserLogonTableViewController.m; path = NextIdentity/UserLogonTableViewController.m; sourceTree = "<group>"; };
+		3515398519BC810B002BE0B9 /* KeyValueTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeyValueTableViewController.h; path = NextIdentity/KeyValueTableViewController.h; sourceTree = "<group>"; };
+		3515398619BC810B002BE0B9 /* KeyValueTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeyValueTableViewController.m; path = NextIdentity/KeyValueTableViewController.m; sourceTree = "<group>"; };
+		3515398719BC810B002BE0B9 /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NavigationController.h; path = NextIdentity/NavigationController.h; sourceTree = "<group>"; };
+		3515398819BC810B002BE0B9 /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NavigationController.m; path = NextIdentity/NavigationController.m; sourceTree = "<group>"; };
+		3515398919BC810B002BE0B9 /* TextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TextFieldTableViewCell.h; path = NextIdentity/TextFieldTableViewCell.h; sourceTree = "<group>"; };
+		3515398A19BC810B002BE0B9 /* TextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TextFieldTableViewCell.m; path = NextIdentity/TextFieldTableViewCell.m; sourceTree = "<group>"; };
+		3515398B19BC810B002BE0B9 /* TouchTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TouchTableView.h; path = NextIdentity/TouchTableView.h; sourceTree = "<group>"; };
+		3515398C19BC810B002BE0B9 /* TouchTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TouchTableView.m; path = NextIdentity/TouchTableView.m; sourceTree = "<group>"; };
+		3515399119BC8127002BE0B9 /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TencentOpenApi_IOS_Bundle.bundle; path = NextIdentity/TencentSDK/TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
+		3515399219BC8127002BE0B9 /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TencentOpenAPI.framework; path = NextIdentity/TencentSDK/TencentOpenAPI.framework; sourceTree = "<group>"; };
+		3515399E19BC8294002BE0B9 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		3515399F19BC8294002BE0B9 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		351539A019BC8294002BE0B9 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		351539A319BC82A6002BE0B9 /* libWeiboSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeiboSDK.a; sourceTree = "<group>"; };
+		351539A419BC82A6002BE0B9 /* WeiboSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WeiboSDK.bundle; sourceTree = "<group>"; };
+		351539A519BC82A6002BE0B9 /* WeiboSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboSDK.h; sourceTree = "<group>"; };
 		3517745F19B3693F00AECE17 /* DoubanLogonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoubanLogonViewController.h; sourceTree = "<group>"; };
 		3517746019B3693F00AECE17 /* DoubanLogonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoubanLogonViewController.m; sourceTree = "<group>"; };
 		3517746219B3701E00AECE17 /* URLRequestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = URLRequestHandler.h; path = NextIdentity/URLRequestHandler.h; sourceTree = "<group>"; };
 		3517746319B3701E00AECE17 /* URLRequestHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = URLRequestHandler.m; path = NextIdentity/URLRequestHandler.m; sourceTree = "<group>"; };
-		3517746819B4A80400AECE17 /* libWeiboSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeiboSDK.a; sourceTree = "<group>"; };
-		3517746919B4A80400AECE17 /* WeiboSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WeiboSDK.bundle; sourceTree = "<group>"; };
-		3517746A19B4A80400AECE17 /* WeiboSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboSDK.h; sourceTree = "<group>"; };
 		3517747019B4BA6600AECE17 /* SinaWeiboLogonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinaWeiboLogonController.h; sourceTree = "<group>"; };
 		3517747119B4BA6600AECE17 /* SinaWeiboLogonController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SinaWeiboLogonController.m; sourceTree = "<group>"; };
 		3517747719B5FB1000AECE17 /* TencentLogonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TencentLogonController.h; sourceTree = "<group>"; };
 		3517747819B5FB1000AECE17 /* TencentLogonController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TencentLogonController.m; sourceTree = "<group>"; };
-		3517747A19B6012700AECE17 /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
-		3517747C19B6014600AECE17 /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
 		3517748419B6058C00AECE17 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		3517748619B6059B00AECE17 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		3517748819B605AD00AECE17 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
@@ -176,8 +182,6 @@
 		356B50AB19B9F30D00DC5874 /* PNPieChartDataItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PNPieChartDataItem.m; path = NextIdentity/PNChart/PNPieChartDataItem.m; sourceTree = "<group>"; };
 		356B50AD19B9F30D00DC5874 /* UICountingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICountingLabel.h; sourceTree = "<group>"; };
 		356B50AE19B9F30D00DC5874 /* UICountingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICountingLabel.m; sourceTree = "<group>"; };
-		356B50BC19B9F4D500DC5874 /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
-		356B50BD19B9F4D500DC5874 /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
 		359AD86819B2F15B00E191A1 /* NextIdentity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NextIdentity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		359AD86B19B2F15B00E191A1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		359AD86D19B2F15B00E191A1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -217,14 +221,15 @@
 				3517749119B6081500AECE17 /* libstdc++.6.0.9.dylib in Frameworks */,
 				3517748F19B6080400AECE17 /* libz.1.1.3.dylib in Frameworks */,
 				3517748B19B605BF00AECE17 /* Security.framework in Frameworks */,
+				351539A119BC8294002BE0B9 /* libWeChatSDK.a in Frameworks */,
+				3515399419BC8127002BE0B9 /* TencentOpenAPI.framework in Frameworks */,
 				3517748919B605AD00AECE17 /* CoreFoundation.framework in Frameworks */,
 				3517748719B6059B00AECE17 /* SystemConfiguration.framework in Frameworks */,
+				351539A619BC82A6002BE0B9 /* libWeiboSDK.a in Frameworks */,
 				3517748519B6058C00AECE17 /* CoreTelephony.framework in Frameworks */,
-				3517747D19B6014600AECE17 /* TencentOpenAPI.framework in Frameworks */,
 				359AD86E19B2F15B00E191A1 /* CoreGraphics.framework in Frameworks */,
 				359AD87019B2F15B00E191A1 /* UIKit.framework in Frameworks */,
 				359AD86C19B2F15B00E191A1 /* Foundation.framework in Frameworks */,
-				3517746B19B4A80400AECE17 /* libWeiboSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,16 +249,16 @@
 		3515395319BB0BCE002BE0B9 /* BaseControl */ = {
 			isa = PBXGroup;
 			children = (
-				3515395719BB270E002BE0B9 /* TouchTableView.h */,
-				3515395819BB270E002BE0B9 /* TouchTableView.m */,
+				3515398519BC810B002BE0B9 /* KeyValueTableViewController.h */,
+				3515398619BC810B002BE0B9 /* KeyValueTableViewController.m */,
+				3515398719BC810B002BE0B9 /* NavigationController.h */,
+				3515398819BC810B002BE0B9 /* NavigationController.m */,
+				3515398919BC810B002BE0B9 /* TextFieldTableViewCell.h */,
+				3515398A19BC810B002BE0B9 /* TextFieldTableViewCell.m */,
+				3515398B19BC810B002BE0B9 /* TouchTableView.h */,
+				3515398C19BC810B002BE0B9 /* TouchTableView.m */,
 				3517746219B3701E00AECE17 /* URLRequestHandler.h */,
 				3517746319B3701E00AECE17 /* URLRequestHandler.m */,
-				356B50BC19B9F4D500DC5874 /* NavigationController.h */,
-				356B50BD19B9F4D500DC5874 /* NavigationController.m */,
-				3515395A19BB5C2E002BE0B9 /* TextFieldTableViewCell.h */,
-				3515395B19BB5C2E002BE0B9 /* TextFieldTableViewCell.m */,
-				3515396019BB5E13002BE0B9 /* KeyValueTableViewController.h */,
-				3515396119BB5E13002BE0B9 /* KeyValueTableViewController.m */,
 			);
 			name = BaseControl;
 			sourceTree = "<group>";
@@ -261,12 +266,12 @@
 		3515396C19BC7E73002BE0B9 /* Logon */ = {
 			isa = PBXGroup;
 			children = (
-				3515395419BB1743002BE0B9 /* UserLogonTableViewController.h */,
-				3515395519BB1743002BE0B9 /* UserLogonTableViewController.m */,
-				3515396919BC19D2002BE0B9 /* RegisterViewController.h */,
-				3515396A19BC19D2002BE0B9 /* RegisterViewController.m */,
-				3515396619BC0593002BE0B9 /* NewUserTableViewController.h */,
-				3515396719BC0593002BE0B9 /* NewUserTableViewController.m */,
+				3515397C19BC80ED002BE0B9 /* NewUserTableViewController.h */,
+				3515397D19BC80ED002BE0B9 /* NewUserTableViewController.m */,
+				3515397E19BC80ED002BE0B9 /* RegisterViewController.h */,
+				3515397F19BC80ED002BE0B9 /* RegisterViewController.m */,
+				3515398019BC80ED002BE0B9 /* UserLogonTableViewController.h */,
+				3515398119BC80ED002BE0B9 /* UserLogonTableViewController.m */,
 			);
 			name = Logon;
 			sourceTree = "<group>";
@@ -274,12 +279,12 @@
 		3515396D19BC7E8B002BE0B9 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				3515394619BA10B3002BE0B9 /* SettingTableViewController.h */,
-				3515394719BA10B3002BE0B9 /* SettingTableViewController.m */,
-				3515395D19BB5D88002BE0B9 /* ChangePwdTableViewController.h */,
-				3515395E19BB5D88002BE0B9 /* ChangePwdTableViewController.m */,
-				3515396319BB64D5002BE0B9 /* ChangeProfileTableViewController.h */,
-				3515396419BB64D5002BE0B9 /* ChangeProfileTableViewController.m */,
+				3515397319BC80CD002BE0B9 /* ChangeProfileTableViewController.h */,
+				3515397419BC80CD002BE0B9 /* ChangeProfileTableViewController.m */,
+				3515397519BC80CD002BE0B9 /* ChangePwdTableViewController.h */,
+				3515397619BC80CD002BE0B9 /* ChangePwdTableViewController.m */,
+				3515397719BC80CD002BE0B9 /* SettingTableViewController.h */,
+				3515397819BC80CD002BE0B9 /* SettingTableViewController.m */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -289,8 +294,8 @@
 			children = (
 				359AD8A019B2FC9600E191A1 /* AssetDetailViewController.h */,
 				359AD8A119B2FC9600E191A1 /* AssetDetailViewController.m */,
-				3515394319BA1071002BE0B9 /* ServiceTableViewController.h */,
-				3515394419BA1071002BE0B9 /* ServiceTableViewController.m */,
+				3515397019BC80B8002BE0B9 /* ServiceTableViewController.h */,
+				3515397119BC80B8002BE0B9 /* ServiceTableViewController.m */,
 			);
 			name = Serivces;
 			sourceTree = "<group>";
@@ -308,14 +313,26 @@
 			name = Home;
 			sourceTree = "<group>";
 		};
-		3517746719B4A80400AECE17 /* libWeiboSDK */ = {
+		3515399D19BC8294002BE0B9 /* WechatSDK */ = {
 			isa = PBXGroup;
 			children = (
-				3517746819B4A80400AECE17 /* libWeiboSDK.a */,
-				3517746919B4A80400AECE17 /* WeiboSDK.bundle */,
-				3517746A19B4A80400AECE17 /* WeiboSDK.h */,
+				3515399E19BC8294002BE0B9 /* libWeChatSDK.a */,
+				3515399F19BC8294002BE0B9 /* WXApi.h */,
+				351539A019BC8294002BE0B9 /* WXApiObject.h */,
 			);
-			path = libWeiboSDK;
+			name = WechatSDK;
+			path = NextIdentity/WechatSDK;
+			sourceTree = "<group>";
+		};
+		351539A219BC82A6002BE0B9 /* SinaWeiboSDK */ = {
+			isa = PBXGroup;
+			children = (
+				351539A319BC82A6002BE0B9 /* libWeiboSDK.a */,
+				351539A419BC82A6002BE0B9 /* WeiboSDK.bundle */,
+				351539A519BC82A6002BE0B9 /* WeiboSDK.h */,
+			);
+			name = SinaWeiboSDK;
+			path = NextIdentity/SinaWeiboSDK;
 			sourceTree = "<group>";
 		};
 		356B509819B9F2C100DC5874 /* NextIdentity */ = {
@@ -404,11 +421,12 @@
 				3517748819B605AD00AECE17 /* CoreFoundation.framework */,
 				3517748619B6059B00AECE17 /* SystemConfiguration.framework */,
 				3517748419B6058C00AECE17 /* CoreTelephony.framework */,
-				3517747C19B6014600AECE17 /* TencentOpenAPI.framework */,
-				3517747A19B6012700AECE17 /* TencentOpenApi_IOS_Bundle.bundle */,
-				3517746719B4A80400AECE17 /* libWeiboSDK */,
+				3515399119BC8127002BE0B9 /* TencentOpenApi_IOS_Bundle.bundle */,
+				3515399219BC8127002BE0B9 /* TencentOpenAPI.framework */,
 				359AD86B19B2F15B00E191A1 /* Foundation.framework */,
 				359AD86D19B2F15B00E191A1 /* CoreGraphics.framework */,
+				351539A219BC82A6002BE0B9 /* SinaWeiboSDK */,
+				3515399D19BC8294002BE0B9 /* WechatSDK */,
 				359AD86F19B2F15B00E191A1 /* UIKit.framework */,
 				359AD88A19B2F15B00E191A1 /* XCTest.framework */,
 			);
@@ -576,7 +594,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				351774A319B8A11D00AECE17 /* IdentityType.plist in Resources */,
-				3517747B19B6012700AECE17 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				3515394E19BB022F002BE0B9 /* LaunchIcon.png in Resources */,
 				356B509119B9F08300DC5874 /* money.png in Resources */,
 				356B508B19B9F02800DC5874 /* wechat.png in Resources */,
@@ -588,13 +605,14 @@
 				3515394F19BB022F002BE0B9 /* LaunchIcon@2x.png in Resources */,
 				356B509719B9F14A00DC5874 /* setting@2x.png in Resources */,
 				359AD87F19B2F15B00E191A1 /* Main.storyboard in Resources */,
-				3517746C19B4A80400AECE17 /* WeiboSDK.bundle in Resources */,
+				3515399319BC8127002BE0B9 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				356B508619B9F02800DC5874 /* service.png in Resources */,
 				359B5FA219B56B3000DEB0E7 /* douban.png in Resources */,
 				356B508919B9F02800DC5874 /* sina.png in Resources */,
 				356B508519B9F02800DC5874 /* qq.png in Resources */,
 				356B509019B9F08300DC5874 /* linkedin.png in Resources */,
 				359B5FB319B5D01400DEB0E7 /* taobao.png in Resources */,
+				351539A719BC82A6002BE0B9 /* WeiboSDK.bundle in Resources */,
 				356B509519B9F14A00DC5874 /* money@2x.png in Resources */,
 				356B509619B9F14A00DC5874 /* service@2x.png in Resources */,
 			);
@@ -615,41 +633,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3515395C19BB5C2E002BE0B9 /* TextFieldTableViewCell.m in Sources */,
 				3517749E19B891EE00AECE17 /* VendorCollectionViewController.m in Sources */,
+				3515398319BC80ED002BE0B9 /* RegisterViewController.m in Sources */,
 				359B5FA819B5AB5500DEB0E7 /* TaobaoLogonViewController.m in Sources */,
-				3515394519BA1071002BE0B9 /* ServiceTableViewController.m in Sources */,
 				3517747219B4BA6600AECE17 /* SinaWeiboLogonController.m in Sources */,
-				3515394819BA10B3002BE0B9 /* SettingTableViewController.m in Sources */,
+				3515398D19BC810B002BE0B9 /* KeyValueTableViewController.m in Sources */,
 				359B5F9819B40CD600DEB0E7 /* NSIdentityModel.m in Sources */,
 				3517746419B3701E00AECE17 /* URLRequestHandler.m in Sources */,
 				356B50AF19B9F30D00DC5874 /* PNBar.m in Sources */,
 				356B50B719B9F30D00DC5874 /* PNPieChartDataItem.m in Sources */,
 				359AD8A519B307AE00E191A1 /* VendorLogonViewController.m in Sources */,
-				3515396819BC0593002BE0B9 /* NewUserTableViewController.m in Sources */,
+				3515397219BC80B8002BE0B9 /* ServiceTableViewController.m in Sources */,
+				3515398219BC80ED002BE0B9 /* NewUserTableViewController.m in Sources */,
 				356B50B419B9F30D00DC5874 /* PNColor.m in Sources */,
+				3515398E19BC810B002BE0B9 /* NavigationController.m in Sources */,
 				351774A119B8953700AECE17 /* VendorCollectionViewCell.m in Sources */,
 				356B50B319B9F30D00DC5874 /* PNCircleChart.m in Sources */,
-				356B50BE19B9F4D500DC5874 /* NavigationController.m in Sources */,
 				3517746119B3693F00AECE17 /* DoubanLogonViewController.m in Sources */,
 				356B50B819B9F30D00DC5874 /* UICountingLabel.m in Sources */,
-				3515395F19BB5D88002BE0B9 /* ChangePwdTableViewController.m in Sources */,
+				3515397A19BC80CD002BE0B9 /* ChangePwdTableViewController.m in Sources */,
 				3515394B19BAF8A5002BE0B9 /* NSUserModel.m in Sources */,
 				356B50B119B9F30D00DC5874 /* PNChart.m in Sources */,
-				3515395619BB1743002BE0B9 /* UserLogonTableViewController.m in Sources */,
 				356B50B219B9F30D00DC5874 /* PNChartLabel.m in Sources */,
 				356B50B619B9F30D00DC5874 /* PNPieChart.m in Sources */,
+				3515398F19BC810B002BE0B9 /* TextFieldTableViewCell.m in Sources */,
 				356B50B519B9F30D00DC5874 /* PNLineChart.m in Sources */,
-				3515396B19BC19D2002BE0B9 /* RegisterViewController.m in Sources */,
-				3515395919BB270E002BE0B9 /* TouchTableView.m in Sources */,
+				3515398419BC80ED002BE0B9 /* UserLogonTableViewController.m in Sources */,
 				3517747919B5FB1000AECE17 /* TencentLogonController.m in Sources */,
 				356B50B019B9F30D00DC5874 /* PNBarChart.m in Sources */,
 				359AD87C19B2F15B00E191A1 /* AppDelegate.m in Sources */,
-				3515396219BB5E13002BE0B9 /* KeyValueTableViewController.m in Sources */,
+				3515397B19BC80CD002BE0B9 /* SettingTableViewController.m in Sources */,
 				359AD87819B2F15B00E191A1 /* main.m in Sources */,
-				3515396519BB64D5002BE0B9 /* ChangeProfileTableViewController.m in Sources */,
 				359AD8A219B2FC9600E191A1 /* AssetDetailViewController.m in Sources */,
 				3517749B19B88A9100AECE17 /* HomeViewController.m in Sources */,
+				3515397919BC80CD002BE0B9 /* ChangeProfileTableViewController.m in Sources */,
+				3515399019BC810B002BE0B9 /* TouchTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -779,16 +797,15 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/NextIdentity/TencentSDK",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NextIdentity/NextIdentity-Prefix.pch";
 				INFOPLIST_FILE = "NextIdentity/NextIdentity-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/libWeiboSDK",
-					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/NextIdentity",
+					"$(PROJECT_DIR)/NextIdentity/WechatSDK",
+					"$(PROJECT_DIR)/NextIdentity/SinaWeiboSDK",
 				);
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -806,16 +823,15 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/NextIdentity/TencentSDK",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NextIdentity/NextIdentity-Prefix.pch";
 				INFOPLIST_FILE = "NextIdentity/NextIdentity-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/libWeiboSDK",
-					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/NextIdentity",
+					"$(PROJECT_DIR)/NextIdentity/WechatSDK",
+					"$(PROJECT_DIR)/NextIdentity/SinaWeiboSDK",
 				);
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
