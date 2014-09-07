@@ -9,6 +9,17 @@
 /* Begin PBXBuildFile section */
 		3515394519BA1071002BE0B9 /* ServiceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3515394419BA1071002BE0B9 /* ServiceTableViewController.m */; };
 		3515394819BA10B3002BE0B9 /* SettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3515394719BA10B3002BE0B9 /* SettingTableViewController.m */; };
+		3515394B19BAF8A5002BE0B9 /* NSUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3515394A19BAF8A5002BE0B9 /* NSUserModel.m */; };
+		3515394E19BB022F002BE0B9 /* LaunchIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3515394C19BB022F002BE0B9 /* LaunchIcon.png */; };
+		3515394F19BB022F002BE0B9 /* LaunchIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3515394D19BB022F002BE0B9 /* LaunchIcon@2x.png */; };
+		3515395619BB1743002BE0B9 /* UserLogonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3515395519BB1743002BE0B9 /* UserLogonTableViewController.m */; };
+		3515395919BB270E002BE0B9 /* TouchTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3515395819BB270E002BE0B9 /* TouchTableView.m */; };
+		3515395C19BB5C2E002BE0B9 /* TextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3515395B19BB5C2E002BE0B9 /* TextFieldTableViewCell.m */; };
+		3515395F19BB5D88002BE0B9 /* ChangePwdTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3515395E19BB5D88002BE0B9 /* ChangePwdTableViewController.m */; };
+		3515396219BB5E13002BE0B9 /* KeyValueTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3515396119BB5E13002BE0B9 /* KeyValueTableViewController.m */; };
+		3515396519BB64D5002BE0B9 /* ChangeProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3515396419BB64D5002BE0B9 /* ChangeProfileTableViewController.m */; };
+		3515396819BC0593002BE0B9 /* NewUserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3515396719BC0593002BE0B9 /* NewUserTableViewController.m */; };
+		3515396B19BC19D2002BE0B9 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3515396A19BC19D2002BE0B9 /* RegisterViewController.m */; };
 		3517746119B3693F00AECE17 /* DoubanLogonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3517746019B3693F00AECE17 /* DoubanLogonViewController.m */; };
 		3517746419B3701E00AECE17 /* URLRequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 3517746319B3701E00AECE17 /* URLRequestHandler.m */; };
 		3517746B19B4A80400AECE17 /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3517746819B4A80400AECE17 /* libWeiboSDK.a */; };
@@ -24,7 +35,6 @@
 		3517748F19B6080400AECE17 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3517748E19B6080400AECE17 /* libz.1.1.3.dylib */; };
 		3517749119B6081500AECE17 /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3517749019B6081500AECE17 /* libstdc++.6.0.9.dylib */; };
 		3517749319B6082F00AECE17 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3517749219B6082F00AECE17 /* libsqlite3.0.dylib */; };
-		3517749819B889D200AECE17 /* CoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3517749719B889D200AECE17 /* CoverViewController.m */; };
 		3517749B19B88A9100AECE17 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3517749A19B88A9100AECE17 /* HomeViewController.m */; };
 		3517749E19B891EE00AECE17 /* VendorCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3517749D19B891EE00AECE17 /* VendorCollectionViewController.m */; };
 		351774A119B8953700AECE17 /* VendorCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 351774A019B8953700AECE17 /* VendorCollectionViewCell.m */; };
@@ -64,8 +74,8 @@
 		359AD88D19B2F15B00E191A1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359AD86F19B2F15B00E191A1 /* UIKit.framework */; };
 		359AD89519B2F15B00E191A1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 359AD89319B2F15B00E191A1 /* InfoPlist.strings */; };
 		359AD89719B2F15B00E191A1 /* NextIdentityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 359AD89619B2F15B00E191A1 /* NextIdentityTests.m */; };
-		359AD8A219B2FC9600E191A1 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 359AD8A119B2FC9600E191A1 /* DetailViewController.m */; };
-		359AD8A519B307AE00E191A1 /* LogonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 359AD8A419B307AE00E191A1 /* LogonViewController.m */; };
+		359AD8A219B2FC9600E191A1 /* AssetDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 359AD8A119B2FC9600E191A1 /* AssetDetailViewController.m */; };
+		359AD8A519B307AE00E191A1 /* VendorLogonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 359AD8A419B307AE00E191A1 /* VendorLogonViewController.m */; };
 		359B5F9819B40CD600DEB0E7 /* NSIdentityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 359B5F9719B40CD600DEB0E7 /* NSIdentityModel.m */; };
 		359B5FA219B56B3000DEB0E7 /* douban.png in Resources */ = {isa = PBXBuildFile; fileRef = 359B5FA019B56B3000DEB0E7 /* douban.png */; };
 		359B5FA319B56B3000DEB0E7 /* sina.png in Resources */ = {isa = PBXBuildFile; fileRef = 359B5FA119B56B3000DEB0E7 /* sina.png */; };
@@ -88,6 +98,26 @@
 		3515394419BA1071002BE0B9 /* ServiceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceTableViewController.m; sourceTree = "<group>"; };
 		3515394619BA10B3002BE0B9 /* SettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewController.h; sourceTree = "<group>"; };
 		3515394719BA10B3002BE0B9 /* SettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewController.m; sourceTree = "<group>"; };
+		3515394919BAF8A5002BE0B9 /* NSUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSUserModel.h; sourceTree = "<group>"; };
+		3515394A19BAF8A5002BE0B9 /* NSUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSUserModel.m; sourceTree = "<group>"; };
+		3515394C19BB022F002BE0B9 /* LaunchIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LaunchIcon.png; path = res/LaunchIcon.png; sourceTree = "<group>"; };
+		3515394D19BB022F002BE0B9 /* LaunchIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "LaunchIcon@2x.png"; path = "res/LaunchIcon@2x.png"; sourceTree = "<group>"; };
+		3515395419BB1743002BE0B9 /* UserLogonTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserLogonTableViewController.h; sourceTree = "<group>"; };
+		3515395519BB1743002BE0B9 /* UserLogonTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserLogonTableViewController.m; sourceTree = "<group>"; };
+		3515395719BB270E002BE0B9 /* TouchTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchTableView.h; sourceTree = "<group>"; };
+		3515395819BB270E002BE0B9 /* TouchTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchTableView.m; sourceTree = "<group>"; };
+		3515395A19BB5C2E002BE0B9 /* TextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldTableViewCell.h; sourceTree = "<group>"; };
+		3515395B19BB5C2E002BE0B9 /* TextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldTableViewCell.m; sourceTree = "<group>"; };
+		3515395D19BB5D88002BE0B9 /* ChangePwdTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePwdTableViewController.h; sourceTree = "<group>"; };
+		3515395E19BB5D88002BE0B9 /* ChangePwdTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePwdTableViewController.m; sourceTree = "<group>"; };
+		3515396019BB5E13002BE0B9 /* KeyValueTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyValueTableViewController.h; sourceTree = "<group>"; };
+		3515396119BB5E13002BE0B9 /* KeyValueTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyValueTableViewController.m; sourceTree = "<group>"; };
+		3515396319BB64D5002BE0B9 /* ChangeProfileTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeProfileTableViewController.h; sourceTree = "<group>"; };
+		3515396419BB64D5002BE0B9 /* ChangeProfileTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeProfileTableViewController.m; sourceTree = "<group>"; };
+		3515396619BC0593002BE0B9 /* NewUserTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewUserTableViewController.h; sourceTree = "<group>"; };
+		3515396719BC0593002BE0B9 /* NewUserTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewUserTableViewController.m; sourceTree = "<group>"; };
+		3515396919BC19D2002BE0B9 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		3515396A19BC19D2002BE0B9 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		3517745F19B3693F00AECE17 /* DoubanLogonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoubanLogonViewController.h; sourceTree = "<group>"; };
 		3517746019B3693F00AECE17 /* DoubanLogonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoubanLogonViewController.m; sourceTree = "<group>"; };
 		3517746219B3701E00AECE17 /* URLRequestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = URLRequestHandler.h; path = NextIdentity/URLRequestHandler.h; sourceTree = "<group>"; };
@@ -108,8 +138,6 @@
 		3517748E19B6080400AECE17 /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
 		3517749019B6081500AECE17 /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
 		3517749219B6082F00AECE17 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
-		3517749619B889D200AECE17 /* CoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoverViewController.h; path = NextIdentity/CoverViewController.h; sourceTree = "<group>"; };
-		3517749719B889D200AECE17 /* CoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoverViewController.m; path = NextIdentity/CoverViewController.m; sourceTree = "<group>"; };
 		3517749919B88A9100AECE17 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = NextIdentity/HomeViewController.h; sourceTree = "<group>"; };
 		3517749A19B88A9100AECE17 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = NextIdentity/HomeViewController.m; sourceTree = "<group>"; };
 		3517749C19B891EE00AECE17 /* VendorCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VendorCollectionViewController.h; path = NextIdentity/VendorCollectionViewController.h; sourceTree = "<group>"; };
@@ -167,10 +195,10 @@
 		359AD89219B2F15B00E191A1 /* NextIdentityTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NextIdentityTests-Info.plist"; sourceTree = "<group>"; };
 		359AD89419B2F15B00E191A1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		359AD89619B2F15B00E191A1 /* NextIdentityTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NextIdentityTests.m; sourceTree = "<group>"; };
-		359AD8A019B2FC9600E191A1 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = NextIdentity/DetailViewController.h; sourceTree = "<group>"; };
-		359AD8A119B2FC9600E191A1 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailViewController.m; path = NextIdentity/DetailViewController.m; sourceTree = "<group>"; };
-		359AD8A319B307AE00E191A1 /* LogonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogonViewController.h; sourceTree = "<group>"; };
-		359AD8A419B307AE00E191A1 /* LogonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogonViewController.m; sourceTree = "<group>"; };
+		359AD8A019B2FC9600E191A1 /* AssetDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AssetDetailViewController.h; path = NextIdentity/AssetDetailViewController.h; sourceTree = "<group>"; };
+		359AD8A119B2FC9600E191A1 /* AssetDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AssetDetailViewController.m; path = NextIdentity/AssetDetailViewController.m; sourceTree = "<group>"; };
+		359AD8A319B307AE00E191A1 /* VendorLogonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VendorLogonViewController.h; sourceTree = "<group>"; };
+		359AD8A419B307AE00E191A1 /* VendorLogonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VendorLogonViewController.m; sourceTree = "<group>"; };
 		359B5F9619B40CD600DEB0E7 /* NSIdentityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSIdentityModel.h; sourceTree = "<group>"; };
 		359B5F9719B40CD600DEB0E7 /* NSIdentityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSIdentityModel.m; sourceTree = "<group>"; };
 		359B5FA019B56B3000DEB0E7 /* douban.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = douban.png; path = res/douban.png; sourceTree = "<group>"; };
@@ -213,6 +241,73 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3515395319BB0BCE002BE0B9 /* BaseControl */ = {
+			isa = PBXGroup;
+			children = (
+				3515395719BB270E002BE0B9 /* TouchTableView.h */,
+				3515395819BB270E002BE0B9 /* TouchTableView.m */,
+				3517746219B3701E00AECE17 /* URLRequestHandler.h */,
+				3517746319B3701E00AECE17 /* URLRequestHandler.m */,
+				356B50BC19B9F4D500DC5874 /* NavigationController.h */,
+				356B50BD19B9F4D500DC5874 /* NavigationController.m */,
+				3515395A19BB5C2E002BE0B9 /* TextFieldTableViewCell.h */,
+				3515395B19BB5C2E002BE0B9 /* TextFieldTableViewCell.m */,
+				3515396019BB5E13002BE0B9 /* KeyValueTableViewController.h */,
+				3515396119BB5E13002BE0B9 /* KeyValueTableViewController.m */,
+			);
+			name = BaseControl;
+			sourceTree = "<group>";
+		};
+		3515396C19BC7E73002BE0B9 /* Logon */ = {
+			isa = PBXGroup;
+			children = (
+				3515395419BB1743002BE0B9 /* UserLogonTableViewController.h */,
+				3515395519BB1743002BE0B9 /* UserLogonTableViewController.m */,
+				3515396919BC19D2002BE0B9 /* RegisterViewController.h */,
+				3515396A19BC19D2002BE0B9 /* RegisterViewController.m */,
+				3515396619BC0593002BE0B9 /* NewUserTableViewController.h */,
+				3515396719BC0593002BE0B9 /* NewUserTableViewController.m */,
+			);
+			name = Logon;
+			sourceTree = "<group>";
+		};
+		3515396D19BC7E8B002BE0B9 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				3515394619BA10B3002BE0B9 /* SettingTableViewController.h */,
+				3515394719BA10B3002BE0B9 /* SettingTableViewController.m */,
+				3515395D19BB5D88002BE0B9 /* ChangePwdTableViewController.h */,
+				3515395E19BB5D88002BE0B9 /* ChangePwdTableViewController.m */,
+				3515396319BB64D5002BE0B9 /* ChangeProfileTableViewController.h */,
+				3515396419BB64D5002BE0B9 /* ChangeProfileTableViewController.m */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		3515396E19BC7E9F002BE0B9 /* Serivces */ = {
+			isa = PBXGroup;
+			children = (
+				359AD8A019B2FC9600E191A1 /* AssetDetailViewController.h */,
+				359AD8A119B2FC9600E191A1 /* AssetDetailViewController.m */,
+				3515394319BA1071002BE0B9 /* ServiceTableViewController.h */,
+				3515394419BA1071002BE0B9 /* ServiceTableViewController.m */,
+			);
+			name = Serivces;
+			sourceTree = "<group>";
+		};
+		3515396F19BC7EAD002BE0B9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				3517749919B88A9100AECE17 /* HomeViewController.h */,
+				3517749A19B88A9100AECE17 /* HomeViewController.m */,
+				3517749C19B891EE00AECE17 /* VendorCollectionViewController.h */,
+				3517749D19B891EE00AECE17 /* VendorCollectionViewController.m */,
+				3517749F19B8953700AECE17 /* VendorCollectionViewCell.h */,
+				351774A019B8953700AECE17 /* VendorCollectionViewCell.m */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
 		3517746719B4A80400AECE17 /* libWeiboSDK */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,29 +321,16 @@
 		356B509819B9F2C100DC5874 /* NextIdentity */ = {
 			isa = PBXGroup;
 			children = (
+				3515396F19BC7EAD002BE0B9 /* Home */,
+				3515396E19BC7E9F002BE0B9 /* Serivces */,
+				3515396D19BC7E8B002BE0B9 /* Settings */,
+				3515396C19BC7E73002BE0B9 /* Logon */,
+				3515395319BB0BCE002BE0B9 /* BaseControl */,
 				356B509919B9F2EB00DC5874 /* PNChart */,
 				359B5FAD19B5CC0C00DEB0E7 /* LogonViewController */,
 				359B5FAC19B5CBFC00DEB0E7 /* IdentityModel */,
 				359AD87A19B2F15B00E191A1 /* AppDelegate.h */,
 				359AD87B19B2F15B00E191A1 /* AppDelegate.m */,
-				356B50BC19B9F4D500DC5874 /* NavigationController.h */,
-				356B50BD19B9F4D500DC5874 /* NavigationController.m */,
-				3517749619B889D200AECE17 /* CoverViewController.h */,
-				3517749719B889D200AECE17 /* CoverViewController.m */,
-				3517749919B88A9100AECE17 /* HomeViewController.h */,
-				3517749A19B88A9100AECE17 /* HomeViewController.m */,
-				3517749C19B891EE00AECE17 /* VendorCollectionViewController.h */,
-				3517749D19B891EE00AECE17 /* VendorCollectionViewController.m */,
-				3517749F19B8953700AECE17 /* VendorCollectionViewCell.h */,
-				351774A019B8953700AECE17 /* VendorCollectionViewCell.m */,
-				3515394319BA1071002BE0B9 /* ServiceTableViewController.h */,
-				3515394419BA1071002BE0B9 /* ServiceTableViewController.m */,
-				3515394619BA10B3002BE0B9 /* SettingTableViewController.h */,
-				3515394719BA10B3002BE0B9 /* SettingTableViewController.m */,
-				359AD8A019B2FC9600E191A1 /* DetailViewController.h */,
-				359AD8A119B2FC9600E191A1 /* DetailViewController.m */,
-				3517746219B3701E00AECE17 /* URLRequestHandler.h */,
-				3517746319B3701E00AECE17 /* URLRequestHandler.m */,
 				359AD88319B2F15B00E191A1 /* Images.xcassets */,
 				351774A219B8A11D00AECE17 /* IdentityType.plist */,
 				359AD87D19B2F15B00E191A1 /* Main.storyboard */,
@@ -367,6 +449,8 @@
 		359B5F9F19B56B0F00DEB0E7 /* res */ = {
 			isa = PBXGroup;
 			children = (
+				3515394C19BB022F002BE0B9 /* LaunchIcon.png */,
+				3515394D19BB022F002BE0B9 /* LaunchIcon@2x.png */,
 				356B508D19B9F08300DC5874 /* linkedin.png */,
 				356B509219B9F14A00DC5874 /* money@2x.png */,
 				356B509319B9F14A00DC5874 /* service@2x.png */,
@@ -390,6 +474,8 @@
 			children = (
 				359B5F9619B40CD600DEB0E7 /* NSIdentityModel.h */,
 				359B5F9719B40CD600DEB0E7 /* NSIdentityModel.m */,
+				3515394919BAF8A5002BE0B9 /* NSUserModel.h */,
+				3515394A19BAF8A5002BE0B9 /* NSUserModel.m */,
 			);
 			name = IdentityModel;
 			path = NextIdentity;
@@ -398,8 +484,8 @@
 		359B5FAD19B5CC0C00DEB0E7 /* LogonViewController */ = {
 			isa = PBXGroup;
 			children = (
-				359AD8A319B307AE00E191A1 /* LogonViewController.h */,
-				359AD8A419B307AE00E191A1 /* LogonViewController.m */,
+				359AD8A319B307AE00E191A1 /* VendorLogonViewController.h */,
+				359AD8A419B307AE00E191A1 /* VendorLogonViewController.m */,
 				3517745F19B3693F00AECE17 /* DoubanLogonViewController.h */,
 				3517746019B3693F00AECE17 /* DoubanLogonViewController.m */,
 				3517747019B4BA6600AECE17 /* SinaWeiboLogonController.h */,
@@ -491,6 +577,7 @@
 			files = (
 				351774A319B8A11D00AECE17 /* IdentityType.plist in Resources */,
 				3517747B19B6012700AECE17 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
+				3515394E19BB022F002BE0B9 /* LaunchIcon.png in Resources */,
 				356B509119B9F08300DC5874 /* money.png in Resources */,
 				356B508B19B9F02800DC5874 /* wechat.png in Resources */,
 				356B508719B9F02800DC5874 /* setting.png in Resources */,
@@ -498,6 +585,7 @@
 				359AD88419B2F15B00E191A1 /* Images.xcassets in Resources */,
 				359AD87619B2F15B00E191A1 /* InfoPlist.strings in Resources */,
 				359B5FA319B56B3000DEB0E7 /* sina.png in Resources */,
+				3515394F19BB022F002BE0B9 /* LaunchIcon@2x.png in Resources */,
 				356B509719B9F14A00DC5874 /* setting@2x.png in Resources */,
 				359AD87F19B2F15B00E191A1 /* Main.storyboard in Resources */,
 				3517746C19B4A80400AECE17 /* WeiboSDK.bundle in Resources */,
@@ -527,6 +615,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3515395C19BB5C2E002BE0B9 /* TextFieldTableViewCell.m in Sources */,
 				3517749E19B891EE00AECE17 /* VendorCollectionViewController.m in Sources */,
 				359B5FA819B5AB5500DEB0E7 /* TaobaoLogonViewController.m in Sources */,
 				3515394519BA1071002BE0B9 /* ServiceTableViewController.m in Sources */,
@@ -536,23 +625,30 @@
 				3517746419B3701E00AECE17 /* URLRequestHandler.m in Sources */,
 				356B50AF19B9F30D00DC5874 /* PNBar.m in Sources */,
 				356B50B719B9F30D00DC5874 /* PNPieChartDataItem.m in Sources */,
-				359AD8A519B307AE00E191A1 /* LogonViewController.m in Sources */,
+				359AD8A519B307AE00E191A1 /* VendorLogonViewController.m in Sources */,
+				3515396819BC0593002BE0B9 /* NewUserTableViewController.m in Sources */,
 				356B50B419B9F30D00DC5874 /* PNColor.m in Sources */,
 				351774A119B8953700AECE17 /* VendorCollectionViewCell.m in Sources */,
 				356B50B319B9F30D00DC5874 /* PNCircleChart.m in Sources */,
 				356B50BE19B9F4D500DC5874 /* NavigationController.m in Sources */,
 				3517746119B3693F00AECE17 /* DoubanLogonViewController.m in Sources */,
 				356B50B819B9F30D00DC5874 /* UICountingLabel.m in Sources */,
-				3517749819B889D200AECE17 /* CoverViewController.m in Sources */,
+				3515395F19BB5D88002BE0B9 /* ChangePwdTableViewController.m in Sources */,
+				3515394B19BAF8A5002BE0B9 /* NSUserModel.m in Sources */,
 				356B50B119B9F30D00DC5874 /* PNChart.m in Sources */,
+				3515395619BB1743002BE0B9 /* UserLogonTableViewController.m in Sources */,
 				356B50B219B9F30D00DC5874 /* PNChartLabel.m in Sources */,
 				356B50B619B9F30D00DC5874 /* PNPieChart.m in Sources */,
 				356B50B519B9F30D00DC5874 /* PNLineChart.m in Sources */,
+				3515396B19BC19D2002BE0B9 /* RegisterViewController.m in Sources */,
+				3515395919BB270E002BE0B9 /* TouchTableView.m in Sources */,
 				3517747919B5FB1000AECE17 /* TencentLogonController.m in Sources */,
 				356B50B019B9F30D00DC5874 /* PNBarChart.m in Sources */,
 				359AD87C19B2F15B00E191A1 /* AppDelegate.m in Sources */,
+				3515396219BB5E13002BE0B9 /* KeyValueTableViewController.m in Sources */,
 				359AD87819B2F15B00E191A1 /* main.m in Sources */,
-				359AD8A219B2FC9600E191A1 /* DetailViewController.m in Sources */,
+				3515396519BB64D5002BE0B9 /* ChangeProfileTableViewController.m in Sources */,
+				359AD8A219B2FC9600E191A1 /* AssetDetailViewController.m in Sources */,
 				3517749B19B88A9100AECE17 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

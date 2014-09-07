@@ -6,14 +6,14 @@
 //  Copyright (c) 2014年 iShanghai Creative. All rights reserved.
 //
 
-#import "LogonViewController.h"
+#import "VendorLogonViewController.h"
 #import <TencentOpenAPI/TencentOAuth.h>
 
 @interface TencentLogonController : NSObject<TencentSessionDelegate>
 {
     TencentOAuth* tencentOAuth;
 }
-@property (nonatomic, assign) id <LogonDelegate> delegate;
+@property (nonatomic, assign) id <VendorLogonDelegate> delegate;
 @property (nonatomic, assign) NSIdentityModel* model;
 
 - (void) startLogon;

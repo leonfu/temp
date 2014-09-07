@@ -6,9 +6,9 @@
 //  Copyright (c) 2014年 iShanghai Creative. All rights reserved.
 //
 
-#import "LogonViewController.h"
+#import "VendorLogonViewController.h"
 
-@interface DoubanLogonViewController : LogonViewController<UIWebViewDelegate, RequestDelegate>
+@interface DoubanLogonViewController : VendorLogonViewController<UIWebViewDelegate, RequestDelegate>
 
 
 - (void) showLogonView;

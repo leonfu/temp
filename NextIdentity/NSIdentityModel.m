@@ -33,23 +33,25 @@ static NSIdentityList *_sharedInstance;
 
 @implementation NSIdentityModel
 
-@synthesize delegate, isAuthed, accessToken, refreshToken, isExpired;
+@synthesize isAuthed, accessToken, refreshToken, isExpired;
 
 - (id) initWithType: (VENDORTYPE)type Name:(NSString*)name Image:(UIImage*)image
 {
     isAuthed = NO;
-    self = [super init];
-    dictModel = [[NSMutableDictionary alloc] init];
-    [dictModel setObject:@"" forKey:@"logon_tokens"];
-    [self addNewKey: @"logon_tokens" SubKeys: @[@"token", @"refresh_token", @"expire_time"]];
-    [dictModel setObject:@"" forKey:@"user_infos"];
-    [self addNewKey:@"user_infos" SubKeys: @[@"user_id", @"user_nick", @"user_email", @"user_profile"]];
-    [dictModel setObject:@"" forKey:@"user_favorites"];
-    
-    netType = type;
-    self.name = name;
-    self.image = image;
-    self.deltaScore = @-1;
+    if(self = [super init])
+    {
+        dictModel = [[NSMutableDictionary alloc] init];
+        [dictModel setObject:@"" forKey:@"logon_tokens"];
+        [self addNewKey: @"logon_tokens" SubKeys: @[@"token", @"refresh_token", @"expire_time"]];
+        [dictModel setObject:@"" forKey:@"user_infos"];
+        [self addNewKey:@"user_infos" SubKeys: @[@"user_id", @"user_nick", @"user_email", @"user_profile"]];
+        [dictModel setObject:@"" forKey:@"user_favorites"];
+        
+        netType = type;
+        self.name = name;
+        self.image = image;
+        self.deltaScore = @-1;
+    }
     return self;
 }
 

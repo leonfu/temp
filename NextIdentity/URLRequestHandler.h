@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void (^responseCompletion) (BOOL isValid, NSString* result, NSInteger topic);
+
 @protocol RequestDelegate
 
 - (void) getResponseResult: (BOOL)isValid Result:(NSString*)result Topic:(NSInteger)topic;
@@ -21,11 +23,14 @@
     NSMutableData* dataResponse;
     NSInteger statusCode;
     NSInteger topic;
+    responseCompletion completionBlock;
 }
+
 @property (nonatomic, assign) id <RequestDelegate> delegate;
 
 - (id) initWithURLStringPOST: (NSString*)url Body:(NSString*)body Topic:(NSInteger)base;
 - (id) initWithURLStringGET: (NSString*)url Headers:(NSDictionary*)headers Topic:(NSInteger)base;
 - (void) start;
+- (void) startWithCompletion: (responseCompletion) completion;
 
 @end

@@ -10,7 +10,7 @@
 #import "AppDelegate.h"
 #import "NSIdentityModel.h"
 
-@interface DetailViewController : UITableViewController<UITableViewDataSource, UITableViewDelegate>
+@interface AssetDetailViewController : UITableViewController<UITableViewDataSource, UITableViewDelegate>
 {
 @protected
     BOOL m_isAuthed;

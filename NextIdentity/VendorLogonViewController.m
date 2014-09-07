@@ -6,13 +6,13 @@
 //  Copyright (c) 2014年 iShanghai Creative. All rights reserved.
 //
 
-#import "LogonViewController.h"
+#import "VendorLogonViewController.h"
 
-@interface LogonViewController ()
+@interface VendorLogonViewController ()
 
 @end
 
-@implementation LogonViewController
+@implementation VendorLogonViewController
 
 @synthesize webView, netType, delegate, model;
 
@@ -21,7 +21,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationItem.title = @"登录认证";
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(closeView)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"关闭" style:UIBarButtonItemStylePlain target:self action:@selector(closeView)];
     self.webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:self.webView];
 }

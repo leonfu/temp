@@ -6,13 +6,13 @@
 //  Copyright (c) 2014年 iShanghai Creative. All rights reserved.
 //
 
-#import "DetailViewController.h"
+#import "AssetDetailViewController.h"
 
-@interface DetailViewController ()
+@interface AssetDetailViewController ()
 
 @end
 
-@implementation DetailViewController
+@implementation AssetDetailViewController
 
 @synthesize netType, model;
 
@@ -29,8 +29,6 @@
     data = [[NSMutableArray alloc] initWithObjects:self.model.accessToken, nil];
     [self.tableView reloadData];
     [indicator stopAnimating];
-    
-    model.deltaScore = @100;
 }
 
 - (void)didReceiveMemoryWarning

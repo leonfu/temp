@@ -14,9 +14,10 @@
 #import "TaobaoLogonViewController.h"
 #import "TencentLogonController.h"
 #import "NSIdentityModel.h"
-#import <TencentOpenAPI/TencentOAuth.h>
-#import "DetailViewController.h"
+#import "TencentOpenAPI/TencentOAuth.h"
+#import "AssetDetailViewController.h"
 #import "NavigationController.h"
+#import "HomeViewController.h"
 
 @interface VendorCollectionViewController ()
 
@@ -71,11 +72,6 @@
 }
 */
 
-- (void) viewWillAppear:(BOOL)animated
-{
-    [self.collectionView reloadData];
-}
-
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     return vendorList.count;
@@ -126,7 +122,7 @@
 - (void) showDoubanLogon
 {
     DoubanLogonViewController* logonViewControler = [[DoubanLogonViewController alloc] init];
-    logonViewControler.delegate = self;
+    logonViewControler.delegate = (HomeViewController*)self.parentViewController;
     logonViewControler.netType = DOUBAN;
     logonViewControler.model = self.vendorList[DOUBAN];
     NavigationController* navController = [[NavigationController alloc] initWithRootViewController:logonViewControler];
@@ -136,7 +132,7 @@
 - (void) showTaobaoLogon
 {
     TaobaoLogonViewController* logonViewControler = [[TaobaoLogonViewController alloc] init];
-    logonViewControler.delegate = self;
+    logonViewControler.delegate = (HomeViewController*)self.parentViewController;
     logonViewControler.netType = TAOBAO;
     logonViewControler.model = self.vendorList[TAOBAO];
     NavigationController* navController = [[NavigationController alloc] initWithRootViewController:logonViewControler];
@@ -146,7 +142,7 @@
 - (void) showSinaWeiboLogon
 {
     sinaWeiboLogonController = [[SinaWeiboLogonController alloc] init];
-    sinaWeiboLogonController.delegate = self;
+    sinaWeiboLogonController.delegate = (HomeViewController*)self.parentViewController;
     sinaWeiboLogonController.model = self.vendorList[SINA_WEIBO];
     [sinaWeiboLogonController startLogon];
 }
@@ -154,14 +150,14 @@
 - (void) showTencentLogon
 {
     tencentLogonController = [[TencentLogonController alloc] init];
-    tencentLogonController.delegate = self;
+    tencentLogonController.delegate = (HomeViewController*)self.parentViewController;
     tencentLogonController.model = self.vendorList[TENCENT];
     [tencentLogonController startLogon];
 }
 
 - (void) showDetailInfo: (VENDORTYPE) type withLogonToken:(NSDictionary*) dictToken
 {
-    DetailViewController* detailViewController = [[DetailViewController alloc] init];
+    AssetDetailViewController* detailViewController = [[AssetDetailViewController alloc] init];
     detailViewController.netType = type;
     detailViewController.model = self.vendorList[type];
     [self.navigationController pushViewController:detailViewController animated:YES];
@@ -175,13 +171,6 @@
 - (BOOL) handleTencentUrl:(NSURL *)url
 {
     return [TencentOAuth HandleOpenURL:url];
-}
-
-- (void) getLogonResult:(BOOL)result Type:(VENDORTYPE) type Info:(NSDictionary *)info
-{
-    if(result == NO)
-        return;
-    [self showDetailInfo:type withLogonToken:info];
 }
 
 - (BOOL) openType:(VENDORTYPE)type URL:(NSURL*)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation

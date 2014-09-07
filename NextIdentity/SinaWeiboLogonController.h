@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "AppDelegate.h"
-#import "LogonViewController.h"
+#import "VendorLogonViewController.h"
 
 @interface SinaWeiboLogonController : NSObject<WeiboSDKDelegate>
 
-@property (nonatomic, assign) id <LogonDelegate> delegate;
+@property (nonatomic, assign) id <VendorLogonDelegate> delegate;
 @property (nonatomic, assign) NSIdentityModel* model;
 
 - (void) startLogon;

@@ -8,6 +8,8 @@
 
 #import "HomeViewController.h"
 #import "NSIdentityModel.h"
+#import "PNColor.h"
+#import "NSUserModel.h"
 
 @interface HomeViewController ()
 
@@ -19,7 +21,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -28,6 +29,42 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.scoreLabel.textColor = PNFreshGreen;
+    self.firstLabel.textColor = PNFreshGreen;
+    vendorViewController = self.childViewControllers[0];
+
+    float value = [NSIdentityList sharedInstance].totalScore.floatValue;
+    if(value == 0) //no any binding
+    {
+        [self initHomeScreen];
+    }
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    BOOL isLogon = [NSUserModel sharedInstance].isLogon;
+    if(isLogon == NO)
+    {
+        [self performSegueWithIdentifier:@"presentCoverIdentifier" sender:self];
+    }   
+}
+
+- (void) initHomeScreen
+{
+    self.scoreLabel.text = @"0";
+    self.welcomeLabel.hidden = YES;
+    self.scoreLabel.hidden = YES;
+    self.firstLabel.hidden = NO;
+    self.introLabel.hidden = NO;
+}
+
+- (void) updateHomeScreen
+{
+    self.scoreLabel.text = [NSIdentityList sharedInstance].totalScore.description;
+    self.welcomeLabel.hidden = NO;
+    self.scoreLabel.hidden = NO;
+    self.firstLabel.hidden = YES;
+    self.introLabel.hidden = YES;
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,6 +72,19 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void) getLogonResult:(BOOL)result Type:(VENDORTYPE) type Info:(NSDictionary *)info
+{
+    if(result == NO)
+        return;
+    NSIdentityModel* model = vendorViewController.vendorList[type];
+    model.deltaScore = @100;
+    [vendorViewController.collectionView reloadData];
+    float value = [NSIdentityList sharedInstance].totalScore.floatValue;
+    [NSIdentityList sharedInstance].totalScore = @(value + model.deltaScore.floatValue);
+    [self updateHomeScreen];
+}
+
 
 /*
 #pragma mark - Navigation

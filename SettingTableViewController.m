@@ -7,6 +7,10 @@
 //
 
 #import "SettingTableViewController.h"
+#import "ChangePwdTableViewController.h"
+#import "NavigationController.h"
+#import "ChangeProfileTableViewController.h"
+#import "NSUserModel.h"
 
 @interface SettingTableViewController ()
 
@@ -32,7 +36,49 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    settingNameList = @[@"昵称", @"性别", @"手机号", @"邮箱"];
+    self.navigationItem.leftBarButtonItem = nil;
+    settingNameList = @[@"手机号",  @"昵称", @"性别", @"邮箱"];
+    NSUserModel *userModel = [NSUserModel sharedInstance];
+    settingValueList = [@[userModel.phone, userModel.nick, userModel.sex, userModel.email] mutableCopy];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(doAction)];
+}
+
+- (void) doAction
+{
+    UIActionSheet* sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"修改密码" otherButtonTitles:@"修改资料", @"登出", nil];
+    [sheet showFromTabBar:self.tabBarController.tabBar];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main"
+                                                         bundle:nil];
+    if(buttonIndex == 0) //change password
+    {
+        ChangePwdTableViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"ChangePwdIdentifier"];
+        controller.isForgotPwd = NO;
+        NavigationController* navController = [[NavigationController alloc] initWithRootViewController:controller];
+        [self presentViewController:navController animated:YES completion:nil];
+    }
+    else if(buttonIndex == 1) //change profile
+    {
+        ChangeProfileTableViewController* controller = [storyboard instantiateViewControllerWithIdentifier:@"ChangeProfileIdentifier"];
+        NavigationController* navController = [[NavigationController alloc] initWithRootViewController:controller];
+        [self presentViewController:navController animated:NO completion:nil];
+    }
+    else if(buttonIndex == 2)
+    {
+        [NSUserModel sharedInstance].isLogon = NO;
+        self.tabBarController.selectedIndex = 0;
+        
+    }
+}
+
+- (void) viewDidAppear:(BOOL)animated
+{
+    NSUserModel *userModel = [NSUserModel sharedInstance];
+    settingValueList = [@[userModel.phone, userModel.nick, userModel.sex, userModel.email] mutableCopy];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -65,7 +111,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:CellIdentifier];
     }
     cell.textLabel.text = settingNameList[indexPath.row];;
-    cell.detailTextLabel.text = @"abc";
+    cell.detailTextLabel.text = settingValueList[indexPath.row];
     return cell;
 }
 

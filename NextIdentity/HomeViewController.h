@@ -7,8 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VendorCollectionViewController.h"
+#import "VendorLogonViewController.h"
 
-@interface HomeViewController : UIViewController
+@interface HomeViewController : UIViewController<VendorLogonDelegate>
 {
+    VendorCollectionViewController* vendorViewController;
 }
+- (void) initHomeScreen;
+@property (strong, nonatomic) IBOutlet UILabel* welcomeLabel;
+@property (strong, nonatomic) IBOutlet UILabel* introLabel;
+@property (strong, nonatomic) IBOutlet UILabel* firstLabel;
+@property (strong, nonatomic) IBOutlet UILabel* scoreLabel;
+
 @end

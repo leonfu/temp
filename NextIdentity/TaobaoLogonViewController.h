@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 iShanghai Creative. All rights reserved.
 //
 
-#import "LogonViewController.h"
+#import "VendorLogonViewController.h"
 #import "URLRequestHandler.h"
 
-@interface TaobaoLogonViewController : LogonViewController<UIWebViewDelegate, RequestDelegate>
+@interface TaobaoLogonViewController : VendorLogonViewController<UIWebViewDelegate, RequestDelegate>
 
 - (void) showLogonView;
 

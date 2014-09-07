@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "NSIdentityModel.h"
-#import "LogonViewController.h"
+#import "VendorLogonViewController.h"
 #import "SinaWeiboLogonController.h"
 #import "TencentLogonController.h"
 
-@interface VendorCollectionViewController : UICollectionViewController<UICollectionViewDataSource, UICollectionViewDelegate, LogonDelegate, WBHttpRequestDelegate, VendorDelegate>
+@interface VendorCollectionViewController : UICollectionViewController<UICollectionViewDataSource, UICollectionViewDelegate, WBHttpRequestDelegate, VendorDelegate>
 {
     SinaWeiboLogonController* sinaWeiboLogonController;
     TencentLogonController* tencentLogonController;

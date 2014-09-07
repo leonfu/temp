@@ -9,34 +9,33 @@
 
 #import <Foundation/Foundation.h>
 #import "AppDelegate.h"
-
+/*
 @protocol ModelDoneDelegate
 
 - (void) modelComplete:(BOOL)result Type:(VENDORTYPE)type;
 
 @end
-
+*/
 @interface NSIdentityList: NSObject
 {
-
+    
 }
 + (NSIdentityList*) sharedInstance;
 @property (strong, nonatomic) NSMutableArray* identityList;
-
+@property (strong, nonatomic) NSNumber* totalScore;
 @end
 
 @interface NSIdentityModel : NSObject
 {
     VENDORTYPE netType;
     NSMutableDictionary* dictModel;
-    
 }
 @property (strong, nonatomic) UIImage* image;
 @property (strong, nonatomic) NSString* name;
 @property (strong, nonatomic) NSNumber* deltaScore;
 @property (strong, nonatomic) NSNumber* totalScore;
 
-@property (nonatomic, assign) id <ModelDoneDelegate> delegate;
+//@property (nonatomic, assign) id <ModelDoneDelegate> delegate;
 
 @property (readonly, nonatomic) BOOL isAuthed;
 @property (readonly, nonatomic) NSString* userID;

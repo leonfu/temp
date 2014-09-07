@@ -35,6 +35,12 @@
     return self;
 }
 
+- (void) startWithCompletion:(responseCompletion)completion
+{
+    [self start];
+    completionBlock = completion;
+}
+
 - (void) start
 {
     urlConnection=[[NSURLConnection alloc] initWithRequest:urlRequest delegate:self];
@@ -50,11 +56,14 @@
 {
     NSString* str = [[NSString alloc] initWithData:dataResponse encoding:NSUTF8StringEncoding];
     [delegate getResponseResult:statusCode Result:str Topic:topic];
+    completionBlock(YES, str, topic);
+    
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
     [delegate getResponseResult:NO Result: nil Topic:topic];
+    completionBlock(NO, nil, topic);
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response

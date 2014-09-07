@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KeyValueTableViewController.h"
 
-@interface SettingTableViewController : UITableViewController
+@interface SettingTableViewController : KeyValueTableViewController<UIActionSheetDelegate>
 {
-    NSArray* settingNameList;
-    NSArray* settingValueList;
 }
+
+- (void) doAction;
+
 @end
