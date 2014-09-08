@@ -49,22 +49,28 @@
     }
     
     //Min value for Y label
-    if (max < 5) {
+    if (max < 5)
+    {
         max = 5;
     }
     
-    _yValueMax = (int)max;
+    _yValueMax = (int)(max+0.5);
     
-    float level = max /[yLabels count];
+    int level = (int)(_yValueMax /[yLabels count]+0.5);
 	
     NSInteger index = 0;
 	NSInteger num = [yLabels count] + 1;
-	while (num > 0) {
-		CGFloat chartCavanHeight = self.frame.size.height - chartMargin * 2 - 40.0 ;
-		CGFloat levelHeight = chartCavanHeight /5.0;
-		PNChartLabel * label = [[PNChartLabel alloc] initWithFrame:CGRectMake(0.0,chartCavanHeight - index * levelHeight + (levelHeight - yLabelHeight) , 20.0, yLabelHeight)];
+    if (num > 9)
+    {
+        num = 9;
+        level = (int)(_yValueMax / (num-1) + 0.5);
+    }
+    CGFloat chartCavanHeight = self.frame.size.height - chartMargin * 2 - 40.0 ;
+	while (num >= 0) {
+        float value = level * index / (float)_yValueMax;
+		PNChartLabel * label = [[PNChartLabel alloc] initWithFrame:CGRectMake(0.0,chartCavanHeight - value * chartCavanHeight + 20.0-yLabelHeight/2, 20.0, yLabelHeight)];
 		[label setTextAlignment:NSTextAlignmentRight];
-		label.text = [NSString stringWithFormat:@"%1.f",level * index];
+		label.text = [NSString stringWithFormat:@"%d",level * index];
 		[self addSubview:label];
         index +=1 ;
 		num -= 1;
@@ -76,11 +82,13 @@
 {
     _xLabels = xLabels;
     _xLabelWidth = (self.frame.size.width - chartMargin - 30.0)/[xLabels count];
-    
-    for (NSString * labelText in xLabels) {
+    for (NSString * labelText in xLabels)
+    {
         NSInteger index = [xLabels indexOfObject:labelText];
         PNChartLabel * label = [[PNChartLabel alloc] initWithFrame:CGRectMake(index * _xLabelWidth + 30.0, self.frame.size.height - 30.0, _xLabelWidth, 20.0)];
         [label setTextAlignment:NSTextAlignmentCenter];
+        if([xLabels count] > 9)
+            label.font = [UIFont fontWithName:label.font.familyName size:8.0f];
         label.text = labelText;
         [self addSubview:label];
     }

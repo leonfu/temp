@@ -19,5 +19,6 @@
 @property (strong, nonatomic) IBOutlet UILabel* introLabel;
 @property (strong, nonatomic) IBOutlet UILabel* firstLabel;
 @property (strong, nonatomic) IBOutlet UILabel* scoreLabel;
+@property (strong, nonatomic) IBOutlet UIView* touchView;
 
 @end

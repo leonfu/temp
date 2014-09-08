@@ -65,30 +65,54 @@
                         <outlet property="firstLabel" destination="gHI-0g-TLt" id="dmD-tL-gWh"/>
                         <outlet property="introLabel" destination="xCI-eS-UXi" id="sxG-za-dVJ"/>
                         <outlet property="scoreLabel" destination="p5E-o1-qJp" id="7Oz-rg-Elw"/>
+                        <outlet property="touchView" destination="qB6-Jd-xKi" id="NrS-Po-V7A"/>
                         <outlet property="welcomeLabel" destination="kfI-gn-nao" id="M4y-T9-FtM"/>
                         <segue destination="S9U-8y-9sW" kind="modal" id="Lpb-v3-n0t"/>
                         <segue destination="a2b-No-SeE" kind="modal" identifier="presentCoverIdentifier" id="cXA-no-1Cx"/>
+                        <segue destination="OoP-TV-mZS" kind="push" identifier="pushTotalAssetIdentifier" id="bLz-XP-99x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KlJ-sT-mHQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1637" y="-380"/>
         </scene>
-        <!--Asset Detail View Controller - 身份信息-->
+        <!--Asset Detail View Controller - 我在%@的财产-->
         <scene sceneID="xsA-GU-ZcS">
             <objects>
                 <tableViewController id="OoP-TV-mZS" customClass="AssetDetailViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="fpO-zf-Qmt">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" allowsSelection="NO" rowHeight="35" sectionHeaderHeight="10" sectionFooterHeight="10" id="fpO-zf-Qmt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="UH0-ms-fQn" customClass="ChartView">
+                            <rect key="frame" x="0.0" y="64" width="320" height="220"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        </view>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="vOD-bP-SaL">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ASSET_DETAIL_CELL" textLabel="WBi-Pt-LiJ" detailTextLabel="AYd-mI-K8q" style="IBUITableViewCellStyleValue1" id="vOD-bP-SaL">
+                                <rect key="frame" x="0.0" y="339" width="320" height="35"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vOD-bP-SaL" id="CBE-Vd-pcd">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="34"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WBi-Pt-LiJ">
+                                            <rect key="frame" x="15" y="7" width="33" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AYd-mI-K8q">
+                                            <rect key="frame" x="261" y="7" width="44" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -97,11 +121,75 @@
                             <outlet property="delegate" destination="OoP-TV-mZS" id="Ctl-34-7wU"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="身份信息" id="3T2-KV-0Mb"/>
+                    <navigationItem key="navigationItem" title="我在%@的财产" id="3T2-KV-0Mb"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="480"/>
+                    <connections>
+                        <outlet property="chartView" destination="UH0-ms-fQn" id="CCZ-5B-Oxl"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jcS-8j-DFy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1198" y="303"/>
+            <point key="canvasLocation" x="-440" y="217"/>
+        </scene>
+        <!--Asset Total View Controller - 我的财产占比图-->
+        <scene sceneID="dTP-ue-ODB">
+            <objects>
+                <tableViewController id="O1K-cp-Rlf" customClass="AssetTotalViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="35" sectionHeaderHeight="10" sectionFooterHeight="10" id="286-ns-ZVF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="bbv-nt-i3X" customClass="ChartView">
+                            <rect key="frame" x="0.0" y="64" width="320" height="290"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        </view>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ALL_ASSET_DETAIL_CELL" textLabel="dM6-wW-HeF" detailTextLabel="831-93-T8u" style="IBUITableViewCellStyleValue1" id="84U-sZ-y4z">
+                                <rect key="frame" x="0.0" y="409" width="320" height="35"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="84U-sZ-y4z" id="Zb0-sb-mVh">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="34"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dM6-wW-HeF">
+                                            <rect key="frame" x="15" y="7" width="33" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="831-93-T8u">
+                                            <rect key="frame" x="241" y="7" width="44" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="OoP-TV-mZS" kind="push" identifier="pushAssetDetailIdentifier" id="tJn-2s-vqX"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="O1K-cp-Rlf" id="ltI-bV-ovw"/>
+                            <outlet property="delegate" destination="O1K-cp-Rlf" id="z2h-hU-jSF"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="我的财产占比图" id="hY7-L4-XqQ"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="480"/>
+                    <connections>
+                        <outlet property="chartView" destination="bbv-nt-i3X" id="Goa-o1-3hg"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="afE-dr-p8I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1046" y="531"/>
         </scene>
         <!--User Logon Table View Controller-->
         <scene sceneID="jyz-Hm-MSr">
@@ -328,7 +416,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="nI4-6T-JOI" style="IBUITableViewCellStyleDefault" id="nbk-TY-5bm">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SERVICE_CELL_LIST" textLabel="nI4-6T-JOI" style="IBUITableViewCellStyleDefault" id="nbk-TY-5bm">
                                 <rect key="frame" x="0.0" y="119" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nbk-TY-5bm" id="9Rl-Mq-VOg">
@@ -407,6 +495,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="个性服务" id="6Ny-81-zLa"/>
+                    <connections>
+                        <segue destination="OoP-TV-mZS" kind="push" identifier="pushTotalAssetIdentifier" id="8s7-3U-0R0"/>
+                        <segue destination="O1K-cp-Rlf" kind="push" identifier="pushAllAssetIdentifier" id="nXe-Mk-KP1"/>
+                        <segue destination="Njk-W0-Cmp" kind="push" identifier="pushAssetRankingIdentifier" id="eEm-8j-tVD"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qD2-CZ-iBu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -581,7 +674,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nf0-Zg-F31" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-754" y="977"/>
+            <point key="canvasLocation" x="110" y="-467"/>
         </scene>
         <!--Change Profile Table View Controller-->
         <scene sceneID="bat-tq-KNe">
@@ -634,7 +727,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ajC-ap-hak" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1189" y="987"/>
+            <point key="canvasLocation" x="-1630" y="1555"/>
         </scene>
         <!--New User Table View Controller - 新用户-->
         <scene sceneID="bXi-ke-Rnb">
@@ -851,10 +944,73 @@
                         </connections>
                     </collectionView>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <navigationItem key="navigationItem" id="PRK-8o-b6A"/>
+                    <connections>
+                        <segue destination="OoP-TV-mZS" kind="push" identifier="pushAssetDetailIdentifier" id="ccc-lu-oTH"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fN9-iq-yD6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1175" y="-100"/>
+            <point key="canvasLocation" x="-1063" y="-258"/>
+        </scene>
+        <!--Asset Ranking View Controller - 财富榜-->
+        <scene sceneID="WKm-h6-8TC">
+            <objects>
+                <tableViewController id="Njk-W0-Cmp" customClass="AssetRankingViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="35" sectionHeaderHeight="10" sectionFooterHeight="10" id="PAG-ho-jK4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="6ib-e8-LmM" customClass="ChartView">
+                            <rect key="frame" x="0.0" y="64" width="320" height="220"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        </view>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ASSET_DETAIL_CELL" textLabel="eid-4y-udm" detailTextLabel="fvU-A6-Nm8" style="IBUITableViewCellStyleValue1" id="PBb-6D-Qgu">
+                                <rect key="frame" x="0.0" y="339" width="320" height="35"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PBb-6D-Qgu" id="cj7-QU-mCV">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="34"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eid-4y-udm">
+                                            <rect key="frame" x="15" y="7" width="33" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fvU-A6-Nm8">
+                                            <rect key="frame" x="241" y="7" width="44" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="OoP-TV-mZS" kind="push" identifier="pushAssetDetailIdentifier" id="2w3-Bj-Nh2"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Njk-W0-Cmp" id="cnC-FG-zEJ"/>
+                            <outlet property="delegate" destination="Njk-W0-Cmp" id="6cR-OV-yDJ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="财富榜" id="JUj-fP-C9X"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="480"/>
+                    <connections>
+                        <outlet property="chartView" destination="6ib-e8-LmM" id="He5-y8-ANa"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="doI-R3-GaK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1046" y="1154"/>
         </scene>
     </scenes>
     <resources>
@@ -868,4 +1024,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="2w3-Bj-Nh2"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -14,7 +14,7 @@
     TencentOAuth* tencentOAuth;
 }
 @property (nonatomic, assign) id <VendorLogonDelegate> delegate;
-@property (nonatomic, assign) NSIdentityModel* model;
+@property (nonatomic, assign) NSAssetModel* model;
 
 - (void) startLogon;
 

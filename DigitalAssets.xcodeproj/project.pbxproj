@@ -40,7 +40,7 @@
 		3517749B19B88A9100AECE17 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3517749A19B88A9100AECE17 /* HomeViewController.m */; };
 		3517749E19B891EE00AECE17 /* VendorCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3517749D19B891EE00AECE17 /* VendorCollectionViewController.m */; };
 		351774A119B8953700AECE17 /* VendorCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 351774A019B8953700AECE17 /* VendorCollectionViewCell.m */; };
-		351774A319B8A11D00AECE17 /* IdentityType.plist in Resources */ = {isa = PBXBuildFile; fileRef = 351774A219B8A11D00AECE17 /* IdentityType.plist */; };
+		351774A319B8A11D00AECE17 /* AssetType.plist in Resources */ = {isa = PBXBuildFile; fileRef = 351774A219B8A11D00AECE17 /* AssetType.plist */; };
 		356B508519B9F02800DC5874 /* qq.png in Resources */ = {isa = PBXBuildFile; fileRef = 356B507E19B9F02800DC5874 /* qq.png */; };
 		356B508619B9F02800DC5874 /* service.png in Resources */ = {isa = PBXBuildFile; fileRef = 356B507F19B9F02800DC5874 /* service.png */; };
 		356B508719B9F02800DC5874 /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = 356B508019B9F02800DC5874 /* setting.png */; };
@@ -62,6 +62,10 @@
 		356B50B619B9F30D00DC5874 /* PNPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 356B50A919B9F30D00DC5874 /* PNPieChart.m */; };
 		356B50B719B9F30D00DC5874 /* PNPieChartDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 356B50AB19B9F30D00DC5874 /* PNPieChartDataItem.m */; };
 		356B50B819B9F30D00DC5874 /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 356B50AE19B9F30D00DC5874 /* UICountingLabel.m */; };
+		356B9CAD19BD9342002F3794 /* ChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 356B9CAC19BD9342002F3794 /* ChartView.m */; };
+		356B9CB019BD9FC1002F3794 /* AssetTotalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 356B9CAF19BD9FC1002F3794 /* AssetTotalViewController.m */; };
+		356B9CB319BDA362002F3794 /* DetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 356B9CB219BDA362002F3794 /* DetailTableViewController.m */; };
+		356B9CB619BDB4F5002F3794 /* AssetRankingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 356B9CB519BDB4F5002F3794 /* AssetRankingViewController.m */; };
 		359AD86C19B2F15B00E191A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359AD86B19B2F15B00E191A1 /* Foundation.framework */; };
 		359AD86E19B2F15B00E191A1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359AD86D19B2F15B00E191A1 /* CoreGraphics.framework */; };
 		359AD87019B2F15B00E191A1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359AD86F19B2F15B00E191A1 /* UIKit.framework */; };
@@ -77,7 +81,7 @@
 		359AD89719B2F15B00E191A1 /* NextIdentityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 359AD89619B2F15B00E191A1 /* NextIdentityTests.m */; };
 		359AD8A219B2FC9600E191A1 /* AssetDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 359AD8A119B2FC9600E191A1 /* AssetDetailViewController.m */; };
 		359AD8A519B307AE00E191A1 /* VendorLogonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 359AD8A419B307AE00E191A1 /* VendorLogonViewController.m */; };
-		359B5F9819B40CD600DEB0E7 /* NSIdentityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 359B5F9719B40CD600DEB0E7 /* NSIdentityModel.m */; };
+		359B5F9819B40CD600DEB0E7 /* NSAssetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 359B5F9719B40CD600DEB0E7 /* NSAssetModel.m */; };
 		359B5FA219B56B3000DEB0E7 /* douban.png in Resources */ = {isa = PBXBuildFile; fileRef = 359B5FA019B56B3000DEB0E7 /* douban.png */; };
 		359B5FA319B56B3000DEB0E7 /* sina.png in Resources */ = {isa = PBXBuildFile; fileRef = 359B5FA119B56B3000DEB0E7 /* sina.png */; };
 		359B5FA819B5AB5500DEB0E7 /* TaobaoLogonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 359B5FA719B5AB5500DEB0E7 /* TaobaoLogonViewController.m */; };
@@ -150,7 +154,7 @@
 		3517749D19B891EE00AECE17 /* VendorCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VendorCollectionViewController.m; path = NextIdentity/VendorCollectionViewController.m; sourceTree = "<group>"; };
 		3517749F19B8953700AECE17 /* VendorCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VendorCollectionViewCell.h; path = NextIdentity/VendorCollectionViewCell.h; sourceTree = "<group>"; };
 		351774A019B8953700AECE17 /* VendorCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VendorCollectionViewCell.m; path = NextIdentity/VendorCollectionViewCell.m; sourceTree = "<group>"; };
-		351774A219B8A11D00AECE17 /* IdentityType.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = IdentityType.plist; path = NextIdentity/IdentityType.plist; sourceTree = "<group>"; };
+		351774A219B8A11D00AECE17 /* AssetType.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AssetType.plist; path = NextIdentity/AssetType.plist; sourceTree = "<group>"; };
 		356B507E19B9F02800DC5874 /* qq.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = qq.png; path = res/qq.png; sourceTree = "<group>"; };
 		356B507F19B9F02800DC5874 /* service.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = service.png; path = res/service.png; sourceTree = "<group>"; };
 		356B508019B9F02800DC5874 /* setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = setting.png; path = res/setting.png; sourceTree = "<group>"; };
@@ -182,7 +186,15 @@
 		356B50AB19B9F30D00DC5874 /* PNPieChartDataItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PNPieChartDataItem.m; path = NextIdentity/PNChart/PNPieChartDataItem.m; sourceTree = "<group>"; };
 		356B50AD19B9F30D00DC5874 /* UICountingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICountingLabel.h; sourceTree = "<group>"; };
 		356B50AE19B9F30D00DC5874 /* UICountingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICountingLabel.m; sourceTree = "<group>"; };
-		359AD86819B2F15B00E191A1 /* NextIdentity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NextIdentity.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		356B9CAB19BD9342002F3794 /* ChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChartView.h; path = NextIdentity/ChartView.h; sourceTree = "<group>"; };
+		356B9CAC19BD9342002F3794 /* ChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChartView.m; path = NextIdentity/ChartView.m; sourceTree = "<group>"; };
+		356B9CAE19BD9FC1002F3794 /* AssetTotalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AssetTotalViewController.h; path = NextIdentity/AssetTotalViewController.h; sourceTree = "<group>"; };
+		356B9CAF19BD9FC1002F3794 /* AssetTotalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AssetTotalViewController.m; path = NextIdentity/AssetTotalViewController.m; sourceTree = "<group>"; };
+		356B9CB119BDA362002F3794 /* DetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailTableViewController.h; path = NextIdentity/DetailTableViewController.h; sourceTree = "<group>"; };
+		356B9CB219BDA362002F3794 /* DetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailTableViewController.m; path = NextIdentity/DetailTableViewController.m; sourceTree = "<group>"; };
+		356B9CB419BDB4F5002F3794 /* AssetRankingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AssetRankingViewController.h; path = NextIdentity/AssetRankingViewController.h; sourceTree = "<group>"; };
+		356B9CB519BDB4F5002F3794 /* AssetRankingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AssetRankingViewController.m; path = NextIdentity/AssetRankingViewController.m; sourceTree = "<group>"; };
+		359AD86819B2F15B00E191A1 /* DigitalAssets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigitalAssets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		359AD86B19B2F15B00E191A1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		359AD86D19B2F15B00E191A1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		359AD86F19B2F15B00E191A1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -194,17 +206,17 @@
 		359AD87B19B2F15B00E191A1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = NextIdentity/AppDelegate.m; sourceTree = "<group>"; };
 		359AD87E19B2F15B00E191A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		359AD88319B2F15B00E191A1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = NextIdentity/Images.xcassets; sourceTree = "<group>"; };
-		359AD88919B2F15B00E191A1 /* NextIdentityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NextIdentityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		359AD88919B2F15B00E191A1 /* DigitalAssetsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DigitalAssetsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		359AD88A19B2F15B00E191A1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		359AD89219B2F15B00E191A1 /* NextIdentityTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NextIdentityTests-Info.plist"; sourceTree = "<group>"; };
 		359AD89419B2F15B00E191A1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		359AD89619B2F15B00E191A1 /* NextIdentityTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NextIdentityTests.m; sourceTree = "<group>"; };
 		359AD8A019B2FC9600E191A1 /* AssetDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AssetDetailViewController.h; path = NextIdentity/AssetDetailViewController.h; sourceTree = "<group>"; };
 		359AD8A119B2FC9600E191A1 /* AssetDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AssetDetailViewController.m; path = NextIdentity/AssetDetailViewController.m; sourceTree = "<group>"; };
-		359AD8A319B307AE00E191A1 /* VendorLogonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VendorLogonViewController.h; sourceTree = "<group>"; };
-		359AD8A419B307AE00E191A1 /* VendorLogonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VendorLogonViewController.m; sourceTree = "<group>"; };
-		359B5F9619B40CD600DEB0E7 /* NSIdentityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSIdentityModel.h; sourceTree = "<group>"; };
-		359B5F9719B40CD600DEB0E7 /* NSIdentityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSIdentityModel.m; sourceTree = "<group>"; };
+		359AD8A319B307AE00E191A1 /* VendorLogonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VendorLogonViewController.h; path = NextIdentity/VendorLogonViewController.h; sourceTree = "<group>"; };
+		359AD8A419B307AE00E191A1 /* VendorLogonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VendorLogonViewController.m; path = NextIdentity/VendorLogonViewController.m; sourceTree = "<group>"; };
+		359B5F9619B40CD600DEB0E7 /* NSAssetModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSAssetModel.h; sourceTree = "<group>"; };
+		359B5F9719B40CD600DEB0E7 /* NSAssetModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSAssetModel.m; sourceTree = "<group>"; };
 		359B5FA019B56B3000DEB0E7 /* douban.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = douban.png; path = res/douban.png; sourceTree = "<group>"; };
 		359B5FA119B56B3000DEB0E7 /* sina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sina.png; path = res/sina.png; sourceTree = "<group>"; };
 		359B5FA619B5AB5500DEB0E7 /* TaobaoLogonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaobaoLogonViewController.h; sourceTree = "<group>"; };
@@ -259,6 +271,12 @@
 				3515398C19BC810B002BE0B9 /* TouchTableView.m */,
 				3517746219B3701E00AECE17 /* URLRequestHandler.h */,
 				3517746319B3701E00AECE17 /* URLRequestHandler.m */,
+				356B9CAB19BD9342002F3794 /* ChartView.h */,
+				356B9CAC19BD9342002F3794 /* ChartView.m */,
+				356B9CB119BDA362002F3794 /* DetailTableViewController.h */,
+				356B9CB219BDA362002F3794 /* DetailTableViewController.m */,
+				359AD8A319B307AE00E191A1 /* VendorLogonViewController.h */,
+				359AD8A419B307AE00E191A1 /* VendorLogonViewController.m */,
 			);
 			name = BaseControl;
 			sourceTree = "<group>";
@@ -292,10 +310,14 @@
 		3515396E19BC7E9F002BE0B9 /* Serivces */ = {
 			isa = PBXGroup;
 			children = (
-				359AD8A019B2FC9600E191A1 /* AssetDetailViewController.h */,
-				359AD8A119B2FC9600E191A1 /* AssetDetailViewController.m */,
 				3515397019BC80B8002BE0B9 /* ServiceTableViewController.h */,
 				3515397119BC80B8002BE0B9 /* ServiceTableViewController.m */,
+				359AD8A019B2FC9600E191A1 /* AssetDetailViewController.h */,
+				359AD8A119B2FC9600E191A1 /* AssetDetailViewController.m */,
+				356B9CAE19BD9FC1002F3794 /* AssetTotalViewController.h */,
+				356B9CAF19BD9FC1002F3794 /* AssetTotalViewController.m */,
+				356B9CB419BDB4F5002F3794 /* AssetRankingViewController.h */,
+				356B9CB519BDB4F5002F3794 /* AssetRankingViewController.m */,
 			);
 			name = Serivces;
 			sourceTree = "<group>";
@@ -335,7 +357,7 @@
 			path = NextIdentity/SinaWeiboSDK;
 			sourceTree = "<group>";
 		};
-		356B509819B9F2C100DC5874 /* NextIdentity */ = {
+		356B509819B9F2C100DC5874 /* DigitalAssets */ = {
 			isa = PBXGroup;
 			children = (
 				3515396F19BC7EAD002BE0B9 /* Home */,
@@ -345,15 +367,15 @@
 				3515395319BB0BCE002BE0B9 /* BaseControl */,
 				356B509919B9F2EB00DC5874 /* PNChart */,
 				359B5FAD19B5CC0C00DEB0E7 /* LogonViewController */,
-				359B5FAC19B5CBFC00DEB0E7 /* IdentityModel */,
+				359B5FAC19B5CBFC00DEB0E7 /* Model */,
 				359AD87A19B2F15B00E191A1 /* AppDelegate.h */,
 				359AD87B19B2F15B00E191A1 /* AppDelegate.m */,
 				359AD88319B2F15B00E191A1 /* Images.xcassets */,
-				351774A219B8A11D00AECE17 /* IdentityType.plist */,
+				351774A219B8A11D00AECE17 /* AssetType.plist */,
 				359AD87D19B2F15B00E191A1 /* Main.storyboard */,
 				359AD87219B2F15B00E191A1 /* Supporting Files */,
 			);
-			name = NextIdentity;
+			name = DigitalAssets;
 			sourceTree = "<group>";
 		};
 		356B509919B9F2EB00DC5874 /* PNChart */ = {
@@ -395,8 +417,8 @@
 		359AD85F19B2F15B00E191A1 = {
 			isa = PBXGroup;
 			children = (
-				356B509819B9F2C100DC5874 /* NextIdentity */,
-				359AD89019B2F15B00E191A1 /* NextIdentityTests */,
+				356B509819B9F2C100DC5874 /* DigitalAssets */,
+				359AD89019B2F15B00E191A1 /* DigitalAssetsTests */,
 				359AD86A19B2F15B00E191A1 /* Frameworks */,
 				359AD86919B2F15B00E191A1 /* Products */,
 			);
@@ -405,8 +427,8 @@
 		359AD86919B2F15B00E191A1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				359AD86819B2F15B00E191A1 /* NextIdentity.app */,
-				359AD88919B2F15B00E191A1 /* NextIdentityTests.xctest */,
+				359AD86819B2F15B00E191A1 /* DigitalAssets.app */,
+				359AD88919B2F15B00E191A1 /* DigitalAssetsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -446,12 +468,13 @@
 			path = NextIdentity;
 			sourceTree = "<group>";
 		};
-		359AD89019B2F15B00E191A1 /* NextIdentityTests */ = {
+		359AD89019B2F15B00E191A1 /* DigitalAssetsTests */ = {
 			isa = PBXGroup;
 			children = (
 				359AD89619B2F15B00E191A1 /* NextIdentityTests.m */,
 				359AD89119B2F15B00E191A1 /* Supporting Files */,
 			);
+			name = DigitalAssetsTests;
 			path = NextIdentityTests;
 			sourceTree = "<group>";
 		};
@@ -487,23 +510,21 @@
 			name = res;
 			sourceTree = "<group>";
 		};
-		359B5FAC19B5CBFC00DEB0E7 /* IdentityModel */ = {
+		359B5FAC19B5CBFC00DEB0E7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				359B5F9619B40CD600DEB0E7 /* NSIdentityModel.h */,
-				359B5F9719B40CD600DEB0E7 /* NSIdentityModel.m */,
+				359B5F9619B40CD600DEB0E7 /* NSAssetModel.h */,
+				359B5F9719B40CD600DEB0E7 /* NSAssetModel.m */,
 				3515394919BAF8A5002BE0B9 /* NSUserModel.h */,
 				3515394A19BAF8A5002BE0B9 /* NSUserModel.m */,
 			);
-			name = IdentityModel;
+			name = Model;
 			path = NextIdentity;
 			sourceTree = "<group>";
 		};
 		359B5FAD19B5CC0C00DEB0E7 /* LogonViewController */ = {
 			isa = PBXGroup;
 			children = (
-				359AD8A319B307AE00E191A1 /* VendorLogonViewController.h */,
-				359AD8A419B307AE00E191A1 /* VendorLogonViewController.m */,
 				3517745F19B3693F00AECE17 /* DoubanLogonViewController.h */,
 				3517746019B3693F00AECE17 /* DoubanLogonViewController.m */,
 				3517747019B4BA6600AECE17 /* SinaWeiboLogonController.h */,
@@ -520,9 +541,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		359AD86719B2F15B00E191A1 /* NextIdentity */ = {
+		359AD86719B2F15B00E191A1 /* DigitalAssets */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 359AD89A19B2F15B00E191A1 /* Build configuration list for PBXNativeTarget "NextIdentity" */;
+			buildConfigurationList = 359AD89A19B2F15B00E191A1 /* Build configuration list for PBXNativeTarget "DigitalAssets" */;
 			buildPhases = (
 				359AD86419B2F15B00E191A1 /* Sources */,
 				359AD86519B2F15B00E191A1 /* Frameworks */,
@@ -532,14 +553,14 @@
 			);
 			dependencies = (
 			);
-			name = NextIdentity;
+			name = DigitalAssets;
 			productName = NextIdentity;
-			productReference = 359AD86819B2F15B00E191A1 /* NextIdentity.app */;
+			productReference = 359AD86819B2F15B00E191A1 /* DigitalAssets.app */;
 			productType = "com.apple.product-type.application";
 		};
-		359AD88819B2F15B00E191A1 /* NextIdentityTests */ = {
+		359AD88819B2F15B00E191A1 /* DigitalAssetsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 359AD89D19B2F15B00E191A1 /* Build configuration list for PBXNativeTarget "NextIdentityTests" */;
+			buildConfigurationList = 359AD89D19B2F15B00E191A1 /* Build configuration list for PBXNativeTarget "DigitalAssetsTests" */;
 			buildPhases = (
 				359AD88519B2F15B00E191A1 /* Sources */,
 				359AD88619B2F15B00E191A1 /* Frameworks */,
@@ -550,9 +571,9 @@
 			dependencies = (
 				359AD88F19B2F15B00E191A1 /* PBXTargetDependency */,
 			);
-			name = NextIdentityTests;
+			name = DigitalAssetsTests;
 			productName = NextIdentityTests;
-			productReference = 359AD88919B2F15B00E191A1 /* NextIdentityTests.xctest */;
+			productReference = 359AD88919B2F15B00E191A1 /* DigitalAssetsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -569,7 +590,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 359AD86319B2F15B00E191A1 /* Build configuration list for PBXProject "NextIdentity" */;
+			buildConfigurationList = 359AD86319B2F15B00E191A1 /* Build configuration list for PBXProject "DigitalAssets" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -582,8 +603,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				359AD86719B2F15B00E191A1 /* NextIdentity */,
-				359AD88819B2F15B00E191A1 /* NextIdentityTests */,
+				359AD86719B2F15B00E191A1 /* DigitalAssets */,
+				359AD88819B2F15B00E191A1 /* DigitalAssetsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -593,7 +614,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				351774A319B8A11D00AECE17 /* IdentityType.plist in Resources */,
+				351774A319B8A11D00AECE17 /* AssetType.plist in Resources */,
 				3515394E19BB022F002BE0B9 /* LaunchIcon.png in Resources */,
 				356B509119B9F08300DC5874 /* money.png in Resources */,
 				356B508B19B9F02800DC5874 /* wechat.png in Resources */,
@@ -633,17 +654,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				356B9CB619BDB4F5002F3794 /* AssetRankingViewController.m in Sources */,
 				3517749E19B891EE00AECE17 /* VendorCollectionViewController.m in Sources */,
 				3515398319BC80ED002BE0B9 /* RegisterViewController.m in Sources */,
 				359B5FA819B5AB5500DEB0E7 /* TaobaoLogonViewController.m in Sources */,
 				3517747219B4BA6600AECE17 /* SinaWeiboLogonController.m in Sources */,
 				3515398D19BC810B002BE0B9 /* KeyValueTableViewController.m in Sources */,
-				359B5F9819B40CD600DEB0E7 /* NSIdentityModel.m in Sources */,
+				359B5F9819B40CD600DEB0E7 /* NSAssetModel.m in Sources */,
 				3517746419B3701E00AECE17 /* URLRequestHandler.m in Sources */,
 				356B50AF19B9F30D00DC5874 /* PNBar.m in Sources */,
+				356B9CB319BDA362002F3794 /* DetailTableViewController.m in Sources */,
+				356B9CB019BD9FC1002F3794 /* AssetTotalViewController.m in Sources */,
 				356B50B719B9F30D00DC5874 /* PNPieChartDataItem.m in Sources */,
 				359AD8A519B307AE00E191A1 /* VendorLogonViewController.m in Sources */,
 				3515397219BC80B8002BE0B9 /* ServiceTableViewController.m in Sources */,
+				356B9CAD19BD9342002F3794 /* ChartView.m in Sources */,
 				3515398219BC80ED002BE0B9 /* NewUserTableViewController.m in Sources */,
 				356B50B419B9F30D00DC5874 /* PNColor.m in Sources */,
 				3515398E19BC810B002BE0B9 /* NavigationController.m in Sources */,
@@ -684,7 +709,7 @@
 /* Begin PBXTargetDependency section */
 		359AD88F19B2F15B00E191A1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 359AD86719B2F15B00E191A1 /* NextIdentity */;
+			target = 359AD86719B2F15B00E191A1 /* DigitalAssets */;
 			targetProxy = 359AD88E19B2F15B00E191A1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -752,6 +777,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = DigitalAssets;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -783,6 +809,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = DigitalAssets;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -883,7 +910,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		359AD86319B2F15B00E191A1 /* Build configuration list for PBXProject "NextIdentity" */ = {
+		359AD86319B2F15B00E191A1 /* Build configuration list for PBXProject "DigitalAssets" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				359AD89819B2F15B00E191A1 /* Debug */,
@@ -892,7 +919,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		359AD89A19B2F15B00E191A1 /* Build configuration list for PBXNativeTarget "NextIdentity" */ = {
+		359AD89A19B2F15B00E191A1 /* Build configuration list for PBXNativeTarget "DigitalAssets" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				359AD89B19B2F15B00E191A1 /* Debug */,
@@ -901,7 +928,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		359AD89D19B2F15B00E191A1 /* Build configuration list for PBXNativeTarget "NextIdentityTests" */ = {
+		359AD89D19B2F15B00E191A1 /* Build configuration list for PBXNativeTarget "DigitalAssetsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				359AD89E19B2F15B00E191A1 /* Debug */,

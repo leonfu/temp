@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "359AD86719B2F15B00E191A1"
-               BuildableName = "NextIdentity.app"
-               BlueprintName = "NextIdentity"
-               ReferencedContainer = "container:NextIdentity.xcodeproj">
+               BuildableName = "DigitalAssets.app"
+               BlueprintName = "DigitalAssets"
+               ReferencedContainer = "container:DigitalAssets.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "359AD88819B2F15B00E191A1"
-               BuildableName = "NextIdentityTests.xctest"
-               BlueprintName = "NextIdentityTests"
-               ReferencedContainer = "container:NextIdentity.xcodeproj">
+               BuildableName = "DigitalAssetsTests.xctest"
+               BlueprintName = "DigitalAssetsTests"
+               ReferencedContainer = "container:DigitalAssets.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "359AD86719B2F15B00E191A1"
-            BuildableName = "NextIdentity.app"
-            BlueprintName = "NextIdentity"
-            ReferencedContainer = "container:NextIdentity.xcodeproj">
+            BuildableName = "DigitalAssets.app"
+            BlueprintName = "DigitalAssets"
+            ReferencedContainer = "container:DigitalAssets.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "359AD86719B2F15B00E191A1"
-            BuildableName = "NextIdentity.app"
-            BlueprintName = "NextIdentity"
-            ReferencedContainer = "container:NextIdentity.xcodeproj">
+            BuildableName = "DigitalAssets.app"
+            BlueprintName = "DigitalAssets"
+            ReferencedContainer = "container:DigitalAssets.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "359AD86719B2F15B00E191A1"
-            BuildableName = "NextIdentity.app"
-            BlueprintName = "NextIdentity"
-            ReferencedContainer = "container:NextIdentity.xcodeproj">
+            BuildableName = "DigitalAssets.app"
+            BlueprintName = "DigitalAssets"
+            ReferencedContainer = "container:DigitalAssets.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "NSIdentityModel.h"
+#import "NSAssetModel.h"
 #import "VendorLogonViewController.h"
 #import "SinaWeiboLogonController.h"
 #import "TencentLogonController.h"
@@ -16,10 +16,11 @@
 {
     SinaWeiboLogonController* sinaWeiboLogonController;
     TencentLogonController* tencentLogonController;
+    VENDOR_TYPE vendorType;
 }
 
 @property (assign, nonatomic) NSMutableArray* vendorList;
-- (void) showDetailInfo:(VENDORTYPE) type withLogonToken:(NSDictionary*) dictToken;
+- (void) showDetailInfo:(VENDOR_TYPE) type withLogonToken:(NSDictionary*) dictToken;
 - (void) showDoubanLogon;
 - (void) showSinaWeiboLogon;
 - (void) showTaobaoLogon;

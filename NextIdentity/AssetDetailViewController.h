@@ -7,18 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AppDelegate.h"
-#import "NSIdentityModel.h"
+#import "DetailTableViewController.h"
 
-@interface AssetDetailViewController : UITableViewController<UITableViewDataSource, UITableViewDelegate>
+@interface AssetDetailViewController : DetailTableViewController<UITableViewDataSource, UITableViewDelegate>
 {
-@protected
-    BOOL m_isAuthed;
-    NSInteger rowNumber;
-    NSMutableArray* data;
-    UIActivityIndicatorView* indicator;
+
 }
-@property (assign, nonatomic) NSIdentityModel* model;
-@property VENDORTYPE netType;
 
 @end

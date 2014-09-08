@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "WeiboSDK.h"
 
-typedef enum {DOUBAN=0, TENCENT, SINA_WEIBO, TAOBAO, MAXTYPE} VENDORTYPE;
+typedef enum {DOUBAN=0, TENCENT, SINA_WEIBO, TAOBAO, ALLTYPE} VENDOR_TYPE;
 
 #define TOPIC_GET_ACCESS_TOKEN 0
 
@@ -26,7 +26,7 @@ typedef enum {DOUBAN=0, TENCENT, SINA_WEIBO, TAOBAO, MAXTYPE} VENDORTYPE;
 
 @protocol VendorDelegate
 
--(BOOL) openType:(VENDORTYPE)type URL:(NSURL*)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation;
+-(BOOL) openType:(VENDOR_TYPE)type URL:(NSURL*)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation;
 
 @end
 

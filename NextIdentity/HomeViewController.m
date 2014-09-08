@@ -7,15 +7,18 @@
 //
 
 #import "HomeViewController.h"
-#import "NSIdentityModel.h"
+#import "NSAssetModel.h"
 #import "PNColor.h"
 #import "NSUserModel.h"
+#import "AssetDetailViewController.h"
 
 @interface HomeViewController ()
 
 @end
 
 @implementation HomeViewController
+
+@synthesize touchView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,7 +36,7 @@
     self.firstLabel.textColor = PNFreshGreen;
     vendorViewController = self.childViewControllers[0];
 
-    float value = [NSIdentityList sharedInstance].totalScore.floatValue;
+    float value = [NSAssetList sharedInstance].totalScore.floatValue;
     if(value == 0) //no any binding
     {
         [self initHomeScreen];
@@ -45,7 +48,7 @@
     BOOL isLogon = [NSUserModel sharedInstance].isLogon;
     if(isLogon == NO)
     {
-        [self performSegueWithIdentifier:@"presentCoverIdentifier" sender:self];
+        //[self performSegueWithIdentifier:@"presentCoverIdentifier" sender:self];
     }   
 }
 
@@ -60,7 +63,7 @@
 
 - (void) updateHomeScreen
 {
-    self.scoreLabel.text = [NSIdentityList sharedInstance].totalScore.description;
+    self.scoreLabel.text = [NSAssetList sharedInstance].totalScore.description;
     self.welcomeLabel.hidden = NO;
     self.scoreLabel.hidden = NO;
     self.firstLabel.hidden = YES;
@@ -73,20 +76,34 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void) getLogonResult:(BOOL)result Type:(VENDORTYPE) type Info:(NSDictionary *)info
+- (void) getLogonResult:(BOOL)result Type:(VENDOR_TYPE) type Info:(NSDictionary *)info
 {
     if(result == NO)
         return;
-    NSIdentityModel* model = vendorViewController.vendorList[type];
+    NSAssetModel* model = vendorViewController.vendorList[type];
     model.deltaScore = @100;
     [vendorViewController.collectionView reloadData];
-    float value = [NSIdentityList sharedInstance].totalScore.floatValue;
-    [NSIdentityList sharedInstance].totalScore = @(value + model.deltaScore.floatValue);
+    float value = [NSAssetList sharedInstance].totalScore.floatValue;
+    [NSAssetList sharedInstance].totalScore = @(value + model.deltaScore.floatValue);
     [self updateHomeScreen];
 }
 
+- (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    if([NSAssetList sharedInstance].totalScore == 0)
+    {
+        [[self nextResponder] touchesEnded:touches withEvent:event];
+        return;
+    }
+    UITouch *touch = [[event allTouches] anyObject];
+    CGPoint location = [touch locationInView:self.view];
+    if(CGRectContainsPoint(touchView.frame, location))
+    {
+        [self performSegueWithIdentifier:@"pushTotalAssetIdentifier" sender:self];
+    }
+}
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -94,7 +111,12 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if([segue.identifier isEqualToString:@"pushTotalAssetIdentifier"])
+    {
+        AssetDetailViewController* controller = [segue destinationViewController];
+        controller.model = [NSAssetList sharedInstance].totalAssetModel;
+    }
 }
-*/
+
 
 @end

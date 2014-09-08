@@ -51,12 +51,12 @@ static NSUserModel *_sharedInstance;
 
 - (NSString*) phone
 {
-    return dictModel[@"phone"];
+    return dictModel[@"phone"] == nil ? @"": dictModel[@"phone"];
 }
 
 - (NSString*) email
 {
-    return dictModel[@"email"];
+    return dictModel[@"email"] == nil ? @"": dictModel[@"email"];
 }
 
 - (NSString*) sex
@@ -66,7 +66,7 @@ static NSUserModel *_sharedInstance;
 
 - (NSString*) nick
 {
-    return dictModel[@"nick"];
+    return dictModel[@"nick"] == nil ? @"": dictModel[@"nick"];
 }
 
 @end

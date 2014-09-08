@@ -7,13 +7,13 @@
 //
 
 #import "VendorCollectionViewController.h"
-#import "NSIdentityModel.h"
+#import "NSAssetModel.h"
 #import "VendorCollectionViewCell.h"
 #import "DoubanLogonViewController.h"
 #import "SinaWeiboLogonController.h"
 #import "TaobaoLogonViewController.h"
 #import "TencentLogonController.h"
-#import "NSIdentityModel.h"
+#import "NSAssetModel.h"
 #import "TencentOpenAPI/TencentOAuth.h"
 #import "AssetDetailViewController.h"
 #import "NavigationController.h"
@@ -41,15 +41,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     NSMutableArray* array = [[NSMutableArray alloc] init];
-    NSString *plistpath = [[NSBundle mainBundle] pathForResource: @"IdentityType" ofType: @"plist"];
+    NSString *plistpath = [[NSBundle mainBundle] pathForResource: @"AssetType" ofType: @"plist"];
     NSArray *plist = [NSArray arrayWithContentsOfURL: [NSURL fileURLWithPath: plistpath]];
-    for (int i = DOUBAN; i < MAXTYPE+2; i++)
+    for (int i = DOUBAN; i < ALLTYPE+2; i++)
     {
-        NSIdentityModel* model = [[NSIdentityModel alloc] initWithType:i Name:plist[i][@"Name"] Image:[UIImage imageNamed:plist[i][@"Image"]]];
+        NSAssetModel* model = [[NSAssetModel alloc] initWithType:i Name:plist[i][@"Name"] Image:[UIImage imageNamed:plist[i][@"Image"]]];
         [array addObject:model];
     }
-    [NSIdentityList sharedInstance].identityList = array;
-    vendorList = [NSIdentityList sharedInstance].identityList;
+    [NSAssetList sharedInstance].assetList = array;
+    NSAssetModel* model = [[NSAssetModel alloc] initWithType:ALLTYPE Name:@"所有财产" Image:nil];
+    [NSAssetList sharedInstance].totalAssetModel = model;
+    vendorList = [NSAssetList sharedInstance].assetList;
     
     AppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
     appDelegate.delegate = self;
@@ -80,7 +82,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     VendorCollectionViewCell* vendorCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"VENDOR_COLL_CELL" forIndexPath:indexPath];
-    NSIdentityModel* model = vendorList[indexPath.row];
+    NSAssetModel* model = vendorList[indexPath.row];
     vendorCell.vendorIconView.image = model.image;
     vendorCell.vendorNameLabel.text = model.name;
     vendorCell.vendorScoreLabel.text = model.deltaScore.floatValue > 0 ? model.deltaScore.description : @"--";
@@ -92,8 +94,8 @@
     UICollectionViewCell *datasetCell =[collectionView cellForItemAtIndexPath:indexPath];
     datasetCell.alpha = 1.0;
 
-    NSIdentityModel* model = self.vendorList[indexPath.row];
-   if(model.isAuthed == NO) //unauthed
+ /*   NSAssetModel* model = self.vendorList[indexPath.row];
+    if(model.isAuthed == NO) //unauthed
     {
         switch (indexPath.row)
         {
@@ -114,8 +116,8 @@
         }
     }
     else //authed
-    {
-        [self showDetailInfo: (VENDORTYPE)indexPath.row withLogonToken:nil];
+*/    {
+        [self showDetailInfo: (VENDOR_TYPE)indexPath.row withLogonToken:nil];
     }
 }
 
@@ -155,12 +157,19 @@
     [tencentLogonController startLogon];
 }
 
-- (void) showDetailInfo: (VENDORTYPE) type withLogonToken:(NSDictionary*) dictToken
+- (void) showDetailInfo: (VENDOR_TYPE) type withLogonToken:(NSDictionary*) dictToken
 {
-    AssetDetailViewController* detailViewController = [[AssetDetailViewController alloc] init];
-    detailViewController.netType = type;
-    detailViewController.model = self.vendorList[type];
-    [self.navigationController pushViewController:detailViewController animated:YES];
+    vendorType = type;
+    [self performSegueWithIdentifier:@"pushAssetDetailIdentifier" sender:self];
+}
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    AssetDetailViewController* controller = [segue destinationViewController];
+    controller.model = vendorList[vendorType];
 }
 
 - (BOOL) handleSinaWeiboUrl:(NSURL *)url
@@ -173,7 +182,7 @@
     return [TencentOAuth HandleOpenURL:url];
 }
 
-- (BOOL) openType:(VENDORTYPE)type URL:(NSURL*)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+- (BOOL) openType:(VENDOR_TYPE)type URL:(NSURL*)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
     if(type == SINA_WEIBO)
     {

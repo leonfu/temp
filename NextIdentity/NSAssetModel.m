@@ -6,22 +6,22 @@
 //  Copyright (c) 2014 iShanghai Creative. All rights reserved.
 //
 
-#import "NSIdentityModel.h"
+#import "NSAssetModel.h"
 
 
-@implementation NSIdentityList
+@implementation NSAssetList
 
-@synthesize identityList;
+@synthesize assetList, totalScore, totalAssetModel;
 
-static NSIdentityList *_sharedInstance;
+static NSAssetList *_sharedInstance;
 
-+ (NSIdentityList*) sharedInstance
++ (NSAssetList*) sharedInstance
 {
     @synchronized(self)
     {
         if (!_sharedInstance)
         {
-            _sharedInstance = [[NSIdentityList alloc] init];
+            _sharedInstance = [[NSAssetList alloc] init];
         }
     }
     
@@ -31,11 +31,11 @@ static NSIdentityList *_sharedInstance;
 @end
 
 
-@implementation NSIdentityModel
+@implementation NSAssetModel
 
-@synthesize isAuthed, accessToken, refreshToken, isExpired;
+@synthesize isAuthed, accessToken, refreshToken, isExpired, image, name, userID, deltaScore, totalScore, vendorType;
 
-- (id) initWithType: (VENDORTYPE)type Name:(NSString*)name Image:(UIImage*)image
+- (id) initWithType: (VENDOR_TYPE)type Name:(NSString*)_name Image:(UIImage*)_image
 {
     isAuthed = NO;
     if(self = [super init])
@@ -47,9 +47,9 @@ static NSIdentityList *_sharedInstance;
         [self addNewKey:@"user_infos" SubKeys: @[@"user_id", @"user_nick", @"user_email", @"user_profile"]];
         [dictModel setObject:@"" forKey:@"user_favorites"];
         
-        netType = type;
-        self.name = name;
-        self.image = image;
+        vendorType = type;
+        self.name = _name;
+        self.image = _image;
         self.deltaScore = @-1;
     }
     return self;

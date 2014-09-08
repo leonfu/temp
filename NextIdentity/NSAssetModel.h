@@ -16,18 +16,9 @@
 
 @end
 */
-@interface NSIdentityList: NSObject
-{
-    
-}
-+ (NSIdentityList*) sharedInstance;
-@property (strong, nonatomic) NSMutableArray* identityList;
-@property (strong, nonatomic) NSNumber* totalScore;
-@end
 
-@interface NSIdentityModel : NSObject
+@interface NSAssetModel : NSObject
 {
-    VENDORTYPE netType;
     NSMutableDictionary* dictModel;
 }
 @property (strong, nonatomic) UIImage* image;
@@ -36,7 +27,7 @@
 @property (strong, nonatomic) NSNumber* totalScore;
 
 //@property (nonatomic, assign) id <ModelDoneDelegate> delegate;
-
+@property (readonly, nonatomic) VENDOR_TYPE vendorType;
 @property (readonly, nonatomic) BOOL isAuthed;
 @property (readonly, nonatomic) NSString* userID;
 @property (readonly, nonatomic) NSString* accessToken;
@@ -44,7 +35,17 @@
 @property (readonly, nonatomic) BOOL isExpired;
 @property (readonly, nonatomic) NSDictionary* tokens;
 
-- (id) initWithType: (VENDORTYPE)type Name:(NSString*)name Image:(UIImage*)image;
+- (id) initWithType: (VENDOR_TYPE)type Name:(NSString*)_name Image:(UIImage*)_image;
 - (void) addNewKey: (NSString*)key SubKeys: (NSArray*) subKeys;
 - (void) addUserTokens: (NSString*)token RefreshToken: (NSString*)rtoken ExpireIn: (NSString*)expire UserID: (NSString*)userId UserNick: (NSString*) userNick;
+@end
+
+@interface NSAssetList: NSObject
+{
+    
+}
++ (NSAssetList*) sharedInstance;
+@property (strong, nonatomic) NSAssetModel* totalAssetModel;
+@property (strong, nonatomic) NSMutableArray* assetList;
+@property (strong, nonatomic) NSNumber* totalScore;
 @end

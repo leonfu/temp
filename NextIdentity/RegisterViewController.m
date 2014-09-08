@@ -144,7 +144,7 @@
     {
         [timer invalidate];
         tokenBtn.enabled = YES;
-        [tokenBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
+        [tokenBtn setTitle:@"获取" forState:UIControlStateNormal];
         count = 60;
     }
 }
