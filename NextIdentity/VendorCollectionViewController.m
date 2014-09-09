@@ -95,7 +95,7 @@
     UICollectionViewCell *datasetCell =[collectionView cellForItemAtIndexPath:indexPath];
     datasetCell.alpha = 1.0;
 
-    NSAssetModel* model = self.vendorList[indexPath.row];
+/*    NSAssetModel* model = self.vendorList[indexPath.row];
     if(model.isAuthed == NO) //unauthed
     {
         switch (indexPath.row)
@@ -120,7 +120,7 @@
         }
     }
     else //authed
-    {
+*/    {
         [self showDetailInfo: (VENDOR_TYPE)indexPath.row withLogonToken:nil];
     }
 }

@@ -85,10 +85,11 @@
     for (NSString * labelText in xLabels)
     {
         NSInteger index = [xLabels indexOfObject:labelText];
-        PNChartLabel * label = [[PNChartLabel alloc] initWithFrame:CGRectMake(index * _xLabelWidth + 30.0, self.frame.size.height - 30.0, _xLabelWidth, 20.0)];
+        PNChartLabel * label = [[PNChartLabel alloc] initWithFrame:CGRectMake(index * _xLabelWidth + 30.0, self.frame.size.height - 30.0, _xLabelWidth, 35.0)];
         [label setTextAlignment:NSTextAlignmentCenter];
+        label.lineBreakMode = NSLineBreakByWordWrapping;
         if([xLabels count] > 9)
-            label.font = [UIFont fontWithName:label.font.familyName size:8.0f];
+          label.font = [UIFont fontWithName:label.font.familyName size:8.0f];
         label.text = labelText;
         [self addSubview:label];
     }
@@ -109,12 +110,12 @@
     
     CGFloat firstValue = [[_yValues objectAtIndex:0] floatValue];
     
-    CGFloat xPosition = _xLabelWidth   ;
+    CGFloat xPosition = _xLabelWidth;
     
     CGFloat chartCavanHeight = self.frame.size.height - chartMargin * 2 - 40.0;
     
     float grade = (float)firstValue / (float)_yValueMax;
-    [progressline moveToPoint:CGPointMake( xPosition, chartCavanHeight - grade * chartCavanHeight + 20.0)];
+    [progressline moveToPoint:CGPointMake( xPosition + _xLabelWidth/2.0, chartCavanHeight - grade * chartCavanHeight + 20.0)];
     [progressline setLineWidth:3.0];
     [progressline setLineCapStyle:kCGLineCapRound];
     [progressline setLineJoinStyle:kCGLineJoinRound];

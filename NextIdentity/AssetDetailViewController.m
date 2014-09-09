@@ -27,7 +27,7 @@
     if(self.model.vendorType == ALLTYPE)
         self.navigationItem.title = [NSString stringWithFormat:@"我的总财产"];
     //date, value
-    data = @{@"values": @{@"09-01":@"18", @"09-08":@"7", @"09-15":@"12", @"09-22":@"4", @"08-25":@"15", @"08-18":@"5", @"08-11":@"10", @"08-04":@"11", @"07-23":@"10", @"07-16":@"11"}, @"total":@"1,234"};
+    data = @{@"values": @{@"09月\n01日":@"18", @"09月\n08日":@"7", @"09月\n15日":@"12", @"09月\n22日":@"4", @"08月\n25日":@"15", @"08月\n18日":@"5", @"08月\n11日":@"10", @"08月\n04日":@"11", @"07月\n23日":@"10", @"07月\n16日":@"11", @"06月\n23日":@"10", @"06月\n16日":@"11"}, @"total":@"1,234"};
     key = [((NSDictionary*)data[@"values"]).allKeys sortedArrayUsingComparator:^(id a, id b)
            {
                return [b compare:a];

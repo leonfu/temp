@@ -48,7 +48,7 @@
     BOOL isLogon = [NSUserModel sharedInstance].isLogon;
     if(isLogon == NO)
     {
-        //[self performSegueWithIdentifier:@"presentCoverIdentifier" sender:self];
+        [self performSegueWithIdentifier:@"presentCoverIdentifier" sender:self];
     }   
 }
 
