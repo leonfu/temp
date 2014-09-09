@@ -25,6 +25,7 @@
 - (void) showSinaWeiboLogon;
 - (void) showTaobaoLogon;
 - (void) showTencentLogon;
+- (void) showLinkedInLogon;
 - (BOOL) handleSinaWeiboUrl: (NSURL*)url;
 - (BOOL) handleTencentUrl: (NSURL*)url;
 @end

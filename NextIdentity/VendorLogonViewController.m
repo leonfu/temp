@@ -37,6 +37,20 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (NSString*) parseURLQuery:(NSString *)query forKey:(NSString *)key
+{
+    NSArray *urlComponents = [query componentsSeparatedByString:@"&"];
+    for (NSString *keyValuePair in urlComponents)
+    {
+        NSArray *pairComponents = [keyValuePair componentsSeparatedByString:@"="];
+        NSString *k = [pairComponents objectAtIndex:0];
+        NSString *v = [pairComponents objectAtIndex:1];
+        if([k isEqualToString:key])
+            return v;
+    }
+    return @"";
+}
+
 /*
 #pragma mark - Navigation
 

@@ -56,14 +56,16 @@
 {
     NSString* str = [[NSString alloc] initWithData:dataResponse encoding:NSUTF8StringEncoding];
     [delegate getResponseResult:statusCode Result:str Topic:topic];
-    completionBlock(YES, str, topic);
+    if(completionBlock)
+        completionBlock(YES, str, topic);
     
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
     [delegate getResponseResult:NO Result: nil Topic:topic];
-    completionBlock(NO, nil, topic);
+    if(completionBlock)
+        completionBlock(NO, nil, topic);
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response

@@ -86,6 +86,7 @@
 		359B5FA319B56B3000DEB0E7 /* sina.png in Resources */ = {isa = PBXBuildFile; fileRef = 359B5FA119B56B3000DEB0E7 /* sina.png */; };
 		359B5FA819B5AB5500DEB0E7 /* TaobaoLogonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 359B5FA719B5AB5500DEB0E7 /* TaobaoLogonViewController.m */; };
 		359B5FB319B5D01400DEB0E7 /* taobao.png in Resources */ = {isa = PBXBuildFile; fileRef = 359B5FB219B5D01400DEB0E7 /* taobao.png */; };
+		35ABAEB319BEE909003D3504 /* LinkedInLogonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35ABAEB219BEE909003D3504 /* LinkedInLogonViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -222,6 +223,8 @@
 		359B5FA619B5AB5500DEB0E7 /* TaobaoLogonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaobaoLogonViewController.h; sourceTree = "<group>"; };
 		359B5FA719B5AB5500DEB0E7 /* TaobaoLogonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaobaoLogonViewController.m; sourceTree = "<group>"; };
 		359B5FB219B5D01400DEB0E7 /* taobao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = taobao.png; path = res/taobao.png; sourceTree = "<group>"; };
+		35ABAEB119BEE909003D3504 /* LinkedInLogonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkedInLogonViewController.h; sourceTree = "<group>"; };
+		35ABAEB219BEE909003D3504 /* LinkedInLogonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkedInLogonViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -533,6 +536,8 @@
 				359B5FA719B5AB5500DEB0E7 /* TaobaoLogonViewController.m */,
 				3517747719B5FB1000AECE17 /* TencentLogonController.h */,
 				3517747819B5FB1000AECE17 /* TencentLogonController.m */,
+				35ABAEB119BEE909003D3504 /* LinkedInLogonViewController.h */,
+				35ABAEB219BEE909003D3504 /* LinkedInLogonViewController.m */,
 			);
 			name = LogonViewController;
 			path = NextIdentity;
@@ -682,6 +687,7 @@
 				356B50B219B9F30D00DC5874 /* PNChartLabel.m in Sources */,
 				356B50B619B9F30D00DC5874 /* PNPieChart.m in Sources */,
 				3515398F19BC810B002BE0B9 /* TextFieldTableViewCell.m in Sources */,
+				35ABAEB319BEE909003D3504 /* LinkedInLogonViewController.m in Sources */,
 				356B50B519B9F30D00DC5874 /* PNLineChart.m in Sources */,
 				3515398419BC80ED002BE0B9 /* UserLogonTableViewController.m in Sources */,
 				3517747919B5FB1000AECE17 /* TencentLogonController.m in Sources */,

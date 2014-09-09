@@ -1,18 +1,18 @@
 //
-//  TaobaoLogonViewController.m
-//  NextIdentity
+//  LinkedInLogonViewController.m
+//  DigitalAssets
 //
-//  Created by Leon Fu on 9/2/14.
+//  Created by Leon Fu on 9/9/14.
 //  Copyright (c) 2014 iShanghai Creative. All rights reserved.
 //
 
-#import "TaobaoLogonViewController.h"
+#import "LinkedInLogonViewController.h"
 
-@interface TaobaoLogonViewController ()
+@interface LinkedInLogonViewController ()
 
 @end
 
-@implementation TaobaoLogonViewController
+@implementation LinkedInLogonViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,7 +27,6 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.webView.delegate = self;
     [self showLogonView];
 }
 
@@ -37,20 +36,9 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 - (void) showLogonView
 {
-    NSURLRequest* urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://oauth.m.taobao.com/authorize?response_type=code&client_id=%s&redirect_uri=http://step.1&state=%d&scope=item,promotion,item,usergrade", TAOBAO_APIKEY, TAOBAO]]];
+    NSURLRequest* urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://www.linkedin.com/uas/oauth2/authorization?response_type=code&client_id=%s&scope=r_fullprofile%%20r_contactinfo%%20r_emailaddress&state=%s&redirect_uri=http://step.1", LINKEDIN_APPKEY, LINKEDIN_APPKEY]]];
     self.webView.delegate = self;
     [self.webView loadRequest:urlRequest];
     return;
@@ -61,7 +49,7 @@
     NSString* auth_code = [self parseURLQuery:code forKey:@"code"];
     if(auth_code)
     {
-        URLRequestHandler* handler = [[URLRequestHandler alloc] initWithURLStringPOST:@"https://oauth.taobao.com/token" Body:[NSString stringWithFormat:@"grant_type=authorization_code&code=%@&redirect_uri=http://step.1&client_id=%s&client_secret=%s", auth_code, TAOBAO_APIKEY, TAOBAO_APISECRET] Topic:TOPIC_GET_ACCESS_TOKEN];
+        URLRequestHandler* handler = [[URLRequestHandler alloc] initWithURLStringPOST:@"https://www.linkedin.com/uas/oauth2/accessToken" Body:[NSString stringWithFormat:@"grant_type=authorization_code&code=%@&redirect_uri=http://step.1&client_id=%s&client_secret=%s", auth_code, LINKEDIN_APPKEY, LINKEDIN_APPSECRET] Topic:TOPIC_GET_ACCESS_TOKEN];
         handler.delegate = self;
         [handler start];
         return;
@@ -114,7 +102,19 @@
 {
     if(self.model.isAuthed == YES)
         return;
-    [self.model addUserTokens:dict[@"access_token"] RefreshToken:dict[@"refresh_token"] ExpireIn:dict[@"expires_in"] UserID:dict[@"taobao_user_id"] UserNick:dict[@"taobao_user_nick"]];
+    [self.model addUserTokens:dict[@"access_token"] RefreshToken:@"" ExpireIn: dict[@"expires_in"] UserID:@"" UserNick:@""];
 }
+
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end

@@ -13,6 +13,7 @@
 #import "SinaWeiboLogonController.h"
 #import "TaobaoLogonViewController.h"
 #import "TencentLogonController.h"
+#import "LinkedInLogonViewController.h"
 #import "NSAssetModel.h"
 #import "TencentOpenAPI/TencentOAuth.h"
 #import "AssetDetailViewController.h"
@@ -43,7 +44,7 @@
     NSMutableArray* array = [[NSMutableArray alloc] init];
     NSString *plistpath = [[NSBundle mainBundle] pathForResource: @"AssetType" ofType: @"plist"];
     NSArray *plist = [NSArray arrayWithContentsOfURL: [NSURL fileURLWithPath: plistpath]];
-    for (int i = DOUBAN; i < ALLTYPE+2; i++)
+    for (int i = DOUBAN; i < ALLTYPE; i++)
     {
         NSAssetModel* model = [[NSAssetModel alloc] initWithType:i Name:plist[i][@"Name"] Image:[UIImage imageNamed:plist[i][@"Image"]]];
         [array addObject:model];
@@ -94,7 +95,7 @@
     UICollectionViewCell *datasetCell =[collectionView cellForItemAtIndexPath:indexPath];
     datasetCell.alpha = 1.0;
 
- /*   NSAssetModel* model = self.vendorList[indexPath.row];
+    NSAssetModel* model = self.vendorList[indexPath.row];
     if(model.isAuthed == NO) //unauthed
     {
         switch (indexPath.row)
@@ -111,14 +112,26 @@
             case TENCENT:
                 [self showTencentLogon];
                 break;
+            case LINKEDIN:
+                [self showLinkedInLogon];
+                break;
             default:
                 break;
         }
     }
     else //authed
-*/    {
+    {
         [self showDetailInfo: (VENDOR_TYPE)indexPath.row withLogonToken:nil];
     }
+}
+- (void) showLinkedInLogon
+{
+    LinkedInLogonViewController* logonViewControler = [[LinkedInLogonViewController alloc] init];
+    logonViewControler.delegate = (HomeViewController*)self.parentViewController;
+    logonViewControler.netType = LINKEDIN;
+    logonViewControler.model = self.vendorList[LINKEDIN];
+    NavigationController* navController = [[NavigationController alloc] initWithRootViewController:logonViewControler];
+    [self presentViewController:navController animated:YES completion:nil];
 }
 
 - (void) showDoubanLogon

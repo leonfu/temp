@@ -58,9 +58,9 @@
 
 - (void) getAuthResponse: (NSString*)code
 {
-    if([code hasPrefix:@"code="] ==YES)
+    NSString* auth_code = [self parseURLQuery:code forKey:@"code"];
+    if(auth_code)
     {
-        NSString* auth_code = [code substringFromIndex:[code rangeOfString:@"="].location+1];
         URLRequestHandler* handler = [[URLRequestHandler alloc] initWithURLStringPOST:@"https://www.douban.com/service/auth2/token" Body:[NSString stringWithFormat:@"client_id=%s&client_secret=%s&redirect_uri=http://step.2&grant_type=authorization_code&code=%@", DOUBAN_APIKEY, DOUBAN_APISECRET, auth_code] Topic:TOPIC_GET_ACCESS_TOKEN];
         handler.delegate = self;
         [handler start];

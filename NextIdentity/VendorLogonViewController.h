@@ -27,6 +27,8 @@
 @property (nonatomic, assign) id <VendorLogonDelegate> delegate;
 @property (strong, nonatomic) IBOutlet UIWebView* webView;
 
+- (NSString*)parseURLQuery:(NSString*)query forKey:(NSString*)key;
+
 - (void) closeView;
 
 @end
