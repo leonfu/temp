@@ -12,6 +12,9 @@
 #import "NSUserModel.h"
 #import "AssetDetailViewController.h"
 
+#define URL_ASSET_BIND "digitalassets/bind/"
+#define URL_ASSET_TODAY "digitalassets/today/"
+
 @interface HomeViewController ()
 
 @end
@@ -36,7 +39,7 @@
     self.firstLabel.textColor = PNFreshGreen;
     vendorViewController = self.childViewControllers[0];
 
-    float value = [NSAssetList sharedInstance].totalScore.floatValue;
+    float value = [NSAssetList sharedInstance].totalAssetModel.totalScore.floatValue;
     if(value == 0) //no any binding
     {
         [self initHomeScreen];
@@ -59,15 +62,17 @@
     self.scoreLabel.hidden = YES;
     self.firstLabel.hidden = NO;
     self.introLabel.hidden = NO;
+    [vendorViewController.collectionView reloadData];
 }
 
 - (void) updateHomeScreen
 {
-    self.scoreLabel.text = [NSAssetList sharedInstance].totalScore.description;
+    self.scoreLabel.text = [NSAssetList sharedInstance].totalAssetModel.totalScore.description;
     self.welcomeLabel.hidden = NO;
     self.scoreLabel.hidden = NO;
     self.firstLabel.hidden = YES;
     self.introLabel.hidden = YES;
+    [vendorViewController.collectionView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -79,18 +84,49 @@
 - (void) getLogonResult:(BOOL)result Type:(VENDOR_TYPE) type Info:(NSDictionary *)info
 {
     if(result == NO)
+    {
+        [Utility showErrorMessage:@"绑定财产提供商失败:("];
         return;
+    }
+    [self bindAssetProvider: type];
+}
+
+- (void) bindAssetProvider: (VENDOR_TYPE) type
+{
     NSAssetModel* model = vendorViewController.vendorList[type];
+    URLRequestHandler* handler = [[URLRequestHandler alloc]initWithURLStringPOST:@URL_SERVER_PATH @URL_ASSET_BIND Body:[Utility getJSONFromObject:model.tokens] Topic:TOPIC_ASSET_BIND];
+    [handler startWithCompletion:^(BOOL isValid, NSString *result, NSInteger topic)
+    {
+        if(isValid == YES)
+        {
+            URLRequestHandler* handler2 = [[URLRequestHandler alloc] initWithURLStringPOST:@URL_SERVER_PATH @URL_ASSET_TODAY Body:nil Topic:TOPIC_ASSET_TODAY];
+            [handler2 startWithCompletion:^(BOOL isValid, NSString *result, NSInteger topic) {
+                if(isValid == YES)
+                {
+                    
+                }
+                else
+                {
+                    [Utility showErrorMessage:result];
+                }
+            }];
+        }
+        else
+        {
+            [Utility showErrorMessage:result];
+        }
+    }];
+/*
     model.deltaScore = @100;
     [vendorViewController.collectionView reloadData];
     float value = [NSAssetList sharedInstance].totalScore.floatValue;
     [NSAssetList sharedInstance].totalScore = @(value + model.deltaScore.floatValue);
+*/
     [self updateHomeScreen];
 }
-
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    if([NSAssetList sharedInstance].totalScore == 0)
+    if([NSAssetList sharedInstance].totalAssetModel.totalScore == 0)
     {
         [[self nextResponder] touchesEnded:touches withEvent:event];
         return;

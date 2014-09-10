@@ -105,7 +105,7 @@
     {
         [self.delegate getLogonResult:NO Type:self.netType Info:nil];
     }
-    NSDictionary* dict = [NSJSONSerialization JSONObjectWithData: [result dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:nil];
+    NSDictionary* dict = [Utility getObjectFromJSON:result];
     [self updateLogonToken:dict];
     [self.delegate getLogonResult:YES Type: self.netType Info: dict];
 }

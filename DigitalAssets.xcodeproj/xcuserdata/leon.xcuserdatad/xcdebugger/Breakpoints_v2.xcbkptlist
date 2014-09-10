@@ -41,13 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NextIdentity/URLRequestHandler.m"
-            timestampString = "431944883.901851"
+            filePath = "NextIdentity/UserLogonTableViewController.m"
+            timestampString = "432028610.442946"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "-initWithURLStringPOST:Body:Topic:"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
+            landmarkName = "-UserLogon:Password:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

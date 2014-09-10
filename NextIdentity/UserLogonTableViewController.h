@@ -23,6 +23,7 @@
 - (IBAction)UserLogon: (NSString*) user Password: (NSString*) password;
 - (IBAction)NewUser;
 - (IBAction)forgotPwd;
+- (void) cancelLogon;
 - (void) autoLogon: (NSNotification*)notification;
 
 @end

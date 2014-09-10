@@ -7,10 +7,15 @@
 //
 
 #import "UserLogonTableViewController.h"
+#import "AppDelegate.h"
 #import "PNColor.h"
 #import "NSUserModel.h"
 #import "NavigationController.h"
 #import "RegisterViewController.h"
+
+#define URL_USER_LOGON "api-token-auth/"
+#define BODY_USER_LOGON "{\"username\":%@, \"password\":%@}"
+#define URL_USER_ME "users/me/"
 
 @interface UserLogonTableViewController ()
 
@@ -152,17 +157,38 @@
     [forgotBtn setTitle:@"取消登录" forState:UIControlStateNormal];
     [indicator startAnimating];
     isLogonProcessing = YES;
-    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(test:) userInfo:nil repeats:NO];
-}
-
-- (void) test:(NSTimer*)timer
-{
-    isLogonProcessing = NO;
-    [timer invalidate];
-    [NSUserModel sharedInstance].isLogon = YES;
-    NSDictionary* dict = @{@"phone":valueList[0], @"email": @"test@email.com", @"sex":@"0", @"nick":@"test"};
-    [[NSUserModel sharedInstance] fillProfile:dict];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    URLRequestHandler* handler = [[URLRequestHandler alloc] initWithURLStringPOST:@URL_SERVER_PATH @URL_USER_LOGON Body:[NSString stringWithFormat:@BODY_USER_LOGON, valueList[0], valueList[1]] Topic:TOPIC_USER_LOGON];
+    [handler startWithCompletion:^(BOOL isValid, NSString *result, NSInteger topic)
+    {
+        if (isValid == YES && isLogonProcessing == YES)
+        {
+            URLRequestHandler* handler2 = [[URLRequestHandler alloc] initWithURLStringGET:@URL_SERVER_PATH @URL_USER_ME Headers:nil Topic:TOPIC_USER_PROFILE];
+            [handler2 startWithCompletion:^(BOOL isValid, NSString *result, NSInteger topic)
+            {
+                if(isValid == YES && isLogonProcessing == YES)
+                {
+                    NSDictionary* dict = [Utility getObjectFromJSON:result];
+                    [NSUserModel sharedInstance].isLogon = YES;
+                    [[NSUserModel sharedInstance] fillUserProfile:dict];
+                    [self dismissViewControllerAnimated:YES completion:nil];
+                    return;
+                }
+                if(isValid == NO && isLogonProcessing == YES)
+                {
+                    [Utility showErrorMessage:result];
+                    [self cancelLogon];
+                }
+            }];
+        }
+        //error occurs
+        if(isValid == NO && isLogonProcessing == YES)
+        {
+            [Utility showErrorMessage:result];
+            [self cancelLogon];
+        }
+    }];
+    
 }
 
 - (void) NewUser
@@ -171,16 +197,21 @@
     [self performSegueWithIdentifier:@"presentNewUserIdentifier" sender:self];
 }
 
+- (void) cancelLogon
+{
+    [indicator stopAnimating];
+    userField.enabled = YES;
+    pwdField.enabled = YES;
+    logonBtn.hidden = NO;
+    [forgotBtn setTitle:@"忘记密码" forState:UIControlStateNormal];
+    isLogonProcessing = NO;
+}
+
 - (void) forgotPwd
 {
     if (isLogonProcessing)  //cancel log on
     {
-        [indicator stopAnimating];
-        userField.enabled = YES;
-        pwdField.enabled = YES;
-        logonBtn.hidden = NO;
-        [forgotBtn setTitle:@"忘记密码" forState:UIControlStateNormal];
-        isLogonProcessing = NO;
+        [self cancelLogon];
     }
     else //forgot password
     {

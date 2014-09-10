@@ -8,6 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+#define TOPIC_GET_ACCESS_TOKEN 0
+#define TOPIC_USER_LOGON 1
+#define TOPIC_USER_PROFILE 2
+#define TOPIC_ASSET_BIND 3
+#define TOPIC_ASSET_TODAY 4
+
+NSString* g_token;
+
 typedef void (^responseCompletion) (BOOL isValid, NSString* result, NSInteger topic);
 
 @protocol RequestDelegate

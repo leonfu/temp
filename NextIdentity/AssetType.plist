@@ -3,36 +3,60 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>ID</key>
+		<string></string>
+		<key>Key</key>
+		<string>douban</string>
 		<key>Name</key>
 		<string>豆瓣</string>
 		<key>Image</key>
 		<string>douban.png</string>
 	</dict>
 	<dict>
+		<key>ID</key>
+		<string></string>
+		<key>Key</key>
+		<string>qq</string>
 		<key>Name</key>
 		<string>QQ</string>
 		<key>Image</key>
 		<string>qq.png</string>
 	</dict>
 	<dict>
+		<key>ID</key>
+		<string></string>
+		<key>Key</key>
+		<string>sina</string>
 		<key>Name</key>
 		<string>微博</string>
 		<key>Image</key>
 		<string>sina.png</string>
 	</dict>
 	<dict>
+		<key>ID</key>
+		<string></string>
+		<key>Key</key>
+		<string>taobao</string>
 		<key>Name</key>
 		<string>淘宝</string>
 		<key>Image</key>
 		<string>taobao.png</string>
 	</dict>
 	<dict>
+		<key>ID</key>
+		<string></string>
+		<key>Key</key>
+		<string>linkedin</string>
 		<key>Name</key>
 		<string>领英</string>
 		<key>Image</key>
 		<string>linkedin.png</string>
 	</dict>
 	<dict>
+		<key>ID</key>
+		<string></string>
+		<key>Key</key>
+		<string>wechat</string>
 		<key>Name</key>
 		<string>微信</string>
 		<key>Image</key>

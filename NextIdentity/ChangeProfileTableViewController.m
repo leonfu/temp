@@ -44,7 +44,7 @@
 - (void) Update
 {
     NSUserModel *userModel = [NSUserModel sharedInstance];
-    [userModel fillProfile:[NSDictionary dictionaryWithObjects:settingValueList forKeys:@[@"phone", @"nick", @"sex", @"email"]]];
+    [userModel fillUserBrief:[NSDictionary dictionaryWithObjects:settingValueList forKeys:@[@"phone", @"nick", @"sex", @"email"]]];
     [self dismissViewControllerAnimated:NO completion:NO];
 }
 

@@ -86,7 +86,7 @@
     NSAssetModel* model = vendorList[indexPath.row];
     vendorCell.vendorIconView.image = model.image;
     vendorCell.vendorNameLabel.text = model.name;
-    vendorCell.vendorScoreLabel.text = model.deltaScore.floatValue > 0 ? model.deltaScore.description : @"--";
+    vendorCell.vendorScoreLabel.text = model.isAuthed? model.deltaScore.description : @"--";
     return  vendorCell;
 }
 

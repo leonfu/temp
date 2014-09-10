@@ -11,10 +11,12 @@
 @interface NSUserModel : NSObject
 {
     NSMutableDictionary* dictModel;
+    NSInteger fillStatus;
 }
 + (NSUserModel*) sharedInstance;
 
-- (void) fillProfile: (NSDictionary*) dict;
+- (void) fillUserBrief: (NSDictionary*) dict;
+- (void) fillUserProfile: (NSDictionary*) dict;
 @property (assign, nonatomic) BOOL isLogon;
 @property (readonly, nonatomic) NSString* phone;
 @property (readonly, nonatomic) NSString* nick;

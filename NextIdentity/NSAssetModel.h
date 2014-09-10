@@ -9,29 +9,22 @@
 
 #import <Foundation/Foundation.h>
 #import "AppDelegate.h"
-/*
-@protocol ModelDoneDelegate
-
-- (void) modelComplete:(BOOL)result Type:(VENDORTYPE)type;
-
-@end
-*/
 
 @interface NSAssetModel : NSObject
 {
-    NSMutableDictionary* dictModel;
+    NSMutableDictionary* tokenModel;
+    NSString* accessToken;
+    NSString* refreshToken;
+    NSString* userID;
 }
-@property (strong, nonatomic) UIImage* image;
-@property (strong, nonatomic) NSString* name;
-@property (strong, nonatomic) NSNumber* deltaScore;
-@property (strong, nonatomic) NSNumber* totalScore;
-
-//@property (nonatomic, assign) id <ModelDoneDelegate> delegate;
+@property (readonly, nonatomic) UIImage* image;
+@property (readonly, nonatomic) NSString* name;
+@property (readonly, nonatomic) NSNumber* deltaScore;
+@property (readonly, nonatomic) NSNumber* totalScore;
+@property (readonly, nonatomic) NSNumber* rank;
+@property (readonly, nonatomic) NSNumber* percentage;
 @property (readonly, nonatomic) VENDOR_TYPE vendorType;
 @property (readonly, nonatomic) BOOL isAuthed;
-@property (readonly, nonatomic) NSString* userID;
-@property (readonly, nonatomic) NSString* accessToken;
-@property (readonly, nonatomic) NSString* refreshToken;
 @property (readonly, nonatomic) BOOL isExpired;
 @property (readonly, nonatomic) NSDictionary* tokens;
 
@@ -47,5 +40,4 @@
 + (NSAssetList*) sharedInstance;
 @property (strong, nonatomic) NSAssetModel* totalAssetModel;
 @property (strong, nonatomic) NSMutableArray* assetList;
-@property (strong, nonatomic) NSNumber* totalScore;
 @end

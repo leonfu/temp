@@ -21,4 +21,6 @@
 @property (strong, nonatomic) IBOutlet UILabel* scoreLabel;
 @property (strong, nonatomic) IBOutlet UIView* touchView;
 
+- (void) bindAssetProvider: (VENDOR_TYPE) type;
+
 @end

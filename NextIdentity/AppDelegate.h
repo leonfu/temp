@@ -7,13 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+
 #import "WeiboSDK.h"
+#import "URLRequestHandler.h"
+#import "Utility.h"
 
 typedef enum {DOUBAN=0, TENCENT, SINA_WEIBO, TAOBAO, LINKEDIN, WECHAT, ALLTYPE} VENDOR_TYPE;
 
-#define TOPIC_GET_ACCESS_TOKEN 0
+#define URL_SERVER_PATH "https://api.shucaibao/"
 
-#define SINAWEIBO_APIKEY @"3147952809"
+#define SINAWEIBO_APIKEY "3147952809"
 
 #define DOUBAN_APIKEY "09c92b8c7d3f9ac11d5b82a577bed043"
 #define DOUBAN_APISECRET "b61ff05818339a08"

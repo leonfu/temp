@@ -32,14 +32,21 @@ static NSUserModel *_sharedInstance;
     if(self = [super init])
     {
         self.isLogon = NO;
-        dictModel = [[NSMutableDictionary alloc] init];
+        fillStatus = 0;
     }
     return self;
 }
 
-- (void) fillProfile: (NSDictionary*) dict
+- (void) fillUserProfile: (NSDictionary*) dict
 {
     dictModel = [dict mutableCopy];
+    fillStatus = 2;
+}
+
+- (void) fillUserBrief: (NSDictionary*) dict
+{
+    dictModel = [dict mutableCopy];
+    fillStatus = 1;
 }
 
 - (void) setIsLogon: (BOOL) value
@@ -51,22 +58,30 @@ static NSUserModel *_sharedInstance;
 
 - (NSString*) phone
 {
-    return dictModel[@"phone"] == nil ? @"": dictModel[@"phone"];
+    if(fillStatus < 1)
+        return @"";
+    return dictModel[@"mobile"] == nil ? @"": dictModel[@"mobile"];
 }
 
 - (NSString*) email
 {
-    return dictModel[@"email"] == nil ? @"": dictModel[@"email"];
+    if(fillStatus < 2)
+        return @"";
+    return dictModel[@"profile"][@"email"] == nil ? @"": dictModel[@"profile"][@"email"];
 }
 
 - (NSString*) sex
 {
-    return ((NSString*)dictModel[@"sex"]).intValue == 0 ? @"男" : @"女" ;
+    if(fillStatus < 2)
+        return @"";
+    return ((NSString*)dictModel[@"profile"][@"sex"]).intValue == 0 ? @"男" : @"女" ;
 }
 
 - (NSString*) nick
 {
-    return dictModel[@"nick"] == nil ? @"": dictModel[@"nick"];
+    if(fillStatus < 1)
+        return @"";
+    return dictModel[@"username"] == nil ? @"": dictModel[@"username"];
 }
 
 @end

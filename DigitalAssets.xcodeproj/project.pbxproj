@@ -87,6 +87,7 @@
 		359B5FA819B5AB5500DEB0E7 /* TaobaoLogonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 359B5FA719B5AB5500DEB0E7 /* TaobaoLogonViewController.m */; };
 		359B5FB319B5D01400DEB0E7 /* taobao.png in Resources */ = {isa = PBXBuildFile; fileRef = 359B5FB219B5D01400DEB0E7 /* taobao.png */; };
 		35ABAEB319BEE909003D3504 /* LinkedInLogonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35ABAEB219BEE909003D3504 /* LinkedInLogonViewController.m */; };
+		35ABAEB619C0246E003D3504 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 35ABAEB519C0246E003D3504 /* Utility.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -225,6 +226,8 @@
 		359B5FB219B5D01400DEB0E7 /* taobao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = taobao.png; path = res/taobao.png; sourceTree = "<group>"; };
 		35ABAEB119BEE909003D3504 /* LinkedInLogonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkedInLogonViewController.h; sourceTree = "<group>"; };
 		35ABAEB219BEE909003D3504 /* LinkedInLogonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkedInLogonViewController.m; sourceTree = "<group>"; };
+		35ABAEB419C0246E003D3504 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utility.h; path = NextIdentity/Utility.h; sourceTree = "<group>"; };
+		35ABAEB519C0246E003D3504 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Utility.m; path = NextIdentity/Utility.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,6 +283,8 @@
 				356B9CB219BDA362002F3794 /* DetailTableViewController.m */,
 				359AD8A319B307AE00E191A1 /* VendorLogonViewController.h */,
 				359AD8A419B307AE00E191A1 /* VendorLogonViewController.m */,
+				35ABAEB419C0246E003D3504 /* Utility.h */,
+				35ABAEB519C0246E003D3504 /* Utility.m */,
 			);
 			name = BaseControl;
 			sourceTree = "<group>";
@@ -692,6 +697,7 @@
 				3515398419BC80ED002BE0B9 /* UserLogonTableViewController.m in Sources */,
 				3517747919B5FB1000AECE17 /* TencentLogonController.m in Sources */,
 				356B50B019B9F30D00DC5874 /* PNBarChart.m in Sources */,
+				35ABAEB619C0246E003D3504 /* Utility.m in Sources */,
 				359AD87C19B2F15B00E191A1 /* AppDelegate.m in Sources */,
 				3515397B19BC80CD002BE0B9 /* SettingTableViewController.m in Sources */,
 				359AD87819B2F15B00E191A1 /* main.m in Sources */,

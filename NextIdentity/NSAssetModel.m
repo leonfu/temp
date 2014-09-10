@@ -11,7 +11,7 @@
 
 @implementation NSAssetList
 
-@synthesize assetList, totalScore, totalAssetModel;
+@synthesize assetList, totalAssetModel;
 
 static NSAssetList *_sharedInstance;
 
@@ -33,26 +33,29 @@ static NSAssetList *_sharedInstance;
 
 @implementation NSAssetModel
 
-@synthesize isAuthed, accessToken, refreshToken, isExpired, image, name, userID, deltaScore, totalScore, vendorType;
+@synthesize isAuthed, isExpired, image, name, deltaScore, totalScore, vendorType, percentage, rank;
 
 - (id) initWithType: (VENDOR_TYPE)type Name:(NSString*)_name Image:(UIImage*)_image
 {
     isAuthed = NO;
     if(self = [super init])
     {
-        dictModel = [[NSMutableDictionary alloc] init];
-        [dictModel setObject:@"" forKey:@"logon_tokens"];
-        [self addNewKey: @"logon_tokens" SubKeys: @[@"token", @"refresh_token", @"expire_time"]];
-        [dictModel setObject:@"" forKey:@"user_infos"];
-        [self addNewKey:@"user_infos" SubKeys: @[@"user_id", @"user_nick", @"user_email", @"user_profile"]];
-        [dictModel setObject:@"" forKey:@"user_favorites"];
-        
+        tokenModel = [@{@"provider_name":@"", @"access_token":@"", @"refresh_token":@"", @"expire_in":@"", @"user_id":@""} mutableCopy];
         vendorType = type;
-        self.name = _name;
-        self.image = _image;
-        self.deltaScore = @-1;
+        name = _name;
+        image = _image;
+        deltaScore = @0;
+        totalScore = @0;
     }
     return self;
+}
+
+- (void) updateAsset: (NSNumber*) total_score Delta: (NSNumber*) delta_socre Percentage:(NSNumber*) _percentage Rank:(NSNumber*)_rank
+{
+    totalScore = total_score;
+    deltaScore = delta_socre;
+    percentage = _percentage;
+    rank = _rank;
 }
 
 - (void) addNewKey: (NSString*)key SubKeys: (NSArray*) subKeys
@@ -62,53 +65,22 @@ static NSAssetList *_sharedInstance;
     {
         [dict setObject:@"" forKey:str];
     }
-    dictModel[key] = [NSMutableDictionary dictionaryWithDictionary:dict];
+    tokenModel[key] = [NSMutableDictionary dictionaryWithDictionary:dict];
 }
 
 - (void) addUserTokens:(NSString *)token RefreshToken:(NSString *)rtoken ExpireIn:(NSString *)expire UserID:(NSString *)userId UserNick:(NSString *)userNick
 {
-    dictModel[@"logon_tokens"][@"token"] = token; 
-    dictModel[@"logon_tokens"][@"refresh_token"] = rtoken;
-    dictModel[@"logon_tokens"][@"expire_time"] = expire;
-    dictModel[@"user_infos"][@"user_id"] = userId;
-    dictModel[@"user_infos"][@"user_nick"] = userNick;
+    tokenModel[@"provider_name"] = self.name;
+    tokenModel[@"access_token"] = token;
+    tokenModel[@"refresh_token"] = rtoken;
+    tokenModel[@"expire_in"] = expire;
+    tokenModel[@"user_id"] = userId;
     isAuthed = YES;
-}
-
-- (NSString*) accessToken
-{
-    return dictModel[@"logon_tokens"][@"token"];
-}
-
-- (NSString*) refreshToken
-{
-    return dictModel[@"logon_tokens"][@"refresh_token"];
-}
-
-- (BOOL) isExpired
-{
-    return NO;
-}
-
-- (NSString*) userID
-{
-    return dictModel[@"user_infos"][@"user_id"];
-}
-
-- (NSDictionary*) userFavorites
-{
-    return dictModel[@"user_favorites"];
-}
-
-- (NSString*) userProfile
-{
-    return dictModel[@"user_infos"][@"user_profile"];
 }
 
 - (NSDictionary*) tokens
 {
-    return dictModel[@"logon_tokens"];
-//    return [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:dictModel[@"logon_tokens"] options:NSJSONWritingPrettyPrinted error:nil] encoding:NSUTF8StringEncoding];
+    return tokenModel;
 }
 
 @end

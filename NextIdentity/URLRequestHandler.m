@@ -7,11 +7,11 @@
 //
 
 #import "URLRequestHandler.h"
+#import "Utility.h"
 
 @implementation URLRequestHandler
 
 @synthesize delegate;
-
 
 - (id) initWithURLStringPOST:(NSString *)url Body:(NSString*) body Topic:(NSInteger) base
 {
@@ -21,6 +21,8 @@
     urlRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
     [urlRequest setHTTPMethod:@"POST"];
     [urlRequest setHTTPBody:data];
+    if (topic != TOPIC_USER_LOGON)
+        [urlRequest addValue:g_token forHTTPHeaderField:@"token"];
     return self;
 }
 
@@ -30,8 +32,13 @@
 
     urlRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
     [urlRequest setHTTPMethod:@"GET"];
-    for (NSString* key in headers.allKeys)
-        [urlRequest addValue:headers[key] forHTTPHeaderField:key];
+    if(headers)
+    {
+        for (NSString* key in headers.allKeys)
+            [urlRequest addValue:headers[key] forHTTPHeaderField:key];
+    }
+    if (topic != TOPIC_USER_LOGON)
+        [urlRequest addValue:g_token forHTTPHeaderField:@"token"];
     return self;
 }
 
@@ -56,6 +63,18 @@
 {
     NSString* str = [[NSString alloc] initWithData:dataResponse encoding:NSUTF8StringEncoding];
     [delegate getResponseResult:statusCode Result:str Topic:topic];
+    if (statusCode != 200)
+    {
+        if(completionBlock)
+            completionBlock(NO, str, topic);
+        return;
+    }
+    //status code = 200
+    if (topic == TOPIC_USER_LOGON)
+    {
+        NSDictionary* dict = [Utility getObjectFromJSON:str];
+        g_token = dict[@"token"];
+    }
     if(completionBlock)
         completionBlock(YES, str, topic);
     
@@ -65,7 +84,7 @@
 {
     [delegate getResponseResult:NO Result: nil Topic:topic];
     if(completionBlock)
-        completionBlock(NO, nil, topic);
+        completionBlock(NO, @"网络不给力啊", topic);
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
@@ -73,7 +92,9 @@
     NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
     statusCode = httpResponse.statusCode;
     if(statusCode != 200)
+    {
         NSLog(@"%@", httpResponse.allHeaderFields.description);
+    }
 }
 
 @end
