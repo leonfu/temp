@@ -14,10 +14,13 @@
     NSInteger count;
     UITextField* phoneField;
     UITextField* codeField;
+    NSTimer* timer;
 }
 @property (assign, nonatomic) NSString* phoneNumber;
 @property (assign, nonatomic) BOOL isNewUser;
 - (void) countDown: (NSTimer*) timer;
 - (void) Register;
 - (void) getToken;
+- (void) stopTimer;
+
 @end

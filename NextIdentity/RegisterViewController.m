@@ -11,6 +11,12 @@
 #import "TextFieldTableViewCell.h"
 #import "NewUserTableViewController.h"
 #import "ChangePwdTableViewController.h"
+#import "AppDelegate.h"
+
+#define URL_MOBILE_VERIFY "mobile/verify/"
+#define URL_MOBILE_CONFIRM "mobile/confirm/"
+#define BODY_MOBILE_VERIFY "{\"mobile\":\"%@\"}"
+#define BODY_MOBILE_CONFIRM "{\"mobile\":\"%@\", \"key\":\"%@\"}"
 
 @interface RegisterViewController ()
 
@@ -46,10 +52,22 @@
 
 - (void) Register
 {
-    if(isNewUser)
-        [self performSegueWithIdentifier:@"presentNewUserIdentifier2" sender:self];
-    else
-        [self performSegueWithIdentifier:@"changePwdIdentifier" sender:self];
+    URLRequestHandler* handler = [[URLRequestHandler alloc] initWithURLStringPOST:@URL_SERVER_PATH @URL_MOBILE_CONFIRM Body:[NSString stringWithFormat:@BODY_MOBILE_CONFIRM, settingValueList[0], settingValueList[1]] Topic:TOPIC_MOBILE_CONFIRM];
+    [handler startWithCompletion:^(BOOL isValid, NSString *result, NSInteger topic)
+     {
+        if(isValid)
+        {
+            if(isNewUser)
+                [self performSegueWithIdentifier:@"presentNewUserIdentifier2" sender:self];
+            else
+                [self performSegueWithIdentifier:@"changePwdIdentifier" sender:self];
+        }
+        else
+        {
+            [Utility showErrorMessage:result];
+            [self stopTimer];
+        }
+    }];
 }
 
 #pragma mark - Table view data source
@@ -130,10 +148,28 @@
 
 - (void) getToken
 {
+    URLRequestHandler* handler = [[URLRequestHandler alloc] initWithURLStringPOST:@URL_SERVER_PATH @URL_MOBILE_VERIFY Body:[NSString stringWithFormat:@BODY_MOBILE_VERIFY, settingValueList[0]] Topic:TOPIC_MOBILE_VERIFY];
+    [handler startWithCompletion:^(BOOL isValid, NSString *result, NSInteger topic) {
+        if(!isValid)
+        {
+            [Utility showErrorMessage:result];
+            [self stopTimer];
+            
+        }
+    }];
     count = 60;
     tokenBtn.enabled = NO;
     [tokenBtn setTitle:[NSString stringWithFormat:@"%ds", count] forState:UIControlStateDisabled];
-    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countDown:) userInfo:nil repeats:YES];
+    timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countDown:) userInfo:nil repeats:YES];
+}
+
+- (void) stopTimer
+{
+    if(timer.isValid)
+        [timer invalidate];
+    tokenBtn.enabled = YES;
+    [tokenBtn setTitle:@"获取" forState:UIControlStateNormal];
+    count = 60;
 }
 
 - (void) countDown: (NSTimer*) timer
@@ -142,10 +178,7 @@
     [tokenBtn setTitle:[NSString stringWithFormat:@"%ds", count] forState:UIControlStateDisabled];
     if(count == 0)
     {
-        [timer invalidate];
-        tokenBtn.enabled = YES;
-        [tokenBtn setTitle:@"获取" forState:UIControlStateNormal];
-        count = 60;
+        [self stopTimer];
     }
 }
 

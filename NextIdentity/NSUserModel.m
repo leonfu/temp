@@ -10,7 +10,7 @@
 
 @implementation NSUserModel
 
-@synthesize isLogon, phone, email, sex, nick;
+@synthesize isLogon, phone, email, sex, nick, token, userid, userModel;
 
 static NSUserModel *_sharedInstance;
 
@@ -27,61 +27,80 @@ static NSUserModel *_sharedInstance;
     return _sharedInstance;
 }
 
+- (void) initInstance: (NSUserModel*) inst
+{
+    [self fillUserProfile: inst.userModel];
+    isLogon = inst.isLogon;
+    [Utility saveUserModel];
+}
+
 - (id) init
 {
     if(self = [super init])
     {
         self.isLogon = NO;
-        fillStatus = 0;
     }
     return self;
 }
 
 - (void) fillUserProfile: (NSDictionary*) dict
 {
-    dictModel = [dict mutableCopy];
-    fillStatus = 2;
-}
-
-- (void) fillUserBrief: (NSDictionary*) dict
-{
-    dictModel = [dict mutableCopy];
-    fillStatus = 1;
+    userModel = [dict mutableCopy];
+    [Utility saveUserModel];
 }
 
 - (void) setIsLogon: (BOOL) value
 {
     isLogon = value;
     if(value == NO)
-        [dictModel removeAllObjects];
+        [userModel removeAllObjects];
 }
 
 - (NSString*) phone
 {
-    if(fillStatus < 1)
-        return @"";
-    return dictModel[@"mobile"] == nil ? @"": dictModel[@"mobile"];
+    return userModel[@"mobile"] == nil ? @"": userModel[@"mobile"];
 }
 
 - (NSString*) email
 {
-    if(fillStatus < 2)
-        return @"";
-    return dictModel[@"profile"][@"email"] == nil ? @"": dictModel[@"profile"][@"email"];
+    return userModel[@"profile"][@"email"] == nil ? @"": userModel[@"profile"][@"email"];
 }
 
 - (NSString*) sex
 {
-    if(fillStatus < 2)
-        return @"";
-    return ((NSString*)dictModel[@"profile"][@"sex"]).intValue == 0 ? @"男" : @"女" ;
+    return ((NSString*)userModel[@"profile"][@"sex"]).intValue == 0 ? @"男" : @"女" ;
 }
 
 - (NSString*) nick
 {
-    if(fillStatus < 1)
-        return @"";
-    return dictModel[@"username"] == nil ? @"": dictModel[@"username"];
+    return userModel[@"username"] == nil ? @"": userModel[@"username"];
+}
+
+- (NSString*) token
+{
+    return userModel[@"token"] == nil? @"" : userModel[@"token"];
+}
+
+- (NSString*) userid
+{
+    return userModel[@"id"] == nil? @"": userModel[@"id"];
+}
+
+-(void) encodeWithCoder:(NSCoder *)aCoder
+{
+	[aCoder encodeObject:userModel forKey:@"userModel"];
+    [aCoder encodeBool:isLogon forKey:@"isLogon"];
+}
+
+-(id) initWithCoder:(NSCoder *)aDecoder
+{
+	if (self=[super init])
+	{
+		userModel = [[aDecoder decodeObjectForKey:@"userModel"] mutableCopy];
+        isLogon = [aDecoder decodeBoolForKey:@"isLogon"];
+	}
+	return self;
+	
 }
 
 @end

@@ -8,6 +8,7 @@
 
 #import "URLRequestHandler.h"
 #import "Utility.h"
+#import "NSUserModel.h"
 
 @implementation URLRequestHandler
 
@@ -16,13 +17,16 @@
 - (id) initWithURLStringPOST:(NSString *)url Body:(NSString*) body Topic:(NSInteger) base
 {
     topic = base;
-
-    NSData* data = [body dataUsingEncoding:NSUTF8StringEncoding];
+   
     urlRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
     [urlRequest setHTTPMethod:@"POST"];
-    [urlRequest setHTTPBody:data];
-    if (topic != TOPIC_USER_LOGON)
-        [urlRequest addValue:g_token forHTTPHeaderField:@"token"];
+    if(body)
+    {
+        NSData* data = [body dataUsingEncoding:NSUTF8StringEncoding];
+        [urlRequest setHTTPBody:data];
+    }
+    if (topic != TOPIC_USER_LOGON && topic != TOPIC_MOBILE_VERIFY && topic != TOPIC_GET_ACCESS_TOKEN)
+        [urlRequest addValue:[NSUserModel sharedInstance].token forHTTPHeaderField:@"AUTHORIZATION"];
     return self;
 }
 
@@ -37,8 +41,8 @@
         for (NSString* key in headers.allKeys)
             [urlRequest addValue:headers[key] forHTTPHeaderField:key];
     }
-    if (topic != TOPIC_USER_LOGON)
-        [urlRequest addValue:g_token forHTTPHeaderField:@"token"];
+    if (topic != TOPIC_USER_LOGON && topic != TOPIC_MOBILE_VERIFY && topic != TOPIC_GET_ACCESS_TOKEN)
+        [urlRequest addValue:[NSUserModel sharedInstance].token forHTTPHeaderField:@"AUTHORIZATION"];
     return self;
 }
 
@@ -70,11 +74,6 @@
         return;
     }
     //status code = 200
-    if (topic == TOPIC_USER_LOGON)
-    {
-        NSDictionary* dict = [Utility getObjectFromJSON:str];
-        g_token = dict[@"token"];
-    }
     if(completionBlock)
         completionBlock(YES, str, topic);
     

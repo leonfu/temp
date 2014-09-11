@@ -9,6 +9,10 @@
 #import "NewUserTableViewController.h"
 #import "PNColor.h"
 #import "TextFieldTableViewCell.h"
+#import "AppDelegate.h"
+
+#define URL_USER_REG "users/"
+#define BODY_USER_REG "{\"mobile\":\"%@\", \"password\":\"%@\", \"username\":\"%@\", \"sex\":\"%@\", \"email\":\"%@\"}"
 
 @interface NewUserTableViewController ()
 
@@ -52,12 +56,23 @@
 - (void) Register
 {
     NSLog(@"%@\n%@\n%@\n%@\n%@", settingValueList[0], settingValueList[1], settingValueList[3], settingValueList[4], settingValueList[5]);
-    [self dismissViewControllerAnimated:YES completion:
-    ^{
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"userLogon"
-                                                            object:self
-                                                          userInfo:[NSDictionary dictionaryWithObject:settingValueList forKey:@"userInfo"]];
-     }];
+    URLRequestHandler* handler = [[URLRequestHandler alloc] initWithURLStringPOST:@URL_SERVER_PATH @URL_USER_REG Body:[NSString stringWithFormat:@BODY_USER_REG, settingValueList[0], settingValueList[1], settingValueList[3], settingValueList[4], settingValueList[5]] Topic:TOPIC_USER_REG];
+    [handler startWithCompletion:^(BOOL isValid, NSString *result, NSInteger topic)
+    {
+        if(isValid)
+        {
+             [self dismissViewControllerAnimated:YES completion:
+              ^{
+                  [[NSNotificationCenter defaultCenter] postNotificationName:@"userLogon"
+                                                                      object:self
+                                                                    userInfo:[NSDictionary dictionaryWithObject:settingValueList forKey:@"userInfo"]];
+              }];
+        }
+        else
+        {
+            [Utility showErrorMessage:result];
+        }
+    }];
 }
 
 #pragma mark - Table view data source

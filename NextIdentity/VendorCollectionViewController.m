@@ -7,18 +7,19 @@
 //
 
 #import "VendorCollectionViewController.h"
-#import "NSAssetModel.h"
+#import "Common.h"
 #import "VendorCollectionViewCell.h"
 #import "DoubanLogonViewController.h"
 #import "SinaWeiboLogonController.h"
 #import "TaobaoLogonViewController.h"
 #import "TencentLogonController.h"
 #import "LinkedInLogonViewController.h"
-#import "NSAssetModel.h"
 #import "TencentOpenAPI/TencentOAuth.h"
 #import "AssetDetailViewController.h"
 #import "NavigationController.h"
 #import "HomeViewController.h"
+
+#define URL_ASSET_ALL "digitalassets/total/"
 
 @interface VendorCollectionViewController ()
 
@@ -41,21 +42,28 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSMutableArray* array = [[NSMutableArray alloc] init];
-    NSString *plistpath = [[NSBundle mainBundle] pathForResource: @"AssetType" ofType: @"plist"];
-    NSArray *plist = [NSArray arrayWithContentsOfURL: [NSURL fileURLWithPath: plistpath]];
-    for (int i = DOUBAN; i < ALLTYPE; i++)
-    {
-        NSAssetModel* model = [[NSAssetModel alloc] initWithType:i Name:plist[i][@"Name"] Image:[UIImage imageNamed:plist[i][@"Image"]]];
-        [array addObject:model];
-    }
-    [NSAssetList sharedInstance].assetList = array;
-    NSAssetModel* model = [[NSAssetModel alloc] initWithType:ALLTYPE Name:@"所有财产" Image:nil];
-    [NSAssetList sharedInstance].totalAssetModel = model;
-    vendorList = [NSAssetList sharedInstance].assetList;
-    
     AppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
     appDelegate.delegate = self;
+        
+    if([NSAssetList sharedInstance].isEmpty)
+    {
+        [[NSAssetList sharedInstance] initInstance:nil];
+    }
+    URLRequestHandler* handler = [[URLRequestHandler alloc] initWithURLStringPOST:@URL_SERVER_PATH @URL_ASSET_ALL Body:nil Topic:TOPIC_ASSET_ALL];
+    [handler startWithCompletion:^(BOOL isValid, NSString *result, NSInteger topic) {
+        if(isValid)
+        {
+            NSDictionary* dict = [Utility getObjectFromJSON:result];
+            [[NSAssetList sharedInstance] fillAssetInfo:dict];
+        }
+        else
+            [Utility showErrorMessage:result];
+    }];
+}
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    vendorList = [NSAssetList sharedInstance].assetList;
 }
 
 - (void)didReceiveMemoryWarning

@@ -38,21 +38,20 @@
     self.scoreLabel.textColor = PNFreshGreen;
     self.firstLabel.textColor = PNFreshGreen;
     vendorViewController = self.childViewControllers[0];
-
-    float value = [NSAssetList sharedInstance].totalAssetModel.totalScore.floatValue;
-    if(value == 0) //no any binding
-    {
-        [self initHomeScreen];
-    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [Utility loadUserModel];
     BOOL isLogon = [NSUserModel sharedInstance].isLogon;
     if(isLogon == NO)
     {
         [self performSegueWithIdentifier:@"presentCoverIdentifier" sender:self];
-    }   
+    }
+    else
+    {
+        [self updateHomeScreen];
+    }
 }
 
 - (void) initHomeScreen
@@ -67,6 +66,11 @@
 
 - (void) updateHomeScreen
 {
+    if([NSAssetList sharedInstance].isEmpty)
+    {
+        [self initHomeScreen];
+        return;
+    }
     self.scoreLabel.text = [NSAssetList sharedInstance].totalAssetModel.totalScore.description;
     self.welcomeLabel.hidden = NO;
     self.scoreLabel.hidden = NO;
@@ -116,12 +120,6 @@
             [Utility showErrorMessage:result];
         }
     }];
-/*
-    model.deltaScore = @100;
-    [vendorViewController.collectionView reloadData];
-    float value = [NSAssetList sharedInstance].totalScore.floatValue;
-    [NSAssetList sharedInstance].totalScore = @(value + model.deltaScore.floatValue);
-*/
     [self updateHomeScreen];
 }
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event

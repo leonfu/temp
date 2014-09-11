@@ -7,19 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Common.h"
 
-@interface NSUserModel : NSObject
+@interface NSUserModel : NSObject<NSCoding>
 {
-    NSMutableDictionary* dictModel;
-    NSInteger fillStatus;
+    NSMutableDictionary* userModel;
 }
 + (NSUserModel*) sharedInstance;
-
-- (void) fillUserBrief: (NSDictionary*) dict;
+- (void) initInstance: (NSUserModel*) inst;
 - (void) fillUserProfile: (NSDictionary*) dict;
+
 @property (assign, nonatomic) BOOL isLogon;
 @property (readonly, nonatomic) NSString* phone;
 @property (readonly, nonatomic) NSString* nick;
 @property (readonly, nonatomic) NSString* email;
 @property (readonly, nonatomic) NSString* sex;
+@property (readonly, nonatomic) NSString* token;
+@property (readonly, nonatomic) NSString* userid;
+@property (readonly, nonatomic) NSMutableDictionary* userModel;
 @end

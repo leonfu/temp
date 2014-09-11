@@ -13,9 +13,8 @@
 #import "NavigationController.h"
 #import "RegisterViewController.h"
 
-#define URL_USER_LOGON "api-token-auth/"
+#define URL_USER_LOGON "users/login"
 #define BODY_USER_LOGON "{\"username\":%@, \"password\":%@}"
-#define URL_USER_ME "users/me/"
 
 @interface UserLogonTableViewController ()
 
@@ -163,29 +162,24 @@
     {
         if (isValid == YES && isLogonProcessing == YES)
         {
-            URLRequestHandler* handler2 = [[URLRequestHandler alloc] initWithURLStringGET:@URL_SERVER_PATH @URL_USER_ME Headers:nil Topic:TOPIC_USER_PROFILE];
-            [handler2 startWithCompletion:^(BOOL isValid, NSString *result, NSInteger topic)
-            {
-                if(isValid == YES && isLogonProcessing == YES)
-                {
-                    NSDictionary* dict = [Utility getObjectFromJSON:result];
-                    [NSUserModel sharedInstance].isLogon = YES;
-                    [[NSUserModel sharedInstance] fillUserProfile:dict];
-                    [self dismissViewControllerAnimated:YES completion:nil];
-                    return;
-                }
-                if(isValid == NO && isLogonProcessing == YES)
-                {
-                    [Utility showErrorMessage:result];
-                    [self cancelLogon];
-                }
-            }];
+            NSDictionary* dict = [Utility getObjectFromJSON:result];
+            [NSUserModel sharedInstance].isLogon = YES;
+            [[NSUserModel sharedInstance] fillUserProfile:dict];
+            [self dismissViewControllerAnimated:YES completion:nil];
+            return;
         }
         //error occurs
-        if(isValid == NO && isLogonProcessing == YES)
+        if (isValid == NO && isLogonProcessing == YES)
         {
             [Utility showErrorMessage:result];
             [self cancelLogon];
+            /////////////////////////
+            //test code
+            [NSUserModel sharedInstance].isLogon = YES;
+            NSDictionary* dict = @{@"id":@"aaaa", @"mobile":@"1234", @"username":@"name"};
+            [[NSUserModel sharedInstance] fillUserProfile:dict];
+            [self dismissViewControllerAnimated:YES completion:nil];
+            /////////////////////////
         }
     }];
     
@@ -193,6 +187,7 @@
 
 - (void) NewUser
 {
+    [[NSAssetList sharedInstance] updateAsset:DOUBAN Total:@100 Delta:@10 Percentage:@70 Rank:@10];
     isForgotPwd = NO;
     [self performSegueWithIdentifier:@"presentNewUserIdentifier" sender:self];
 }

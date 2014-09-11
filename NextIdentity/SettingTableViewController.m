@@ -66,9 +66,10 @@
         NavigationController* navController = [[NavigationController alloc] initWithRootViewController:controller];
         [self presentViewController:navController animated:NO completion:nil];
     }
-    else if(buttonIndex == 2)
+    else if(buttonIndex == 2) //log out
     {
         [NSUserModel sharedInstance].isLogon = NO;
+        [Utility removeCurrentUser];
         self.tabBarController.selectedIndex = 0;
         
     }

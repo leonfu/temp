@@ -228,6 +228,7 @@
 		35ABAEB219BEE909003D3504 /* LinkedInLogonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkedInLogonViewController.m; sourceTree = "<group>"; };
 		35ABAEB419C0246E003D3504 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utility.h; path = NextIdentity/Utility.h; sourceTree = "<group>"; };
 		35ABAEB519C0246E003D3504 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Utility.m; path = NextIdentity/Utility.m; sourceTree = "<group>"; };
+		35ABAEB719C174EA003D3504 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Common.h; path = NextIdentity/Common.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,6 +286,7 @@
 				359AD8A419B307AE00E191A1 /* VendorLogonViewController.m */,
 				35ABAEB419C0246E003D3504 /* Utility.h */,
 				35ABAEB519C0246E003D3504 /* Utility.m */,
+				35ABAEB719C174EA003D3504 /* Common.h */,
 			);
 			name = BaseControl;
 			sourceTree = "<group>";

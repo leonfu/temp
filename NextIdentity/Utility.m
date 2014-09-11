@@ -31,4 +31,53 @@
     [alert show];
 }
 
++ (void) removeCurrentUser
+{
+    [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"current_user"];
+}
+
++ (BOOL) saveAssetModel
+{
+    NSString* userid = [NSUserModel sharedInstance].userid;
+    if(userid.length == 0 || [NSAssetList sharedInstance].isEmpty)
+        return NO;
+    NSString* strFileName = [NSString stringWithFormat:@"%@_asset.plist", userid];
+    NSData* data = [NSKeyedArchiver archivedDataWithRootObject:[NSAssetList sharedInstance]];
+    return [data writeToFile:strFileName atomically:YES];
+}
+
++ (BOOL) saveUserModel
+{
+    NSString* userid = [NSUserModel sharedInstance].userid;
+    if(userid.length == 0)
+        return NO;
+    [[NSUserDefaults standardUserDefaults] setObject:userid forKey:@"current_user"];
+    NSString* strFileName = [NSString stringWithFormat:@"%@_user.plist", userid];
+    NSData* data = [NSKeyedArchiver archivedDataWithRootObject:[NSUserModel sharedInstance]];
+    return [data writeToFile:strFileName atomically:YES];
+}
+
++ (BOOL) loadUserModel
+{
+    NSString* userid = [[NSUserDefaults standardUserDefaults] objectForKey:@"current_user"];
+    if(userid == nil)
+        return NO;
+    NSString* strFileName = [NSString stringWithFormat:@"%@_user.plist", userid];
+    NSData* data = [NSData dataWithContentsOfFile:strFileName];
+    if(data == nil)
+        return NO;
+    [[NSUserModel sharedInstance] initInstance:[NSKeyedUnarchiver unarchiveObjectWithData:data]];
+    return YES;
+}
+
++ (BOOL) loadAssetModelList
+{
+    NSString* strFileName = [NSString stringWithFormat:@"%@_asset.plist", [NSUserModel sharedInstance].userid];
+    NSData* data = [NSData dataWithContentsOfFile:strFileName];
+    if(data == nil)
+        return NO;
+    [[NSAssetList sharedInstance] initInstance:[NSKeyedUnarchiver unarchiveObjectWithData:data]];
+    return YES;
+}
+
 @end

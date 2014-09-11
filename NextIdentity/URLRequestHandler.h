@@ -10,11 +10,13 @@
 
 #define TOPIC_GET_ACCESS_TOKEN 0
 #define TOPIC_USER_LOGON 1
-#define TOPIC_USER_PROFILE 2
-#define TOPIC_ASSET_BIND 3
-#define TOPIC_ASSET_TODAY 4
-
-NSString* g_token;
+#define TOPIC_MOBILE_VERIFY 2
+#define TOPIC_USER_PROFILE 3
+#define TOPIC_ASSET_BIND 4
+#define TOPIC_ASSET_TODAY 5
+#define TOPIC_MOBILE_CONFIRM 6
+#define TOPIC_USER_REG 7
+#define TOPIC_ASSET_ALL 8
 
 typedef void (^responseCompletion) (BOOL isValid, NSString* result, NSInteger topic);
 
